@@ -9,8 +9,8 @@ class Profile(models.Model):
     name = models.CharField(max_length=30)
     photo = models.ImageField(upload_to="avatars", blank=True)
     #team involvement??
-    blogs = models.URLField(blank=True, verify_exists=False)
-    microblogs = models.URLField(blank=True, verify_exists=False)
+    blog = models.URLField(blank=True, verify_exists=False)
+    microblog = models.URLField(blank=True, verify_exists=False)
     email = models.EmailField(blank=True)
     telephone = models.CharField(max_length=30, blank=True)
     micro_biography = models.CharField(max_length=140, blank=True)
