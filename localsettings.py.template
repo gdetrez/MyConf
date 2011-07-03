@@ -1,0 +1,15 @@
+
+# Absolute path to the root of the project.
+# i.e. the folder where this file is.
+# ROOTDIR="/home/gdetrez/myconf"
+
+# Absolute path to the directory that holds media.
+# Example: "/home/media/media.lawrence.com/"
+MEDIA_ROOT = '/path/to/myconf/media'
+
+TEMPLATE_DIRS = (
+    "/path/to/myconf/templates"
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
+)
