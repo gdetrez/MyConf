@@ -1,0 +1,27 @@
+{% extends "people/base.html" %}
+{% block head-title %}Staff{% endblock %}
+
+{% block content %}
+    <h2>Staff</h2>
+    <span class="subtitle">FSCONS Fantastic staff !</span>
+    
+    {% if staff_list %}
+    <ul class="people listview">
+      {% for member in staff_list %}
+      <li class="person"><a href="/staff/{{ member.username }}/">
+	{% if member.get_profile.photo %}
+	<img src="{{ member.get_profile.photo.url }}" />
+	{% else %}
+	<img src="/site_media/style/user_anonymous.png" />
+	{% endif %}
+	<span class="name">{{ member.get_full_name }}</span>
+	{% if member.get_profile.physical_location %}
+	<br /><span class="location">{{ member.get_profile.physical_location }}</span>
+	{% endif %}
+      </a></li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No staff refgistered.</p>
+    {% endif %}
+{% endblock %}

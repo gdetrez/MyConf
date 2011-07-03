@@ -1,0 +1,40 @@
+{% extends "people/base.html" %}
+{% block head-title %}{{ staff_member.get_full_name }}, FSCONS staff{% endblock %}
+
+{% block content %}
+<div class="user-profile">
+  <h2>{{ staff_member.get_full_name }}</h2>
+  <span class="subtitle">FSCONS Staff</span>
+
+  <div class="user-picture">
+    {% if staff_member.get_profile.photo %}
+    <img src="{{ staff_member.get_profile.photo.url }}" />
+    {% else %}
+    <img src="/site_media/style/user_anonymous.png" />
+    {% endif %}
+  </div>
+
+  
+  <dl>
+    {% if staff_member.get_profile.micro_biography %}
+    <dt>Biography</dt>
+    <dd>{{ staff_member.get_profile.micro_biography }}</dd>
+    {% endif %}
+
+    {% if staff_member.get_profile.physical_location %}
+    <dt>Location</dt>
+    <dd class="location">{{ staff_member.get_profile.physical_location }}</dd>
+    {% endif %}
+    
+    {% if staff_member.get_profile.blogs %}
+    <dt>Blog</dt>
+    <dd class="location"><a href="{{ staff_member.get_profile.blogs }}">{{ staff_member.get_profile.blogs }}</a></dd>
+    {% endif %}
+  
+    {% if staff_member.get_profile.microblogs %}
+    <dt>Microblog</dt>
+    <dd class="location"><a href="{{ staff_member.get_profile.microblogs }}">{{ staff_member.get_profile.microblogs }}</a></dd>
+    {% endif %}
+  </dl>
+</div>
+{% endblock %}
