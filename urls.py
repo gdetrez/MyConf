@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-
+from myconf.settings import MEDIA_ROOT
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
@@ -17,5 +17,5 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
                        
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': '/home/gdetrez/Projects/MyConf/myconf/media'}),
+        {'document_root': MEDIA_ROOT}),
 )
