@@ -161,3 +161,14 @@ h2 { font-size: 2.5em;
 	margin-right: 5%;}
 
 }
+
+@media screen and (min-width: 750px) {
+
+    /* We use li here to be the floating element
+     * because a may have padding and you should't give 
+     * Width and padding to the same element */
+    .listview li { 
+	width: 30%; float: left;
+	margin-right: 3%;}
+
+}
