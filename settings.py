@@ -24,6 +24,14 @@ DATABASES = {
 
 AUTH_PROFILE_MODULE = 'people.Profile'
 
+# XMPP server configuration.
+XMPP_PUBSUB_HOST = "pubsub.zjyto.net"
+XMPP_JID = "myconf-django@zjyto.net"
+XMPP_PASSWORD = "0000"
+
+
+
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
@@ -31,7 +39,7 @@ AUTH_PROFILE_MODULE = 'people.Profile'
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Europe/Stockholm'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -89,6 +97,9 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    
     # MyConf apps
-    'people'
+    'people',
+    'notifications',
+    'simulator',
 )

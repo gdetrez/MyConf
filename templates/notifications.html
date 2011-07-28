@@ -1,0 +1,81 @@
+{% extends "people/base.html" %}
+{% block head-title %}Welcome to My Conf{% endblock %}
+
+{% block content %}
+<h2>Notifications</h2>
+<span class="subtitle">Hot news about FSCONS</span>
+<ul class="notifications" id="notifications">
+  {% for notif in notification_list %}
+  <li>
+    <p class="text">{{ notif.text }}</p>
+    <span class="date">{{ notif.date }}</span>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
+
+
+{% block extra-headers %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/strophe.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/strophe.pubsub.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/pubsub.settings.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/pubsub.client.js"></script>
+<script type="text/javascript">
+  function event_cb(entry, pubsub) {
+  console.log(entry.text());
+  eval("context="+entry.text());
+  $("#template").tmpl(context).linkify().prependTo($("ul")).effect("highlight", 5000);
+            if (!pubsub.focus) {
+                pubsub.unread++;
+                title = document.title;
+                if (title.indexOf("[") == -1) {
+                    title = "[" + pubsub.unread + "]  " + document.title;
+                }
+                else {
+                    title = title.replace(pubsub.unread-1, pubsub.unread);
+                }
+                document.title = title;
+            }
+        }
+        pubsub = new PubSubClient({
+                'nick': '{{ unique_nick }}',
+                'node': '/demo/Status',
+                'event_cb': event_cb
+        });
+
+
+        $(document).ready(function() {
+            $("form").ajaxForm({
+                'resetForm': true
+            });
+        });
+
+        /* resore title on focus */
+        $(window).focus(function() {
+            document.title = document.title.replace(/ *\[[^)]*\] */g, "");
+        });
+
+        $(window).unload(function() {
+            pubsub.disconnect();
+        });
+
+    </script>
+
+    <script id="template" type="text/x-jquery-tmpl">
+        <li>
+            <span class="nick">
+                ${ nick } says:
+            </span>
+            <br />
+            <span class="message">
+                ${ message }
+            </span>
+            <br />
+            <span class="time">
+                ${ time }
+            </span>
+        </li>
+    </script>
+{% endblock %}
+

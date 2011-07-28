@@ -6,6 +6,10 @@
     <title>{% block head-title%} XXXXXXX {% endblock %} | MyConf@fscons.org</title>
     <!-- ma template.css -->
     <link rel="stylesheet" href="/site_media/style/main.css" type="text/css"  media="screen">
+
+      {% block extra-headers %}
+      {% endblock %}
+
   </head>
   <body>
     <header>

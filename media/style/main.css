@@ -172,3 +172,19 @@ h2 { font-size: 2.5em;
 	margin-right: 3%;}
 
 }
+
+
+
+
+
+/* NOTIFICATIONS */
+
+ul.notifications {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul.notifications li .date {
+    color: gray;
+}
