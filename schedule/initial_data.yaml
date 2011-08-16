@@ -1,0 +1,113 @@
+- fields: {begin: !!timestamp '2011-11-12 09:15:00', end: !!timestamp '2011-11-12
+      10:00:00'}
+  model: schedule.timeslot
+  pk: 1
+- fields: {begin: !!timestamp '2011-11-12 10:00:00', end: !!timestamp '2011-11-12
+      10:45:00'}
+  model: schedule.timeslot
+  pk: 2
+- fields: {begin: !!timestamp '2011-11-12 11:00:00', end: !!timestamp '2011-11-12
+      11:45:00'}
+  model: schedule.timeslot
+  pk: 3
+- fields: {begin: !!timestamp '2011-11-12 12:00:00', end: !!timestamp '2011-11-12
+      12:45:00'}
+  model: schedule.timeslot
+  pk: 4
+- fields: {begin: !!timestamp '2011-11-12 12:45:00', end: !!timestamp '2011-11-12
+      14:15:00'}
+  model: schedule.timeslot
+  pk: 5
+- fields: {begin: !!timestamp '2011-11-12 14:15:00', end: !!timestamp '2011-11-12
+      15:00:00'}
+  model: schedule.timeslot
+  pk: 6
+- fields: {begin: !!timestamp '2011-11-12 15:15:00', end: !!timestamp '2011-11-12
+      16:00:00'}
+  model: schedule.timeslot
+  pk: 7
+- fields: {begin: !!timestamp '2011-11-12 16:15:00', end: !!timestamp '2011-11-12
+      17:00:00'}
+  model: schedule.timeslot
+  pk: 8
+- fields: {begin: !!timestamp '2011-11-12 17:15:00', end: !!timestamp '2011-11-12
+      18:00:00'}
+  model: schedule.timeslot
+  pk: 9
+- fields: {begin: !!timestamp '2011-11-12 18:15:00', end: !!timestamp '2011-11-12
+      19:00:00'}
+  model: schedule.timeslot
+  pk: 10
+- fields: {begin: !!timestamp '2011-11-13 09:15:00', end: !!timestamp '2011-11-13
+      10:00:00'}
+  model: schedule.timeslot
+  pk: 11
+- fields: {begin: !!timestamp '2011-11-13 10:00:00', end: !!timestamp '2011-11-13
+      10:45:00'}
+  model: schedule.timeslot
+  pk: 12
+- fields: {begin: !!timestamp '2011-11-13 11:00:00', end: !!timestamp '2011-11-13
+      11:45:00'}
+  model: schedule.timeslot
+  pk: 13
+- fields: {begin: !!timestamp '2011-11-13 12:00:00', end: !!timestamp '2011-11-13
+      12:45:00'}
+  model: schedule.timeslot
+  pk: 14
+- fields: {begin: !!timestamp '2011-11-13 12:45:00', end: !!timestamp '2011-11-13
+      14:15:00'}
+  model: schedule.timeslot
+  pk: 15
+- fields: {begin: !!timestamp '2011-11-13 14:15:00', end: !!timestamp '2011-11-13
+      15:00:00'}
+  model: schedule.timeslot
+  pk: 16
+- fields: {begin: !!timestamp '2011-11-13 15:15:00', end: !!timestamp '2011-11-13
+      16:00:00'}
+  model: schedule.timeslot
+  pk: 17
+- fields: {begin: !!timestamp '2011-11-13 16:15:00', end: !!timestamp '2011-11-13
+      17:00:00'}
+  model: schedule.timeslot
+  pk: 18
+- fields: {begin: !!timestamp '2011-11-13 17:15:00', end: !!timestamp '2011-11-13
+      18:00:00'}
+  model: schedule.timeslot
+  pk: 19
+- fields: {begin: !!timestamp '2011-11-13 18:15:00', end: !!timestamp '2011-11-13
+      19:00:00'}
+  model: schedule.timeslot
+  pk: 20
+- fields: {name: Room 1}
+  model: schedule.room
+  pk: 1
+- fields: {name: Room 2}
+  model: schedule.room
+  pk: 2
+- fields: {name: Room 3}
+  model: schedule.room
+  pk: 3
+- fields: {name: Room 4}
+  model: schedule.room
+  pk: 4
+- fields: {color: red, name: Development for Embedded Systems}
+  model: schedule.track
+  pk: 1
+- fields: {color: B45F04, name: Development in Free Software Communities}
+  model: schedule.track
+  pk: 2
+- fields: {color: blue, name: 'Free Desktop Environments (working title) '}
+  model: schedule.track
+  pk: 3
+- fields: {color: 0B610B, name: Free Software in Politics}
+  model: schedule.track
+  pk: 4
+- fields: {color: DF01D7, name: "Building Together \u2014 Manufacturing Solidarity "}
+  model: schedule.track
+  pk: 5
+- fields: {color: AEB404, name: 'The Future of Money '}
+  model: schedule.track
+  pk: 6
+- fields: {color: 00FFFF, name: "Our Democracy \u2014 Your Privacy (working title)"}
+  model: schedule.track
+  pk: 7

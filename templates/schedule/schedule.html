@@ -1,0 +1,17 @@
+{% extends "people/base.html" %}
+{% block head-title %}Staff{% endblock %}
+
+{% block content %}
+    <h2>Schedule</h2>
+    <span class="subtitle">FSCONS schedule !</span>
+    
+    {% if list_sessions %}
+      {% for session in list_sessions %}
+      {% ifchanged %}<h3>{{ session.time_slot.begin.date }}</h3>{% endifchanged %}
+      {% ifchanged %}<h4>{{ session.time_slot.begin.time }}</h4>{% endifchanged %}
+      <h5>{{ session.title }}</h5>
+      {% endfor %}
+      {% else %}
+      <p>Not yet.</p>
+    {% endif %}
+{% endblock %}

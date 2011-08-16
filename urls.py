@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     (r'^staff/$', 'people.views.staff'),
     (r'^staff/(?P<uname>\w+)/$', 'people.views.user'),
     (r'^notifications/$', 'notifications.views.index'),
+    (r'^schedule/$', 'schedule.views.schedule'),
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

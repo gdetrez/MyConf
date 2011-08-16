@@ -102,4 +102,5 @@ INSTALLED_APPS = (
     'people',
     'notifications',
     'simulator',
+    'schedule',
 )
