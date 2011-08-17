@@ -53,6 +53,13 @@ class Presenter(models.Model):
     def __unicode__(self):
         return self.name
 
+SESSION_KIND_CHOICES = (
+    ('T', 'Talk'),
+    ('W', 'Workshop'),
+    ('K', 'Keynote'),
+    ('O', 'Other'),
+)
+
 class Session(models.Model):
     title = models.CharField(max_length=200, unique = True)
     description = models.TextField()
@@ -60,8 +67,11 @@ class Session(models.Model):
     time_slot = models.ForeignKey('TimeSlot', blank=True, null=True)
     room = models.ForeignKey('Room', blank=True, null=True)
     intended_audience = models.TextField(blank=True)
+    kind = models.CharField(max_length=1, choices=SESSION_KIND_CHOICES, default="T")
 
 #    presenters = models.ManyToManyField(Presenter, related_name='talks')
+
+    
     
     unique_together = (("time_slot", "room"),)
 

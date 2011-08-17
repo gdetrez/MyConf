@@ -32,7 +32,8 @@ class PresenterInline(admin.TabularInline):
 class SessionAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
-                'fields': ('title', 'description', 'intended_audience')
+                'fields': ('title', 'kind',
+                           'description', 'intended_audience', )
         }),
         ('Scheduling', {
                 'classes':('collapse',),
@@ -42,6 +43,7 @@ class SessionAdmin(admin.ModelAdmin):
     inlines = [
         PresenterInline,
     ]
+    list_display = ('title', 'time_slot', 'room')
 
 
 admin.site.register(Session, SessionAdmin)
