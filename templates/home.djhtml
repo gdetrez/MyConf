@@ -1,4 +1,4 @@
-{% extends "people/base.html" %}
+{% extends "people/base.djhtml" %}
 {% block head-title %}Welcome to My Conf{% endblock %}
 
 {% block content %}

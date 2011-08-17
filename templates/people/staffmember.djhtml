@@ -1,4 +1,4 @@
-{% extends "people/base.html" %}
+{% extends "people/base.djhtml" %}
 {% block head-title %}{{ staff_member.get_full_name }}, FSCONS staff{% endblock %}
 
 {% block content %}

@@ -6,7 +6,7 @@ from notifications.models import Notification
 
 def index(request):
     notifs = Notification.objects.all().order_by("-date")
-    t = loader.get_template('notifications.html')
+    t = loader.get_template('notifications.djhtml')
     c = RequestContext(request,{
         'notification_list': notifs,
     })

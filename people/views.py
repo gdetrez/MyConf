@@ -5,7 +5,7 @@ from people.models import Profile
 
 def staff(request):
     staff = User.objects.filter(groups=Group.objects.get(name="Staff")).order_by("first_name")
-    t = loader.get_template('people/staff.html')
+    t = loader.get_template('people/staff.djhtml')
     c = Context({
         'staff_list': staff,
     })
@@ -13,7 +13,7 @@ def staff(request):
 
 def user(request, uname):
     staff_member = User.objects.get(username=uname, groups=Group.objects.get(name="Staff"))
-    t = loader.get_template('people/staffmember.html')
+    t = loader.get_template('people/staffmember.djhtml')
     c = Context({
         'staff_member': staff_member,
     })

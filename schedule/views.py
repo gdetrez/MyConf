@@ -5,7 +5,7 @@ from schedule.models import *
 
 def schedule(request):
     sessions = Session.objects.all().order_by("time_slot__begin")
-    t = loader.get_template('schedule/schedule.html')
+    t = loader.get_template('schedule/schedule.djhtml')
     c = Context({
            'list_sessions': sessions,
     })
