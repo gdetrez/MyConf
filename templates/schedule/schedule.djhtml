@@ -1,17 +1,30 @@
-{% extends "people/base.html" %}
+{% extends "people/base.djhtml" %}
 {% block head-title %}Staff{% endblock %}
 
 {% block content %}
-    <h2>Schedule</h2>
-    <span class="subtitle">FSCONS schedule !</span>
-    
-    {% if list_sessions %}
-      {% for session in list_sessions %}
-      {% ifchanged %}<h3>{{ session.time_slot.begin.date }}</h3>{% endifchanged %}
-      {% ifchanged %}<h4>{{ session.time_slot.begin.time }}</h4>{% endifchanged %}
-      <h5>{{ session.title }}</h5>
-      {% endfor %}
-      {% else %}
-      <p>Not yet.</p>
-    {% endif %}
+<h2>Schedule</h2>
+<span class="subtitle">FSCONS schedule !</span>
+
+{% if list_sessions %}
+    {% for session in list_sessions %}
+        {% ifchanged session.time_slot.begin.date %}
+            {% if not for.first %}
+                </ul>
+            {% endif %}
+
+            <h3 class="day">{{ session.time_slot.begin.date }}</h3>
+        {% else %}
+        {% endifchanged %}      
+        {% ifchanged session.time_slot.begin.time %}
+            </ul>
+            <h4 class="time">{{ session.time_slot.begin.time }}</h4>
+            <ul class="sessions">
+        {% endifchanged %}
+
+        <li class="session">{{ session.title }}</li>
+    {% endfor %}
+{% else %}
+    <p>Not yet.</p>
+{% endif %}
+
 {% endblock %}
