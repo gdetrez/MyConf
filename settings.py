@@ -100,7 +100,7 @@ INSTALLED_APPS = (
     
     # MyConf apps
     'people',
-    'notifications',
-    'simulator',
+    #'notifications',
+    #'simulator',
     'schedule',
 )
