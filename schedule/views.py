@@ -1,7 +1,7 @@
 # Create your views here.
 from django.http import HttpResponse
 from django.template import Context, loader
-from schedule.models import *
+from myconf.schedule.models import *
 
 def schedule(request):
     sessions = Session.objects.all().order_by("time_slot__begin")

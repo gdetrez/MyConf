@@ -7,11 +7,11 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Example:
     # (r'^myconf/', include('myconf.foo.urls')),
-    (r'^$', 'homepage.views.index'),
-    (r'^staff/$', 'people.views.staff'),
-    (r'^staff/(?P<uname>\w+)/$', 'people.views.user'),
+    (r'^$', 'myconf.homepage.views.index'),
+    (r'^staff/$', 'myconf.people.views.staff'),
+    (r'^staff/(?P<uname>\w+)/$', 'myconf.people.views.user'),
     # (r'^notifications/$', 'notifications.views.index'),
-    (r'^schedule/$', 'schedule.views.schedule'),
+    (r'^schedule/$', 'myconf.schedule.views.schedule'),
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 

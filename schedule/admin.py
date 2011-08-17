@@ -1,4 +1,4 @@
-from schedule.models import *
+from myconf.schedule.models import *
 from django.contrib import admin
 
 class TimeSlotAdmin(admin.ModelAdmin):
