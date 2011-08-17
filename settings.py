@@ -93,3 +93,4 @@ INSTALLED_APPS = (
     #'simulator',
     'myconf.schedule',
 )
+

@@ -118,12 +118,13 @@ h1, h2, h3, h4, h5 {margin:0;}
 
 h1 {font-family: Arial, Sans-serif;
    }
+
 h2 { font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
      font-size: 2.5em;
      line-height:1em;
 }
 
-h3 {     border-bottom: thin black solid;
+h3 { border-bottom: thin black solid;
      font-size: 1.25em;
      line-height:1em;
      margin-top:1em;
@@ -132,7 +133,6 @@ h3 {     border-bottom: thin black solid;
 
 h4.time {
     font-family: 'Anton', arial, Sans-serif;
-    margin-top:1.25em;
     
     color: grey;
     float: left;
