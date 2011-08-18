@@ -4,6 +4,9 @@
 # exclude patterns (uncomment them if you want to use them):
 *.pyc
 *~
+*.swp
+*.db
+*.sqlite
 localsettings.py
 db.sqlite
 media/avatars/
