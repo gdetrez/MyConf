@@ -19,7 +19,7 @@ class TimeSlot(models.Model):
         return self.begin.time()
 
     def end_time(self):
-        return self.begin.time()
+        return self.end.time()
 
     def duration(self):
         return self.end - self.begin
