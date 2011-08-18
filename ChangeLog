@@ -1,0 +1,5 @@
+2011-08-18	Patrik Willard	<patrik.willard@padowi.se>
+	* Added project meta data
+		agpl.txt, AUTHORS, ChangeLog, COPYING
+	* Updated localsettings.py.template
+		Clarified paths
