@@ -117,7 +117,7 @@ body {
 
 /** RESET **/
 h1, h2, h3, h4, h5 {
-    margina:0;}
+    margin:0;}
 
 /** Default margin-bottom
  *
@@ -149,14 +149,17 @@ h3 { border-bottom: thin black solid;
 
 
 h4.time {
-    font-family: 'Anton', arial, Sans-serif;    
-    color: grey;
+    font-family: 'Yanone Kaffeesatz', helvetica, arial, Sans-serif;    
+    font-size: 2em;
+    font-weight: bold;
+    color: #aaaaaa;
     float: left;
     font-variant: small-caps;
-    width: 8em;}
+    width: 2em;
+}
 
 ul.sessions {
-    margin-left: 6em;}
+    margin-left: 4em;}
 
 .subtitle {
     font-weight:lighter; 
