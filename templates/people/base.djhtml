@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <title>{% block head-title%} XXXXXXX {% endblock %} | MyConf@fscons.org</title>
+        <title>{% block head-title%} XXXXXXX {% endblock %} | My fscons</title>
         <!-- ma template.css -->
         <link rel="stylesheet" href="/site_media/style/main.css" type="text/css"  media="screen">
 
@@ -15,7 +15,7 @@
         <header>
             <div class="content">
                 <img alt="FSCONS logo" src="/site_media/style/logo-small.png" />
-                <h1><a href="/">MyConf</a></h1>
+                <h1><a href="/">My FSCONS</a></h1>
                 <navigation>
                     <li><a id="nav_schedule" href="/schedule/"><span>Schedule</span></a>
                     <li><a id="nav_manifesto" href="/manifesto/"><span>Manifesto</span></a>
