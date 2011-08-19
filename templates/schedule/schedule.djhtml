@@ -19,7 +19,7 @@
             <ul class="sessions">
         {% endifchanged %}
 
-        <li class="session">{{ session.title }}</li>
+        <li class="session"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %} {% if session.track %}(track: {{ session.track }}){% endif %}</li>
     {% endfor %}
 {% else %}
     <p>Not yet.</p>
