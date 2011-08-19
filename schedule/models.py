@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -50,7 +50,7 @@ class Room(models.Model):
 
 class Track(models.Model):
     name = models.CharField(max_length=200, unique = True)
-    color = models.CharField(max_length=6)
+    css_class = models.CharField(max_length=16)
 
     def get_html_color(self):
         if self.color in ['red', 'black', 'blue', 'yellow']:

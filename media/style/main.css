@@ -224,7 +224,43 @@ ul.sessions {
 }
 
 
+/* SCHEDULE */
+/* tracks */
+.session.undef {
+    list-style-image: url("tracks/all.png");
+}
 
+.session.embeded {
+    list-style-image: url("tracks/embeded.png");
+}
+
+.session.monney {
+    list-style-image: url("tracks/monney.png");
+}
+
+.session.desktop {
+    list-style-image: url("tracks/desktop.png");
+}
+
+.session.politics {
+    list-style-image: url("tracks/politics.png");
+}
+
+.session.building {
+    list-style-image: url("tracks/building.png");
+}
+
+.session.security {
+    list-style-image: url("tracks/security.png");
+}
+
+.session.accessibility {
+    list-style-image: url("tracks/accessibility.png");
+}
+
+.session.community {
+    list-style-image: url("tracks/community.png");
+}
 
 
 /* NOTIFICATIONS */
