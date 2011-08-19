@@ -1,5 +1,5 @@
 {% extends "people/base.djhtml" %}
-{% block head-title %}Staff{% endblock %}
+{% block head-title %}Schedule{% endblock %}
 
 {% block content %}
 <h2>Schedule</h2>
@@ -8,9 +8,7 @@
 {% if list_sessions %}
     {% for session in list_sessions %}
         {% ifchanged session.time_slot.begin.date %}
-            {% if not for.first %}
-                </ul>
-            {% endif %}
+            {% if not forloop.first %}</ul>{% endif %}
 
             <h3 class="day">{{ session.time_slot.begin.date }}</h3>
         {% else %}
