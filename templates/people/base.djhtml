@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{% block head-title%} XXXXXXX {% endblock %} | MyConf@fscons.org</title>
-    <!-- ma template.css -->
-    <link rel="stylesheet" href="/site_media/style/main.css" type="text/css"  media="screen">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>{% block head-title%} XXXXXXX {% endblock %} | MyConf@fscons.org</title>
+        <!-- ma template.css -->
+        <link rel="stylesheet" href="/site_media/style/main.css" type="text/css"  media="screen">
 
-      {% block extra-headers %}
-      {% endblock %}
+        {% block extra-headers %}
+        {% endblock %}
 
-  </head>
-  <body>
-    <header>
-      <div class="content">
-	<img alt="FSCONS logo" src="/site_media/style/logo-small.png" />
-	<h1><a href="/">MyConf</a></h1>
-	<navigation>
-	  <li><a id="nav_schedule" href="/schedule/"><span>Schedule</span></a>
-	  <li><a id="nav_manifesto" href="/manifesto/"><span>Manifesto</span></a>
-	  <li><a id="nav_map" href="/map/"><span>Map</span></a>
-	  <li><a id="nav_notifications" href="/notifications/"><span>Notifications</span></a>
-	</navigation>
-      </div>
-    </header>
+    </head>
+    <body>
+        <header>
+            <div class="content">
+                <img alt="FSCONS logo" src="/site_media/style/logo-small.png" />
+                <h1><a href="/">MyConf</a></h1>
+                <navigation>
+                    <li><a id="nav_schedule" href="/schedule/"><span>Schedule</span></a>
+                    <li><a id="nav_manifesto" href="/manifesto/"><span>Manifesto</span></a>
+                    <li><a id="nav_map" href="/map/"><span>Map</span></a>
+                    <li><a id="nav_notifications" href="/notifications/"><span>Notifications</span></a>
+                </navigation>
+            </div>
+        </header>
 
-    <div class="content" id="main">
-      {% block content %}
-      {% endblock %}
-    </div>
-  </body>
+        <div class="content" id="main">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
 </html>
