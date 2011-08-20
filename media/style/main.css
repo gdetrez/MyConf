@@ -237,7 +237,7 @@ ul.sessions {
 .session.embeded {
     list-style-type: none;
     padding-left: 25px;
-    background-image: url("tracks/embeded.png");
+    background-image: url("tracks/embedded.png");
     background-repeat: no-repeat;
     background-position: 0 0;
 }
@@ -245,7 +245,7 @@ ul.sessions {
 .session.monney {
     list-style-type: none;
     padding-left: 25px;
-    background-image: url("tracks/monney.png");
+    background-image: url("tracks/money.png");
     background-repeat: no-repeat;
     background-position: 0 0;
 }
