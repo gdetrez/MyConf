@@ -227,39 +227,75 @@ ul.sessions {
 /* SCHEDULE */
 /* tracks */
 .session.undef {
-    list-style-image: url("tracks/all.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/all.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.embeded {
-    list-style-image: url("tracks/embeded.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/embeded.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.monney {
-    list-style-image: url("tracks/monney.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/monney.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.desktop {
-    list-style-image: url("tracks/desktop.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/desktop.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.politics {
-    list-style-image: url("tracks/politics.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/politics.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.building {
-    list-style-image: url("tracks/building.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/building.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.security {
-    list-style-image: url("tracks/security.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/security.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.accessibility {
-    list-style-image: url("tracks/accessibility.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/accessibility.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .session.community {
-    list-style-image: url("tracks/community.png");
+    list-style-type: none;
+    padding-left: 25px;
+    background-image: url("tracks/community.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 
@@ -273,4 +309,8 @@ ul.notifications {
 
 ul.notifications li .date {
     color: gray;
+}
+
+ul.sessions li {
+    list-style-position: inside;
 }
