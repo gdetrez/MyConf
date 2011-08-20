@@ -1,13 +1,16 @@
 from django.conf.urls.defaults import *
 from myconf.settings import MEDIA_ROOT
+from django.views.generic.simple import direct_to_template
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
     # Example:
+
     # (r'^myconf/', include('myconf.foo.urls')),
-    (r'^$', 'myconf.homepage.views.index'),
+    (r'^$', direct_to_template, {'template': 'home.djhtml'}),
+
     (r'^staff/$', 'myconf.people.views.staff'),
     (r'^staff/(?P<uname>\w+)/$', 'myconf.people.views.user'),
     # (r'^notifications/$', 'notifications.views.index'),
