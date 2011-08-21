@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -16,6 +16,7 @@
 
 from myconf.schedule.models import *
 from django.contrib import admin
+from myconf.people.models import Person
 
 class TimeSlotAdmin(admin.ModelAdmin):
     list_display = ('day', 'begin_time', 'end_time', 'duration')
@@ -37,13 +38,17 @@ class TrackAdmin(admin.ModelAdmin):
 
 admin.site.register(Track, TrackAdmin)
 
-#class ChoiceInline(admin.StackedInline):
-#    model = Choice
-#    extra = 3
-
 class PresenterInline(admin.TabularInline):
-    model = Presenter
+    verbose_name = "Presenter"
+    verbose_name_plural = "Presenters"
+    model = Session.presenters.through
     extra = 1
+
+
+def presenter_list(obj):
+    return u", ".join(map(unicode, obj.presenters.all()))
+presenter_list.short_description = 'Presenters'
+presenter_list.allow_tags = True
 
 class SessionAdmin(admin.ModelAdmin):
     fieldsets = (
@@ -59,8 +64,7 @@ class SessionAdmin(admin.ModelAdmin):
     inlines = [
         PresenterInline,
     ]
-    list_display = ('title', 'time_slot', 'room')
+    list_display = ('title', presenter_list, 'time_slot', 'room')
 
 
 admin.site.register(Session, SessionAdmin)
-admin.site.register(Presenter)

@@ -17,5 +17,12 @@
 from myconf.people.models import Person
 from django.contrib import admin
 
-admin.site.register(Person)
+class PersonAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'staff')
+    list_display_links = ('name',)
 
+    prepopulated_fields = {
+        'slug': ['name']
+        }
+
+admin.site.register(Person, PersonAdmin)

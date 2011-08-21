@@ -20,7 +20,7 @@ from django.db import models
 from django.template.defaultfilters import date
 from django.conf import settings
 from django.contrib.auth.models import User
-
+from myconf.people.models import Person
 
 class TimeSlot(models.Model):
     begin = models.DateTimeField()
@@ -61,13 +61,13 @@ class Track(models.Model):
     def __unicode__(self):
         return self.name
 
-class Presenter(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.EmailField(blank = True)
-    session = models.ForeignKey('Session', related_name="presenters")
+# class Presenter(models.Model):
+#     name = models.CharField(max_length=200)
+#     email = models.EmailField(blank = True)
+#     session = models.ForeignKey('Session', related_name="presenters_old")
 
-    def __unicode__(self):
-        return self.name
+#     def __unicode__(self):
+#         return self.name
 
 SESSION_KIND_CHOICES = (
     ('T', 'Talk'),
@@ -85,9 +85,7 @@ class Session(models.Model):
     intended_audience = models.TextField(blank=True)
     kind = models.CharField(max_length=1, choices=SESSION_KIND_CHOICES, default="T")
 
-#    presenters = models.ManyToManyField(Presenter, related_name='talks')
-
-    
+    presenters = models.ManyToManyField(Person, related_name='talks')
     
     unique_together = (("time_slot", "room"),)
 
