@@ -20,10 +20,39 @@ from django.template import Context, loader
 from myconf.schedule.models import *
 
 def schedule(request):
-    sessions = Session.objects.all().order_by("time_slot__begin")
+    friday = []
+    for ts in TimeSlot.objects.filter(begin__day=11):
+        friday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+
+    sat_am = []
+    ts = TimeSlot.objects.filter(begin__day=12)
+    filtered_ts = [t for t in ts if t.begin.hour < 13]
+    for ts in filtered_ts:
+        sat_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+
+    sat_pm = []
+    ts = TimeSlot.objects.filter(begin__day=12)
+    filtered_ts = [t for t in ts if t.begin.hour > 13]
+    for ts in filtered_ts:
+        sat_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+
+    sun_am = []
+    ts = TimeSlot.objects.filter(begin__day=13)
+    filtered_ts = [t for t in ts if t.begin.hour < 13]
+    for ts in filtered_ts:
+        sun_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+
+    sun_pm = []
+    ts = TimeSlot.objects.filter(begin__day=13)
+    filtered_ts = [t for t in ts if t.begin.hour > 13]
+    for ts in filtered_ts:
+        sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+
     t = loader.get_template('schedule/schedule.djhtml')
     c = Context({
-           'list_sessions': sessions,
+        'friday_sessions': friday,
+        'sat_am': sat_am,
+        'sat_pm': sat_pm,
     })
     return HttpResponse(t.render(c))
 

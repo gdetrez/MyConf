@@ -24,7 +24,12 @@ class TimeSlotAdmin(admin.ModelAdmin):
 admin.site.register(TimeSlot, TimeSlotAdmin)
 admin.site.register(Room)
 
-admin.site.register(Track)
+class TrackAdmin(admin.ModelAdmin):
+    list_display = ('name', 'css_class')
+    list_display_links = ('name',)
+
+admin.site.register(Track, TrackAdmin)
+
 
 class PresenterInline(admin.TabularInline):
     verbose_name = "Presenter"
