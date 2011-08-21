@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -14,8 +14,8 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from myconf.people.models import Profile
+from myconf.people.models import Person
 from django.contrib import admin
 
-admin.site.register(Profile)
+admin.site.register(Person)
 

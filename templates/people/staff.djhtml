@@ -8,15 +8,15 @@
     {% if staff_list %}
     <ul class="people listview">
       {% for member in staff_list %}
-      <li class="person"><a href="/staff/{{ member.username }}/">
-	{% if member.get_profile.photo %}
-	<img src="{{ member.get_profile.photo.url }}" />
+      <li class="person"><a href="{{ member.get_url }}">
+	{% if member.photo %}
+	<img src="{{ member.photo.url }}" />
 	{% else %}
 	<img src="/site_media/style/user_anonymous.png" />
 	{% endif %}
-	<span class="name">{{ member.get_full_name }}</span>
-	{% if member.get_profile.physical_location %}
-	<br /><span class="location">{{ member.get_profile.physical_location }}</span>
+	<span class="name">{{ member.name }}</span>
+	{% if member.physical_location %}
+	<br /><span class="location">{{ member.physical_location }}</span>
 	{% endif %}
       </a></li>
       {% endfor %}

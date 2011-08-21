@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -16,19 +16,18 @@
 
 from django.http import HttpResponse
 from django.template import Context, loader
-from django.contrib.auth.models import User,Group
-from myconf.people.models import Profile
+from myconf.people.models import Person
 
 def staff(request):
-    staff = User.objects.filter(groups=Group.objects.get(name="Staff")).order_by("first_name")
+    staff = Person.objects.filter(staff=True).order_by("name")
     t = loader.get_template('people/staff.djhtml')
     c = Context({
         'staff_list': staff,
     })
     return HttpResponse(t.render(c))
 
-def user(request, uname):
-    staff_member = User.objects.get(username=uname, groups=Group.objects.get(name="Staff"))
+def user(request, slug):
+    staff_member = Person.objects.get(slug=slug)
     t = loader.get_template('people/staffmember.djhtml')
     c = Context({
         'staff_member': staff_member,

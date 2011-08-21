@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -19,12 +19,13 @@ from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
 
-class Profile(models.Model):
-    user = models.OneToOneField(User)
-
+class Person(models.Model):
+    
     name = models.CharField(max_length=30)
+    slug = models.SlugField(primary_key=True)
     photo = models.ImageField(upload_to="avatars", blank=True)
-    #team involvement??
+
+    # Profile info
     blog = models.URLField(blank=True, verify_exists=False)
     microblog = models.URLField(blank=True, verify_exists=False)
     email = models.EmailField(blank=True)
@@ -32,13 +33,12 @@ class Profile(models.Model):
     micro_biography = models.CharField(max_length=140, blank=True)
     physical_location = models.CharField(max_length=200, blank=True)
 
+    # Flags
+    staff = models.BooleanField()
+    
     def __unicode__(self):
-        return self.user.username
+        return self.name
 
+    def get_url(self):
+        return u"/people/%s/" % self.slug
 
-
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
-
-post_save.connect(create_user_profile, sender=User)

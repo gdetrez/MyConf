@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     (r'^$', direct_to_template, {'template': 'home.djhtml'}),
 
     (r'^staff/$', 'myconf.people.views.staff'),
-    (r'^staff/(?P<uname>\w+)/$', 'myconf.people.views.user'),
+    (r'^people/(?P<slug>\w+)/$', 'myconf.people.views.user'),
     # (r'^notifications/$', 'notifications.views.index'),
     (r'^schedule/$', 'myconf.schedule.views.schedule'),
     # Uncomment the admin/doc line below to enable admin documentation:
