@@ -5,24 +5,98 @@
 <h2>Schedule</h2>
 <span class="subtitle">FSCONS schedule !</span>
 
-{% if list_sessions %}
-    {% for session in list_sessions %}
-        {% ifchanged session.time_slot.begin.date %}
-            {% if not forloop.first %}</ul>{% endif %}
+<h3 class="day">Friday (November 11th)</h3>
+{% for sessions in friday_sessions %}
+    {% if sessions.1 %}
+        <h4 class="time">{{ sessions.0 }}</h4>
+        <ul class="sessions">
+        {% for session in sessions.1 %}
+            <li class="session workshop"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}{% if session.kind == "W" %} (Workshop){% endif %}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
 
-            <h3 class="day">{{ session.time_slot.begin|date:"l (F d)" }}</h3>
-        {% else %}
-        {% endifchanged %}      
-        {% ifchanged session.time_slot.begin.time %}
-            </ul>
-            <h4 class="time">{{ session.time_slot.begin|date:"H:i" }}</h4>
-            <ul class="sessions">
-        {% endifchanged %}
+<h3 class="day">Saturday (November 12th)</h3>
 
-        <li class="session {{ session.track.css_class}}"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %} {% if session.track %}(track: {{ session.track }}){% endif %}</li>
-    {% endfor %}
-{% else %}
-    <p>Not yet.</p>
-{% endif %}
+<h4 class="time">09:15</h4>
+<ul class="sessions">
+    <li class="session breakfast">Breakfast</li>
+</ul>
+
+<!-- sat_am -->
+{% for sessions in sat_am %}
+    {% if sessions.1 %}
+        <h4 class="time">{{ sessions.0 }}</h4>
+        <ul class="sessions">
+        {% for session in sessions.1 %}
+            <li class="session {{ session.track.css_class }}"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}{% if session.kind == "W" %} (Workshop){% endif %}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+
+<h4 class="time">12:45</h4>
+<ul class="sessions">
+    <li class="session lunch">Lunch</li>
+</ul>
+
+<!-- sat_pm -->
+{% for sessions in sat_pm %}
+    {% if sessions.1 %}
+        <h4 class="time">{{ sessions.0 }}</h4>
+        <ul class="sessions">
+        {% for session in sessions.1 %}
+            <li class="session {{ session.track.css_class }}"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}{% if session.kind == "W" %} (Workshop){% endif %}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+
+<h4 class="time">19:00</h4>
+<ul class="sessions">
+    <li class="session party">Social Event</li>
+</ul>
+
+<h3 class="day">Sunday (November 13th)</h3>
+
+<h4 class="time">09:15</h4>
+<ul class="sessions">
+    <li class="session breakfast">Breakfast</li>
+</ul>
+
+<!-- sun_am -->
+{% for sessions in sun_am %}
+    {% if sessions.1 %}
+        <h4 class="time">{{ sessions.0 }}</h4>
+        <ul class="sessions">
+        {% for session in sessions.1 %}
+            <li class="session {{ session.track.css_class }}"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}{% if session.kind == "W" %} (Workshop){% endif %}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+
+<h4 class="time">12:45</h4>
+<ul class="sessions">
+    <li class="session lunch">Lunch</li>
+</ul>
+
+<!-- sun_pm -->
+{% for sessions in sun_pm %}
+    {% if sessions.1 %}
+        <h4 class="time">{{ sessions.0 }}</h4>
+        <ul class="sessions">
+        {% for session in sessions.1 %}
+            <li class="session {{ session.track.css_class }}"><a href="#">{{ session.title }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}{% if session.kind == "W" %} (Workshop){% endif %}</li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+{% endfor %}
+
+<h4 class="time">19:00</h4>
+<ul class="sessions">
+    <li class="session party">Social Event</li>
+</ul>
 
 {% endblock %}
