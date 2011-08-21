@@ -234,7 +234,7 @@ ul.sessions {
     background-position: 0 0;
 }
 
-.session.embeded {
+.session.embedded {
     list-style-type: none;
     padding-left: 25px;
     background-image: url("tracks/embedded.png");
@@ -242,7 +242,7 @@ ul.sessions {
     background-position: 0 0;
 }
 
-.session.monney {
+.session.money {
     list-style-type: none;
     padding-left: 25px;
     background-image: url("tracks/money.png");
@@ -312,5 +312,12 @@ ul.notifications li .date {
 }
 
 ul.sessions li {
+    list-style-type: none;
     list-style-position: inside;
+    padding-bottom: 7px;
+}
+
+li.breakfast, li.lunch, li.party {
+    text-transform: uppercase;
+    font-size: 1.5em;
 }
