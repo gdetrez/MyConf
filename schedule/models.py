@@ -90,4 +90,4 @@ class Session(models.Model):
     unique_together = (("time_slot", "room"),)
 
     def __unicode__(self):
-        return u"%s" % (self.title)
+        return u"%s: %s" % (self.get_kind_display(), self.title)

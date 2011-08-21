@@ -24,26 +24,13 @@ class TimeSlotAdmin(admin.ModelAdmin):
 admin.site.register(TimeSlot, TimeSlotAdmin)
 admin.site.register(Room)
 
-def color(obj):
-    return """
-<div style=\"height:1em;background:%s;border:thin solid black;\"></div>
-""" % obj.get_html_color()
-color.short_description = 'Color'
-color.allow_tags = True
-color.admin_order_field = 'color'
-
-class TrackAdmin(admin.ModelAdmin):
-    list_display = (color, 'name')
-    list_display_links = ('name',)
-
-admin.site.register(Track, TrackAdmin)
+admin.site.register(Track)
 
 class PresenterInline(admin.TabularInline):
     verbose_name = "Presenter"
     verbose_name_plural = "Presenters"
     model = Session.presenters.through
     extra = 1
-
 
 def presenter_list(obj):
     return u", ".join(map(unicode, obj.presenters.all()))
@@ -64,7 +51,13 @@ class SessionAdmin(admin.ModelAdmin):
     inlines = [
         PresenterInline,
     ]
-    list_display = ('title', presenter_list, 'time_slot', 'room')
 
+    list_display = (unicode, presenter_list,
+                    'time_slot', 'room')
+    list_display_links = (unicode,)
+    list_editable = ('time_slot', 'room')
+    list_filter = ('kind', 'room')
+    search_fields = ('title', 'description', 'intended_audience',
+                     'presenters__name')
 
 admin.site.register(Session, SessionAdmin)

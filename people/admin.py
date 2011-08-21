@@ -20,7 +20,9 @@ from django.contrib import admin
 class PersonAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'staff')
     list_display_links = ('name',)
-
+    list_filter = ('staff', 'physical_location')
+    list_editable = ('staff',)
+    search_fields = ('name', 'slug', 'email', 'micro_biography', 'physical_location')
     prepopulated_fields = {
         'slug': ['name']
         }
