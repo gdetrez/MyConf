@@ -32,7 +32,7 @@ color.allow_tags = True
 color.admin_order_field = 'color'
 
 class TrackAdmin(admin.ModelAdmin):
-    list_display = (color, 'name')
+    list_display = (color, 'name', 'css_class')
     list_display_links = ('name',)
 
 admin.site.register(Track, TrackAdmin)
