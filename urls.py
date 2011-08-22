@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from myconf.settings import MEDIA_ROOT
+from myconf.settings import MEDIA_ROOT, STATIC_URL, STATIC_ROOT
 from django.views.generic.simple import direct_to_template
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -23,4 +23,7 @@ urlpatterns = patterns('',
                        
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': MEDIA_ROOT}),
+
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+        {'document_root': STATIC_ROOT}),
 )

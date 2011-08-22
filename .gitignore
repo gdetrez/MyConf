@@ -10,3 +10,4 @@
 localsettings.py
 db.sqlite
 media/avatars/
+sitestatic/
