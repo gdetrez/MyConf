@@ -41,7 +41,8 @@ class TimeSlot(models.Model):
         return self.end - self.begin
 
     def __unicode__(self):
-        return u"%s - %s" % (self.begin, self.end)
+        return u"%s – %s" % (self.begin.strftime('%A %d, %H.%M'),
+                             self.end.strftime('%H.%M'))
 
 class Room(models.Model):
     name = models.CharField(max_length=200, unique = True)
