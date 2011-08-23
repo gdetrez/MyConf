@@ -92,3 +92,6 @@ class Session(models.Model):
 
     def __unicode__(self):
         return u"%s: %s" % (self.get_kind_display(), self.title)
+
+    def get_absolute_url(self):
+        return "/schedule/session/%i/" % self.id

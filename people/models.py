@@ -41,7 +41,7 @@ class Person(models.Model):
 
     # Flags
     staff = models.BooleanField()
-    
+
     def __unicode__(self):
         return self.name
 

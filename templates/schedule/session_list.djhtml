@@ -1,0 +1,15 @@
+{% comment %}
+This template is used to display a list of sesison, for example to display the concurrent and following sessions on a session page.
+
+This should NOT be used for the mans schedule page.
+{% endcomment %}
+<ul>
+{% for session in session_list %}
+    <li>
+      <span class="time">{{ session.time_slot.begin|date:"H:i" }} - {{ session.time_slot.end|date:"H:i" }}</span>
+      <a href="{{ session.get_absolute_url }}">{{ session }}</a>
+    </li>
+{% empty %}
+    <li>Sorry, no session in this list!</li>
+{% endfor %}
+</ul>

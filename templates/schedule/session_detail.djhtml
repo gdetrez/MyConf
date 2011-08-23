@@ -1,0 +1,38 @@
+{% extends "people/base.djhtml" %}
+{% block head-title %}{{ session }}{% endblock %}
+
+{% block content %}
+<h2>{{ session }}</h2>
+<span class="subtitle">{{ session.track }}</span>
+
+{% if session.presenters.all %}
+<p class="speakers">by {{ session.presenters.all|join:", " }}</p>
+{% endif %}
+
+<p class="description">{{ session.description }}</p>
+
+<dl class="session_info">
+  {% if session.time_slot %}
+  <dt>Day</dt>
+  <dd>{{ session.time_slot.begin|date:"l" }}</dd>
+  <dt>Start</dt>
+  <dd>{{ session.time_slot.begin|date:"H:i" }}</dd>
+  <dt>End</dt>
+  <dd>{{ session.time_slot.end|date:"H:i" }}</dd>
+  <dt>Duration</dt>
+  <dd>{{ session.time_slot.duration }}</dd>
+  {% endif %}
+  <dt>Room</dt>
+  <dd>{{ session.room }}</dd>
+</dl>
+
+<h3>Concurrent events:</h3>
+{% include "schedule/session_list.djhtml" with session_list=concurrent_sessions %}
+
+<h3>Next (up to 3) talks in the same room (AW1.121):</h3>
+{% include "schedule/session_list.djhtml" with session_list=next_sessions_in_room %}
+
+<h3>Events that start after this one (within 30 minutes):</h3>
+{% include "schedule/session_list.djhtml" with session_list=sessions_after %}
+
+{% endblock %}

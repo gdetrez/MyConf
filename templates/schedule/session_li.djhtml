@@ -1,0 +1,1 @@
+<li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}</li>

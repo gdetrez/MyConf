@@ -298,6 +298,32 @@ ul.sessions {
     background-position: 0 0;
 }
 
+dl.session_info {
+    background: none repeat scroll 0 0 #FFFFAA;
+    border: thin solid #999900;
+    padding: 1.25em 1.5em;
+    margin: 1.25em 0;
+}
+
+dl.session_info dt {
+    float: left;
+    clear:left;
+    font-weigth: bold;
+}
+
+dl.session_info dt:after {
+    content: ": ";
+}
+
+dl.session_info dd {
+    font-weight: bold;
+    
+}
+
+dl.session_info dd:after {
+    content: " ";
+}
+
 
 /* NOTIFICATIONS */
 
@@ -321,3 +347,5 @@ li.breakfast, li.lunch, li.party {
     text-transform: uppercase;
     font-size: 1.5em;
 }
+
+span.time { font-weight: bold;}

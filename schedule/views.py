@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -19,6 +19,8 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from myconf.schedule.models import *
 from django.contrib.auth.decorators import login_required
+from datetime import timedelta
+from django.db.models import Q
 
 @login_required(login_url='/admin/')
 def schedule(request):
@@ -56,14 +58,47 @@ def schedule(request):
         'sat_am': sat_am,
         'sat_pm': sat_pm,
         'sun_pm': sun_pm,
-        'sun_pm': sun_pm,
+        'sun_am': sun_am,
     })
     return HttpResponse(t.render(c))
 
-# def user(request, uname):
-#     staff_member = User.objects.get(username=uname, groups=Group.objects.get(name="Staff"))
-#     t = loader.get_template('people/staffmember.html')
-#     c = Context({
-#         'staff_member': staff_member,
-#     })
-#     return HttpResponse(t.render(c))
+
+def session(request, pk):
+    session = Session.objects.get(pk=pk)
+    # Session starting up to 30 minutes after the end
+    # of this one
+    timerange = (
+        session.time_slot.end,
+        session.time_slot.end + timedelta(minutes=30))
+    sessions_after = Session.objects.filter(
+        time_slot__begin__range=timerange).order_by('time_slot__begin')
+
+    # Concurrent sessions
+    timerange = (
+        session.time_slot.begin,
+        session.time_slot.end)
+    query = Q(time_slot__begin__range=timerange) | Q(time_slot__end__range=timerange)
+    concurrent_sessions = Session.objects.filter(query).exclude(pk=pk).order_by('time_slot__begin')
+
+
+    # 3 next talks in the same room
+    timerange = (
+        session.time_slot.begin,
+        session.time_slot.end)
+    query = Q(time_slot__begin__range=timerange) | Q(time_slot__end__range=timerange)
+    next_sessions_in_room = Session.objects.filter(
+        room=session.room,
+        time_slot__begin__gte=session.time_slot.end,
+        time_slot__begin__year=session.time_slot.begin.year,
+        time_slot__begin__month=session.time_slot.begin.month,
+        time_slot__begin__day=session.time_slot.begin.day
+    ).exclude(pk=pk).order_by('time_slot__begin')[:3]
+
+    t = loader.get_template('schedule/session_detail.djhtml')
+    c = Context({
+            'session': session,
+            'sessions_after': sessions_after,
+            'concurrent_sessions': concurrent_sessions,
+            'next_sessions_in_room': next_sessions_in_room,
+            })
+    return HttpResponse(t.render(c))
