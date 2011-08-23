@@ -21,17 +21,23 @@ from django.db.models.signals import post_save
 
 class Person(models.Model):
     
-    name = models.CharField(max_length=30)
-    slug = models.SlugField(primary_key=True)
-    photo = models.ImageField(upload_to="avatars", blank=True)
+    name = models.CharField(max_length=30, help_text="Full name")
+    slug = models.SlugField(primary_key=True,
+                            help_text="The slug is used to build the URL. Could be a nickname or a ASCII representation of the name (only lowerase, numbers and hyphen)")
+    photo = models.ImageField(upload_to="avatars", blank=True,)
 
     # Profile info
     blog = models.URLField(blank=True, verify_exists=False)
-    microblog = models.URLField(blank=True, verify_exists=False)
+    microblog = models.URLField(blank=True, verify_exists=False,
+                                help_text="status.net, identi.ca or twitter")
     email = models.EmailField(blank=True)
-    telephone = models.CharField(max_length=30, blank=True)
-    micro_biography = models.CharField(max_length=140, blank=True)
-    physical_location = models.CharField(max_length=200, blank=True)
+    telephone = models.CharField(max_length=30, blank=True,
+                                 help_text="Please include the country's prefix")
+
+    micro_biography = models.CharField(max_length=140, blank=True,
+                                       help_text="micro = imited to 140 characters.")
+    physical_location = models.CharField(max_length=200, blank=True,
+                                         help_text="Country or city name")
 
     # Flags
     staff = models.BooleanField()
