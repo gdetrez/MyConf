@@ -1,15 +1,13 @@
 {% extends "people/base.djhtml" %}
 {% block head-title %}{{ session }}{% endblock %}
 
+{% block extra-headers %}
+<link rel="stylesheet" href="/site_media/style/schedule.css" type="text/css"  media="screen">
+{% endblock %}
+
 {% block content %}
 <h2>{{ session }}</h2>
 <span class="subtitle">{{ session.track }}</span>
-
-{% if session.presenters.all %}
-<p class="speakers">by {{ session.presenters.all|join:", " }}</p>
-{% endif %}
-
-<p class="description">{{ session.description }}</p>
 
 <dl class="session_info">
   {% if session.time_slot %}
@@ -25,6 +23,12 @@
   <dt>Room</dt>
   <dd>{{ session.room }}</dd>
 </dl>
+
+{% if session.presenters.all %}
+<p class="speakers">by {{ session.presenters.all|join:", " }}</p>
+{% endif %}
+
+<p class="description">{{ session.description }}</p>
 
 <h3>Concurrent events:</h3>
 {% include "schedule/session_list.djhtml" with session_list=concurrent_sessions %}

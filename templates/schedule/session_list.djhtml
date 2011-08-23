@@ -3,7 +3,7 @@ This template is used to display a list of session, for example to display the c
 
 This should NOT be used for the main schedule page.
 {% endcomment %}
-<ul>
+<ul class="session_list">
 {% for session in session_list %}
     <li>
       <span class="time">{{ session.time_slot.begin|date:"H:i" }} - {{ session.time_slot.end|date:"H:i" }}</span>
