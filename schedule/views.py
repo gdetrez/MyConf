@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 GrÃ©goire DÃ©trez
+# Copyright (C) 2011 Grégoire Détrez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -55,6 +55,8 @@ def schedule(request):
         'friday_sessions': friday,
         'sat_am': sat_am,
         'sat_pm': sat_pm,
+        'sun_pm': sun_pm,
+        'sun_pm': sun_pm,
     })
     return HttpResponse(t.render(c))
 
