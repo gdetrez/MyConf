@@ -1,0 +1,203 @@
+@import 'http://fonts.googleapis.com/css?family=Anton&v1';
+@import 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:light,regular,bold&v1';
+@import 'http://fonts.googleapis.com/css?family=VT323&v1';
+
+
+/* this is good for wide screen but not for phones.
+May add back later
+*/
+/* h4.time { */
+/*     font-family: 'Yanone Kaffeesatz', helvetica, arial, Sans-serif;     */
+/*     font-size: 2em; */
+/*     font-weight: bold; */
+/*     color: #aaaaaa; */
+/*     float: left; */
+/*     font-variant: small-caps; */
+/*     width: 2em; */
+/* } */
+/* ul.sessions { */
+/*     margin-left: 4em;} */
+
+/* ************************************************************************ */
+/*                               SCHEDULE                                   */
+/* ************************************************************************ */
+
+h4.time {
+    font-family: helvetica, arial, Sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    background: #999;
+    color:white;
+    text-align:center;
+    margin: 2.5em 0 1.25em 0;    
+}
+
+ul.sessions {
+    margin: 0;
+    padding:0;
+}
+
+ul.sessions li {
+    margin: 0 0 1.25em 0;
+    list-style-type: none;
+    list-style-position: inside;
+}
+
+/* Special typography for food/social events */
+.session.breakfast, .session.lunch, .session.party {
+    font-variant: small-caps;
+    color: #555;
+    text-align:center;
+}
+
+/* This is good for wide screen but not for phones. */
+@media screen and (min-width: 500px) {
+    h4.time {
+	font-size: 2em;
+	color: #aaaaaa; background:none;
+	float: left;
+	font-variant: small-caps;
+	width: 2em;
+	text-align:left;
+	margin:0;
+	clear: left;
+
+    }
+    ul.sessions {
+	margin-left: 6em;
+	margin-bottom: 2.5em;
+    }
+}
+
+/* /\* tracks *\/ */
+/* .session.undef { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/all.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.embedded { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/embedded.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.money { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/money.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.desktop { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/desktop.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.politics { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/politics.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.building { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/building.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.security { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/security.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.accessibility { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/accessibility.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* .session.community { */
+/*     list-style-type: none; */
+/*     padding-left: 25px; */
+/*     background-image: url("tracks/community.png"); */
+/*     background-repeat: no-repeat; */
+/*     background-position: 0 0; */
+/* } */
+
+/* Inline track and room informations */
+dl.session_info_inline {
+    color: #555;
+}
+
+dl.session_info_inline dt {
+    float: left;
+    clear:left;
+    font-weigth: bold;
+}
+
+dl.session_info_inline dt:after {
+    content: ": ";
+}
+
+dl.session_info_inline dd {
+    font-weight: bold;
+}
+
+/* ************************************************************************ */
+/*                           SESSION DETAILS                                */
+/* ************************************************************************ */
+dl.session_info {
+    background: none repeat scroll 0 0 #FFFFAA;
+    border: thin solid #999900;
+    padding: 1.25em 1.5em;
+    margin: 1.25em 0;
+}
+
+@media screen and (min-width: 500px) {
+    dl.session_info { margin:1.25em; float:right; width:10em;}
+}
+
+dl.session_info dt {
+    float: left;
+    clear:left;
+    font-weigth: bold;
+}
+
+dl.session_info dt:after {
+    content: ": ";
+}
+
+dl.session_info dd {
+    font-weight: bold;
+    
+}
+
+/* ************************************************************************ */
+/*                            SESSION_LIST                                  */
+/* ************************************************************************ */
+.session_list {
+    margin:0 0 1.25em; padding:0 ;
+}
+
+.session_list li { 
+    list-style-type: none;
+    font-weight: bold;}
+.session_list .time { font-weight: bold;}

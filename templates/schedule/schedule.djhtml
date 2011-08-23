@@ -1,10 +1,15 @@
 {% extends "people/base.djhtml" %}
 {% block head-title %}Schedule{% endblock %}
 
+{% block extra-headers %}
+<link rel="stylesheet" href="/site_media/style/schedule.css" type="text/css"  media="screen">
+{% endblock %}
+
 {% block content %}
 <h2>Schedule</h2>
 <span class="subtitle">FSCONS schedule !</span>
 
+<div class="schedule">
 <h3 class="day">Friday (November 11th)</h3>
 {% for sessions in friday_sessions %}
     {% if sessions.1 %}
@@ -98,5 +103,5 @@
 <ul class="sessions">
     <li class="session party">Social Event</li>
 </ul>
-
+</div>
 {% endblock %}
