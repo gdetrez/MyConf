@@ -62,14 +62,6 @@ class Track(models.Model):
     def __unicode__(self):
         return self.name
 
-# class Presenter(models.Model):
-#     name = models.CharField(max_length=200)
-#     email = models.EmailField(blank = True)
-#     session = models.ForeignKey('Session', related_name="presenters_old")
-
-#     def __unicode__(self):
-#         return self.name
-
 SESSION_KIND_CHOICES = (
     ('T', 'Talk'),
     ('W', 'Workshop'),
@@ -88,6 +80,11 @@ class Session(models.Model):
 
     presenters = models.ManyToManyField(Person, related_name='talks')
     
+    # Fix after fscons 2011:
+    # use a Meta subclass
+    # class Meta:
+    #     unique_together = (("time_slot", "room"),)
+
     unique_together = (("time_slot", "room"),)
 
     def __unicode__(self):
