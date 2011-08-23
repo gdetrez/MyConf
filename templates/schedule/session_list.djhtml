@@ -1,7 +1,7 @@
 {% comment %}
-This template is used to display a list of sesison, for example to display the concurrent and following sessions on a session page.
+This template is used to display a list of session, for example to display the concurrent and following sessions on a session page.
 
-This should NOT be used for the mans schedule page.
+This should NOT be used for the main schedule page.
 {% endcomment %}
 <ul>
 {% for session in session_list %}
