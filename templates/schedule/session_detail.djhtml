@@ -33,7 +33,7 @@
 <h3>Concurrent events:</h3>
 {% include "schedule/session_list.djhtml" with session_list=concurrent_sessions %}
 
-<h3>Next (up to 3) talks in the same room (AW1.121):</h3>
+<h3>Next (up to 3) talks in the same room ({{ session.room }}):</h3>
 {% include "schedule/session_list.djhtml" with session_list=next_sessions_in_room %}
 
 <h3>Events that start after this one (within 30 minutes):</h3>
