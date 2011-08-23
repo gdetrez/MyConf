@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2011 Grégoire Détrez
+# Copyright (C) 2011 GrÃ©goire DÃ©trez
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU Affero General Public License as published by
@@ -18,7 +18,9 @@
 from django.http import HttpResponse
 from django.template import Context, loader
 from myconf.schedule.models import *
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/admin/')
 def schedule(request):
     friday = []
     for ts in TimeSlot.objects.filter(begin__day=11):
