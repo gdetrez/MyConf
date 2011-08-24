@@ -13,12 +13,14 @@
 <h3 class="day">Friday (November 11th)</h3>
 {% for sessions in friday_sessions %}
     {% if sessions.1 %}
-        <h4 class="time">{{ sessions.0 }}</h4>
-        <ul class="sessions">
-        {% for session in sessions.1 %}
-        {% include "schedule/session_li.djhtml" %}
-        {% endfor %}
-        </ul>
+        <section{% if sessions.2 %} class="done"{% endif %}>
+            <h4 class="time">{{ sessions.0 }}</h4>
+            <ul class="sessions">
+            {% for session in sessions.1 %}
+            {% include "schedule/session_li.djhtml" %}
+            {% endfor %}
+            </ul>
+        </section>
     {% endif %}
 {% endfor %}
 
@@ -32,12 +34,14 @@
 <!-- sat_am -->
 {% for sessions in sat_am %}
     {% if sessions.1 %}
-        <h4 class="time">{{ sessions.0 }}</h4>
-        <ul class="sessions">
-        {% for session in sessions.1 %}
-        {% include "schedule/session_li.djhtml" %}
-        {% endfor %}
-        </ul>
+        <section{% if sessions.2 %} class="done"{% endif %}>
+            <h4 class="time">{{ sessions.0 }}</h4>
+            <ul class="sessions">
+            {% for session in sessions.1 %}
+            {% include "schedule/session_li.djhtml" %}
+            {% endfor %}
+            </ul>
+        </section>
     {% endif %}
 {% endfor %}
 
@@ -49,12 +53,14 @@
 <!-- sat_pm -->
 {% for sessions in sat_pm %}
     {% if sessions.1 %}
-        <h4 class="time">{{ sessions.0 }}</h4>
-        <ul class="sessions">
-        {% for session in sessions.1 %}
-        {% include "schedule/session_li.djhtml" %}
-        {% endfor %}
-        </ul>
+        <section{% if sessions.2 %} class="done"{% endif %}>
+            <h4 class="time">{{ sessions.0 }}</h4>
+            <ul class="sessions">
+            {% for session in sessions.1 %}
+            {% include "schedule/session_li.djhtml" %}
+            {% endfor %}
+            </ul>
+        </section>
     {% endif %}
 {% endfor %}
 
@@ -73,12 +79,14 @@
 <!-- sun_am -->
 {% for sessions in sun_am %}
     {% if sessions.1 %}
-        <h4 class="time">{{ sessions.0 }}</h4>
-        <ul class="sessions">
-        {% for session in sessions.1 %}
-        {% include "schedule/session_li.djhtml" %}
-        {% endfor %}
-        </ul>
+        <section{% if sessions.2 %} class="done"{% endif %}>
+            <h4 class="time">{{ sessions.0 }}</h4>
+            <ul class="sessions">
+            {% for session in sessions.1 %}
+            {% include "schedule/session_li.djhtml" %}
+            {% endfor %}
+            </ul>
+        </section>
     {% endif %}
 {% endfor %}
 
@@ -90,12 +98,14 @@
 <!-- sun_pm -->
 {% for sessions in sun_pm %}
     {% if sessions.1 %}
-        <h4 class="time">{{ sessions.0 }}</h4>
-        <ul class="sessions">
-        {% for session in sessions.1 %}
-        {% include "schedule/session_li.djhtml" %}
-        {% endfor %}
-        </ul>
+        <section{% if sessions.2 %} class="done"{% endif %}>
+            <h4 class="time">{{ sessions.0 }}</h4>
+            <ul class="sessions">
+            {% for session in sessions.1 %}
+            {% include "schedule/session_li.djhtml" %}
+            {% endfor %}
+            </ul>
+        </section>
     {% endif %}
 {% endfor %}
 
