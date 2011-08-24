@@ -180,6 +180,7 @@ dl.session_info dt {
     float: left;
     clear:left;
     font-weigth: bold;
+    padding-right: 0.2em;
 }
 
 dl.session_info dt:after {
