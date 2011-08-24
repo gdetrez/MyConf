@@ -149,7 +149,7 @@ dl.session_info_inline {
 dl.session_info_inline dt {
     float: left;
     clear:left;
-    font-weigth: bold;
+    font-weight: bold;
     padding-right: 0.2em;
 }
 
@@ -178,7 +178,7 @@ dl.session_info {
 dl.session_info dt {
     float: left;
     clear:left;
-    font-weigth: bold;
+    font-weight: bold;
     padding-right: 0.2em;
 }
 
