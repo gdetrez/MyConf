@@ -14,6 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+import datetime
 from django.db import models
 
 # Create your models here.
@@ -27,6 +28,11 @@ class TimeSlot(models.Model):
     end = models.DateTimeField()
 
     unique_together = (("begin", "end"),)
+
+    def passed(self):
+        if datetime.datetime.now() > self.end:
+            return True
+        return False
 
     def day(self):
         return self.begin.strftime("%A %d")

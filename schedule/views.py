@@ -26,31 +26,31 @@ from django.db.models import Q
 def schedule(request):
     friday = []
     for ts in TimeSlot.objects.filter(begin__day=11):
-        friday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+        friday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sat_am = []
     ts = TimeSlot.objects.filter(begin__day=12)
     filtered_ts = [t for t in ts if t.begin.hour < 13]
     for ts in filtered_ts:
-        sat_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+        sat_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sat_pm = []
     ts = TimeSlot.objects.filter(begin__day=12)
     filtered_ts = [t for t in ts if t.begin.hour > 13]
     for ts in filtered_ts:
-        sat_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+        sat_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sun_am = []
     ts = TimeSlot.objects.filter(begin__day=13)
     filtered_ts = [t for t in ts if t.begin.hour < 13]
     for ts in filtered_ts:
-        sun_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+        sun_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sun_pm = []
     ts = TimeSlot.objects.filter(begin__day=13)
     filtered_ts = [t for t in ts if t.begin.hour > 13]
     for ts in filtered_ts:
-        sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id)))
+        sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     t = loader.get_template('schedule/schedule.djhtml')
     c = Context({
