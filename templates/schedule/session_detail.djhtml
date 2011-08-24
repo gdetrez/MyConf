@@ -1,4 +1,4 @@
-{% extends "people/base.djhtml" %}
+{% extends "base.djhtml" %}
 {% block head-title %}{{ session }}{% endblock %}
 
 {% block extra-headers %}

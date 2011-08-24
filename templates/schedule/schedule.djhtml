@@ -1,4 +1,4 @@
-{% extends "people/base.djhtml" %}
+{% extends "base.djhtml" %}
 {% block head-title %}Schedule{% endblock %}
 
 {% block extra-headers %}
