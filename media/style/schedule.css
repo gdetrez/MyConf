@@ -198,3 +198,9 @@ dl.session_info dd {
     list-style-type: none;
     font-weight: bold;}
 .session_list .time { font-weight: bold;}
+
+.past {
+    background-image: url("./bg_past.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
