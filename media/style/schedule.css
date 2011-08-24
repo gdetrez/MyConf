@@ -1,22 +1,19 @@
-@import 'http://fonts.googleapis.com/css?family=Anton&v1';
-@import 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:light,regular,bold&v1';
-@import 'http://fonts.googleapis.com/css?family=VT323&v1';
-
-
-/* this is good for wide screen but not for phones.
-May add back later
-*/
-/* h4.time { */
-/*     font-family: 'Yanone Kaffeesatz', helvetica, arial, Sans-serif;     */
-/*     font-size: 2em; */
-/*     font-weight: bold; */
-/*     color: #aaaaaa; */
-/*     float: left; */
-/*     font-variant: small-caps; */
-/*     width: 2em; */
-/* } */
-/* ul.sessions { */
-/*     margin-left: 4em;} */
+/* -*- coding: utf-8 -*-
+ * Copyright (C) 2011 Grégoire Détrez, Patrik Willard
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 /* ************************************************************************ */
 /*                               SCHEDULE                                   */
@@ -38,7 +35,7 @@ ul.sessions {
 }
 
 ul.sessions li {
-    margin: 0 0 1.25em 1.0em;
+    margin: 0 0 1.25em 0;
     list-style-type: none;
     list-style-position: inside;
 }
@@ -50,7 +47,8 @@ ul.sessions li {
     text-align:center;
 }
 
-/* This is good for wide screen but not for phones. */
+/* This is good for wide screen but not for phones.
+ * So we only apply it when screen size is bigger than 500px */
 @media screen and (min-width: 500px) {
     h4.time {
 	font-size: 2em;
@@ -64,7 +62,7 @@ ul.sessions li {
 
     }
     ul.sessions {
-	margin-left: 6em;
+	margin-left: 8em;
 	margin-bottom: 2.5em;
     }
 }
@@ -145,6 +143,7 @@ ul.sessions li {
 /* Inline track and room informations */
 dl.session_info_inline {
     color: #555;
+    margin:0;
 }
 
 dl.session_info_inline dt {
@@ -189,16 +188,12 @@ dl.session_info dt:after {
 
 dl.session_info dd {
     font-weight: bold;
-    
 }
 
 /* ************************************************************************ */
 /*                            SESSION_LIST                                  */
 /* ************************************************************************ */
-.session_list {
-    margin:0 0 1.25em; padding:0 ;
-}
-
+.session_list { margin:0 0 1.25em; padding:0; }
 .session_list li { 
     list-style-type: none;
     font-weight: bold;}

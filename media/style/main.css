@@ -1,12 +1,27 @@
-@import 'http://fonts.googleapis.com/css?family=Anton&v1';
-@import 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:light,regular,bold&v1';
-@import 'http://fonts.googleapis.com/css?family=VT323&v1';
+/* -*- coding: utf-8 -*-
+ * Copyright (C) 2011 Grégoire Détrez, Patrik Willard
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* NB: in css @import statements have to be included at the very top of the
+ * file otherwise (some) browsers won't see them. */
+@import 'typography.css';
+/* defines the vertical grid: all vertical space should be a multiple of
+ * 1.25em */
 
 /* **** LAYOUT **** */
-body {
-    margin:0;
-    padding:0;
-}
 #main { margin-top: 2.5em; }
 
 .content {
@@ -19,7 +34,9 @@ header {
     background: #1a1a1a url("/site_media/style/line.png") repeat-x top left;
     margin: 0 0 0 0;
     padding:1em 0;}
-    header:after { clear:both; content: "."; height:0; visibility:hidden; display:block;}
+    /* clearing after the header */
+    header:after {
+	clear:both; content: "."; height:0; visibility:hidden; display:block;}
 
 header h1 {
     margin:0;
@@ -31,39 +48,41 @@ header h1 {
 	color: #f5f5f5;
 	text-decoration: none;}
 
-header navigation {
-    float:right;
-    list-style-type:none;
-    width:198px;
-    padding:0;}
-header navigation a { display:block; float:left; margin:0 10px; height:32px; background-position: center; background-repeat:no-repeat; }
-header navigation a span { display:none; }
-#nav_schedule { background-image: url("/site_media/style/ic_schedule_24.png"); width: 24px; }
-#nav_manifesto { background-image: url("/site_media/style/ic_manifesto_24.png"); width: 36px; }
-#nav_map { background-image: url("/site_media/style/ic_map_24.png"); width: 32px; }
-#nav_notifications { background-image: url("/site_media/style/ic_notification_24.png"); width: 26px; }
+/* Logo */
 header img {
     height: 40px;
     vertical-align: top;
 }
 
-
-.people li a .name { font-weight: bold; }
-.people li a .location { color:gray; font-style: italic; }
-.people li a:hover { background: #f8f8f8 url("/site_media/style/list_link_right.png") right center no-repeat;}
-.people li a:after {
-    clear:both;
-    content: ".";
-    height:0;
-    visibility:hidden;
-    display:block;}
-.people img {
-    height: 2.5em;
-    float:left;
-    margin: 0 .75em; }
-
-
-
+/** header navigation
+ *
+ * We replace the menu texts by icons.
+ */
+header navigation {
+    float:right;
+    list-style-type:none;
+    width:198px;
+    padding:0;}
+    header navigation a {
+	display:block;
+	float:left;
+	margin:0 10px;
+	height:32px;
+	background-position: center;
+	background-repeat:no-repeat; }
+        header navigation a span { display:none; }
+    #nav_schedule {
+	background-image: url("/site_media/style/ic_schedule_24.png");
+	width: 24px; }
+    #nav_manifesto {
+	background-image: url("/site_media/style/ic_manifesto_24.png");
+	width: 36px; }
+    #nav_map {
+	background-image: url("/site_media/style/ic_map_24.png");
+	width: 32px; }
+    #nav_notifications {
+	background-image: url("/site_media/style/ic_notification_24.png");
+	width: 26px; }
 
 
 /* **** Main menu **** */
@@ -98,87 +117,57 @@ header img {
 #main-navigation a:hover { background-color: #f8f8f8;}
 #main-navigation a:hover:after { float:right; content: "»"; margin-right:5px;}
 
-
-/* **** TYPOGRAPHY **** */
-
-/** body typography
- * Defines the base font-size and line height (grid)
- */
-body { 
-       font-size: 16px;
-       line-height:1.25em; /* 20px */ }
-
-.content {
-    /* Uncomment to display the typographic grid
-    background-image: url("tgrid.png");
-    background-position: left 16px;
-    /**/
-}
-
-/** RESET **/
-h1, h2, h3, h4, h5 {
-    margin:0;}
-
-/** Default margin-bottom
+/** STYLES FOR THE 'PEOPLE' APP
  *
- * in order to respect the typographic grid, all negative space between 
- * element has to be a multiple of the line height.
- * Default is 1 line spacing.
- **/
-ul, p, .subtitle {
-    display: block;
-    margin-bottom: 1.25em;    
-}
+ * This section contains style for the 'people' app templates
+ */
 
-ul { margin: 1.25em 0; }
-
-
-h1 { font-family: Arial, Sans-serif; }
-
-h2 { font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
-     font-size: 2.5em; /* 40px */
-     line-height:1em;  /* 40px */
-}
-
-h3 { border-bottom: thin black solid;
-     font-size: 1.25em;
-     line-height:1em;
-     margin-top:-1px;
-     margin-bottom: 1em;
-}
-
-h4.time {
-    font-family: 'Yanone Kaffeesatz', helvetica, arial, Sans-serif;
-    font-size: 1.5em;
-    line-heigth: 
-    font-weight: bold;
-    color: #aaaaaa;
-}
-
-ul.sessions {
-    margin-left: 0;
-padding:0;}
+/** List of people */
+.people li a .name { font-weight: bold; }
+.people li a .location { color:gray; font-style: italic; }
+.people li a:hover { background: #f8f8f8 url("/site_media/style/list_link_right.png") right center no-repeat;}
+.people img {
+    height: 2.5em;
+    float:left;
+    margin: 0 .75em; }
+/* clearing */
+.people li a:after {
+    clear:both;
+    content: ".";
+    height:0;
+    visibility:hidden;
+    display:block;}
 
 
-.subtitle {
-    font-weight:lighter; 
-    font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
-}
-
-.user-profile dt { color: Gray;
-		   font-weight: bold; }
+/** INDIVIDUAL PERSON INFO */
+.user-profile dt { color: Gray; font-weight: bold; }
 .user-profile dt:after { content: ':' }
-
 .user-profile dd { margin:0 0 1.25em 0;}
-
 .user-profile .user-picture { text-align:center; }
 .user-profile .user-picture img { height: 12.5em; margin:1.25em; }
 
-/* *** List view ***  */
-/* ... */
-/* Either a navigation of an ul element */
+/* For screen bigger than 500px
+ * instead of centering the image under the name, we push it on the right */
+@media screen and (min-width: 500px) {
+    .user-profile .user-picture img {
+	height: 12.5em; margin:1.25em; float:right; }
+}
+
+/* ***************************************************************************
+ * LIST VIEW
+ *
+ * The list view is a very common UI element of mobile apps
+ * here we try to create the same effet in css.
+ *
+ * ListView should be used for list of clickable items.
+ * examples include the main menu, the staff list, restaurants...
+ *
+ * It can be either a <navigation> or an <ul> element
+ *
+ * Be aware that margin, padding and dimension are calculated to
+ * agree with the typographic grid of 20px. */
 .listview { list-style-type: none;
-	    margin: 29px 0 30px 0; padding: 0;}
+	    margin: 30px 0 30px 0; padding: 0;}
 .listview li { list-style-type:none; display:inline;
 	       margin:0; padding:0;}
 .listview a { display:block;
@@ -190,11 +179,9 @@ padding:0;}
 	      color: inherit;
 	      text-decoration:none;}
 
-
-/* ADAPTATION */
+/* in case the screen is bigger than 500px, we split listviews
+ * in 2 columns */
 @media screen and (min-width: 500px) {
-    .user-profile .user-picture img { height: 12.5em; margin:1.25em; float:right; }
-
     .listview:after {
 	clear:both;
 	content: ".";
@@ -208,31 +195,17 @@ padding:0;}
     .listview li { 
 	width: 45%; float: left;
 	margin-right: 5%;}
-
 }
 
-@media screen and (min-width: 750px) {
 
+/* in case the screen is bigger than 750px, we split listviews
+ * in 3 columns
+ */
+@media screen and (min-width: 750px) {
     /* We use li here to be the floating element
-     * because a may have padding and you should't give 
+     * because <a/> may have padding and you should't give 
      * Width and padding to the same element */
     .listview li { 
 	width: 30%; float: left;
 	margin-right: 3%;}
-
 }
-
-
-
-/* NOTIFICATIONS */
-
-ul.notifications {
-    list-style-type: none;
-    padding: 0;
-    text-align: center;
-}
-
-ul.notifications li .date {
-    color: gray;
-}
-

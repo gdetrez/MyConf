@@ -1,0 +1,89 @@
+/* -*- coding: utf-8 -*-
+ * Copyright (C) 2011 Grégoire Détrez, Patrik Willard
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* ***************************************************************************
+ * Font import
+ * NB: in css @import statements have to be included at the very top of the
+ * file otherwise (some) browsers won't see them.
+ */
+@import 'http://fonts.googleapis.com/css?family=Anton&v1';
+@import 'http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:light,regular,bold&v1';
+@import 'http://fonts.googleapis.com/css?family=VT323&v1';
+
+/* ***************************************************************************
+ ** Reset **/
+html, * { margin:0; padding:0; }
+
+/* ***************************************************************************
+ ** Typographic grid
+ *
+ * For this design, we use a bse font size of 16px
+ * with a base grid of 20px (1.25em).
+ */
+body { 
+       font-size: 16px;
+       line-height:1.25em; /* 20px */ }
+
+/* Uncomment to display the typographic grid*/
+.content {
+    background-image: url("tgrid.png");
+    background-position: left 16px;
+}
+/**/
+
+
+/* ***************************************************************************
+ ** Font selection
+ * Including size colors, weigth...
+ */
+h1 { font-family: Arial, Sans-serif; }
+
+h2 { font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
+     font-size: 2.5em; /* 40px */
+     line-height:1em;  /* 40px */
+}
+
+h3 { border-bottom: thin black solid;
+     margin-top:-1px;    /* compenate for the border height */
+     font-size: 1.25em;  /* 20px */
+     line-height:1em;    /* 20px */
+     margin-bottom: 1em; /* 20px */
+}
+
+.subtitle {
+    font-weight:lighter; 
+    font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
+}
+
+/* ***************************************************************************
+ ** Vertical rythm
+ *
+ * Here we precisely control the vertical spacing between elements.
+ */
+/** Default margin-bottom
+ *
+ * in order to respect the typographic grid, all negative space between 
+ * element has to be a multiple of the line height.
+ * Default is 1 line (1.25em = 20px) spacing.
+ **/
+ul, p, .subtitle {
+    display: block;
+    margin-bottom: 1.25em;    
+}
+
+/* For some elements, a margin-top is also necessary */
+ul { margin-top: 1.25em; }
