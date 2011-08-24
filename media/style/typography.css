@@ -38,7 +38,7 @@ body {
        font-size: 16px;
        line-height:1.25em; /* 20px */ }
 
-/* Uncomment to display the typographic grid*/
+/* Uncomment to display the typographic grid
 .content {
     background-image: url("tgrid.png");
     background-position: left 16px;
