@@ -25,3 +25,8 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+# Configuring the staticfiles applications
+STATIC_URL = '/static/'
+# Example: "/home/user/myconf/sitestatic"
+STATIC_ROOT = "CHANGEME"
