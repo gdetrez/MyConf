@@ -12,17 +12,7 @@
 <div class="schedule">
 <h3 class="day">Friday (November 11th)</h3>
 {% for sessions in friday_sessions %}
-        <section{% if sessions.2 %} class="done"{% endif %}>
-            <h4 class="time">{{ sessions.0 }}</h4>
-            <ul class="sessions">
-            {% for session in sessions.1 %}
-            {% include "schedule/session_li.djhtml" %}
-            {% empty %}
-            <li class="session tba">Nothing yet, keep tuned !</li>
-            {% endfor %}
-
-            </ul>
-        </section>
+  {% include "schedule/schedule_timeslot.djhtml" %}
 {% endfor %}
 
 <h3 class="day">Saturday (November 12th)</h3>
