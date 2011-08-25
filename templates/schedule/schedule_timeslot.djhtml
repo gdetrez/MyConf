@@ -1,0 +1,21 @@
+<section{% if sessions.2 %} class="done"{% endif %}>
+  <h4 class="time">{{ sessions.0 }}</h4>
+  <ul class="sessions">
+    {% for session in sessions.1 %}
+      <li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}
+        <dl class="session_info_inline">
+          {% if session.track %}
+          <dt>Track</dt>
+          <dd>{{ session.track }}</dd>
+          {% endif %}
+          {% if session.room %}
+          <dt>Room</dt>
+          <dd>{{ session.room }}</dd>
+          {% endif %}
+        </dl>
+      </li>
+    {% empty %}
+      <li class="session tba">Nothing yet, keep tuned !</li>
+    {% endfor %}
+  </ul>
+</section>

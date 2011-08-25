@@ -1,8 +1,0 @@
-<li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}
-<dl class="session_info_inline">
-<dt>Track</dt>
-<dd>Security/infractucture</dd>
-<dt>Room</dt>
-<dd>Room 3</dd>
-</dl>
-</li>

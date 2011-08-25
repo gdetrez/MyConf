@@ -34,16 +34,7 @@
 
 <!-- sat_am -->
 {% for sessions in sat_am %}
-        <section{% if sessions.2 %} class="done"{% endif %}>
-            <h4 class="time">{{ sessions.0 }}</h4>
-            <ul class="sessions">
-            {% for session in sessions.1 %}
-            {% include "schedule/session_li.djhtml" %}
-            {% empty %}
-            <li class="session tba">Nothing yet, keep tuned !</li>
-            {% endfor %}
-            </ul>
-        </section>
+  {% include "schedule/schedule_timeslot.djhtml" %}
 {% endfor %}
 
 <h4 class="time">12:45</h4>
@@ -53,16 +44,7 @@
 
 <!-- sat_pm -->
 {% for sessions in sat_pm %}
-        <section{% if sessions.2 %} class="done"{% endif %}>
-            <h4 class="time">{{ sessions.0 }}</h4>
-            <ul class="sessions">
-            {% for session in sessions.1 %}
-            {% include "schedule/session_li.djhtml" %}
-            {% empty %}
-            <li class="session tba">Nothing yet, keep tuned !</li>
-            {% endfor %}
-            </ul>
-        </section>
+  {% include "schedule/schedule_timeslot.djhtml" %}
 {% endfor %}
 
 <h4 class="time">19:00</h4>
@@ -79,16 +61,7 @@
 
 <!-- sun_am -->
 {% for sessions in sun_am %}
-        <section{% if sessions.2 %} class="done"{% endif %}>
-            <h4 class="time">{{ sessions.0 }}</h4>
-            <ul class="sessions">
-            {% for session in sessions.1 %}
-            {% include "schedule/session_li.djhtml" %}
-            {% empty %}
-            <li class="session tba">Nothing yet, keep tuned !</li>
-            {% endfor %}
-            </ul>
-        </section>
+  {% include "schedule/schedule_timeslot.djhtml" %}
 {% endfor %}
 
 <h4 class="time">12:45</h4>
@@ -98,16 +71,7 @@
 
 <!-- sun_pm -->
 {% for sessions in sun_pm %}
-        <section{% if sessions.2 %} class="done"{% endif %}>
-            <h4 class="time">{{ sessions.0 }}</h4>
-            <ul class="sessions">
-            {% for session in sessions.1 %}
-            {% include "schedule/session_li.djhtml" %}
-            {% empty %}
-            <li class="session tba">Nothing yet, keep tuned !</li>
-            {% endfor %}
-            </ul>
-        </section>
+  {% include "schedule/schedule_timeslot.djhtml" %}
 {% endfor %}
 
 <h4 class="time">19:00</h4>
