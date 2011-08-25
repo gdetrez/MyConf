@@ -18,7 +18,7 @@
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
             {% empty %}
-            <li class="session tba">To be announced</li>
+            <li class="session tba">Nothing yet, keep tuned !</li>
             {% endfor %}
 
             </ul>
@@ -40,7 +40,7 @@
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
             {% empty %}
-            <li class="session tba">To be announced</li>
+            <li class="session tba">Nothing yet, keep tuned !</li>
             {% endfor %}
             </ul>
         </section>
@@ -59,7 +59,7 @@
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
             {% empty %}
-            <li class="session tba">To be announced</li>
+            <li class="session tba">Nothing yet, keep tuned !</li>
             {% endfor %}
             </ul>
         </section>
@@ -85,7 +85,7 @@
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
             {% empty %}
-            <li class="session tba">To be announced</li>
+            <li class="session tba">Nothing yet, keep tuned !</li>
             {% endfor %}
             </ul>
         </section>
@@ -104,7 +104,7 @@
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
             {% empty %}
-            <li class="session tba">To be announced</li>
+            <li class="session tba">Nothing yet, keep tuned !</li>
             {% endfor %}
             </ul>
         </section>
