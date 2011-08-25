@@ -12,16 +12,17 @@
 <div class="schedule">
 <h3 class="day">Friday (November 11th)</h3>
 {% for sessions in friday_sessions %}
-    {% if sessions.1 %}
         <section{% if sessions.2 %} class="done"{% endif %}>
             <h4 class="time">{{ sessions.0 }}</h4>
             <ul class="sessions">
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
+            {% empty %}
+            <li class="session tba">To be announced</li>
             {% endfor %}
+
             </ul>
         </section>
-    {% endif %}
 {% endfor %}
 
 <h3 class="day">Saturday (November 12th)</h3>
@@ -33,16 +34,16 @@
 
 <!-- sat_am -->
 {% for sessions in sat_am %}
-    {% if sessions.1 %}
         <section{% if sessions.2 %} class="done"{% endif %}>
             <h4 class="time">{{ sessions.0 }}</h4>
             <ul class="sessions">
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
+            {% empty %}
+            <li class="session tba">To be announced</li>
             {% endfor %}
             </ul>
         </section>
-    {% endif %}
 {% endfor %}
 
 <h4 class="time">12:45</h4>
@@ -52,16 +53,16 @@
 
 <!-- sat_pm -->
 {% for sessions in sat_pm %}
-    {% if sessions.1 %}
         <section{% if sessions.2 %} class="done"{% endif %}>
             <h4 class="time">{{ sessions.0 }}</h4>
             <ul class="sessions">
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
+            {% empty %}
+            <li class="session tba">To be announced</li>
             {% endfor %}
             </ul>
         </section>
-    {% endif %}
 {% endfor %}
 
 <h4 class="time">19:00</h4>
@@ -78,16 +79,16 @@
 
 <!-- sun_am -->
 {% for sessions in sun_am %}
-    {% if sessions.1 %}
         <section{% if sessions.2 %} class="done"{% endif %}>
             <h4 class="time">{{ sessions.0 }}</h4>
             <ul class="sessions">
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
+            {% empty %}
+            <li class="session tba">To be announced</li>
             {% endfor %}
             </ul>
         </section>
-    {% endif %}
 {% endfor %}
 
 <h4 class="time">12:45</h4>
@@ -97,16 +98,16 @@
 
 <!-- sun_pm -->
 {% for sessions in sun_pm %}
-    {% if sessions.1 %}
         <section{% if sessions.2 %} class="done"{% endif %}>
             <h4 class="time">{{ sessions.0 }}</h4>
             <ul class="sessions">
             {% for session in sessions.1 %}
             {% include "schedule/session_li.djhtml" %}
+            {% empty %}
+            <li class="session tba">To be announced</li>
             {% endfor %}
             </ul>
         </section>
-    {% endif %}
 {% endfor %}
 
 <h4 class="time">19:00</h4>

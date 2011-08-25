@@ -19,7 +19,7 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from myconf.schedule.models import *
 from django.contrib.auth.decorators import login_required
-from datetime import timedelta
+from datetime import timedelta, datetime
 from django.db.models import Q
 
 @login_required(login_url='/admin/')
@@ -29,27 +29,35 @@ def schedule(request):
         friday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sat_am = []
-    ts = TimeSlot.objects.filter(begin__day=12)
-    filtered_ts = [t for t in ts if t.begin.hour < 13]
-    for ts in filtered_ts:
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011, 11, 12, 10),
+            datetime(2011, 11, 12, 12)
+            ))
+    for ts in ts:
         sat_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sat_pm = []
-    ts = TimeSlot.objects.filter(begin__day=12)
-    filtered_ts = [t for t in ts if t.begin.hour > 13]
-    for ts in filtered_ts:
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011,11,12,14,15),
+            datetime(2011,11,12,18,15)
+            ))
+    for ts in ts:
         sat_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sun_am = []
-    ts = TimeSlot.objects.filter(begin__day=13)
-    filtered_ts = [t for t in ts if t.begin.hour < 13]
-    for ts in filtered_ts:
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011,11,13,14,00),
+            datetime(2011,11,13,12,00)
+            ))
+    for ts in ts:
         sun_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sun_pm = []
-    ts = TimeSlot.objects.filter(begin__day=13)
-    filtered_ts = [t for t in ts if t.begin.hour > 13]
-    for ts in filtered_ts:
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011,11,12,14,15),
+            datetime(2011,11,12,18,15)
+            ))
+    for ts in ts:
         sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     t = loader.get_template('schedule/schedule.djhtml')

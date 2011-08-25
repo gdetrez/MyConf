@@ -47,6 +47,13 @@ ul.sessions li {
     text-align:center;
 }
 
+/* Special typography for TBA */
+.session.tba {
+    font-style:italic;
+    color: #555;
+#    text-align:center;
+}
+
 /* This is good for wide screen but not for phones.
  * So we only apply it when screen size is bigger than 500px */
 @media screen and (min-width: 500px) {
