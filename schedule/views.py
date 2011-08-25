@@ -46,7 +46,7 @@ def schedule(request):
 
     sun_am = []
     ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,13,14,00),
+            datetime(2011,11,13,10,00),
             datetime(2011,11,13,12,00)
             ))
     for ts in ts:
