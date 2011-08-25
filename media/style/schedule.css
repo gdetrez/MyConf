@@ -206,8 +206,8 @@ dl.session_info dd {
     font-weight: bold;}
 .session_list .time { font-weight: bold;}
 
-.past {
-    background-image: url("./bg_past.png");
-    background-repeat: no-repeat;
-    background-position: center;
+.past h4:after {
+    content: "✔";
+    color: #00ff00;
+    font-size: 1em;
 }
