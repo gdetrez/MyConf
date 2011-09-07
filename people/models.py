@@ -39,6 +39,8 @@ class Person(models.Model):
     physical_location = models.CharField(max_length=200, blank=True,
                                          help_text="Country or city name")
 
+    biography = models.TextField(blank=True, help_text="For speakers' bio")
+
     # Flags
     staff = models.BooleanField()
 
