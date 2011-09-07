@@ -15,7 +15,7 @@
         </dl>
       </li>
     {% empty %}
-      <li class="session tba">Nothing yet, keep tuned !</li>
+      <li class="session tba">Nothing yet, stay tuned !</li>
     {% endfor %}
   </ul>
 </section>
