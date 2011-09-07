@@ -86,10 +86,8 @@ class Session(models.Model):
 
     presenters = models.ManyToManyField(Person, related_name='talks')
     
-    # Fix after fscons 2011:
-    # use a Meta subclass
-    # class Meta:
-    #     unique_together = (("time_slot", "room"),)
+    class Meta:
+        unique_together = (("time_slot", "room"),)
 
     unique_together = (("time_slot", "room"),)
 
