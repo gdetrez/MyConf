@@ -22,7 +22,7 @@ from django.contrib.auth.decorators import login_required
 from datetime import timedelta, datetime
 from django.db.models import Q
 
-@login_required(login_url='/admin/')
+#@login_required(login_url='/admin/')
 def schedule(request):
     friday = []
     for ts in TimeSlot.objects.filter(begin__day=11):
