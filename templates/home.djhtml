@@ -7,7 +7,6 @@
 
 <ul id="main-navigation" class="listview">
   <li><a href="/schedule/" id="index_schedule">Schedule</a>
-  <li><a href="#" id="index_profile">Profile</a>
   <li><a href="#" id="index_manifesto">Manifesto</a>
   <li><a href="#" id="index_map">Map</a>
   <li><a href="/staff/" id="index_staff">Staff</a>
