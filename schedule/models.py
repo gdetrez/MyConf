@@ -91,6 +91,19 @@ class Session(models.Model):
 
     unique_together = (("time_slot", "room"),)
 
+
+    def presenters_html(self):
+        html = ""
+        presenters = self.presenters.all()
+        for i, person in enumerate(presenters):
+            if i!=0 and i != len(presenters) -1:
+                html += ", "
+            elif i!=0 and i==len(presenters) -1:
+                html += " &amp; "
+            html+= "<a href=\"%s\">%s</a>"%(person.get_absolute_url(), person)
+        return html
+    presenters_html.allow_tags=True
+
     def __unicode__(self):
         return u"%s: %s" % (self.get_kind_display(), self.title)
 

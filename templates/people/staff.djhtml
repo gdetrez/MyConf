@@ -8,7 +8,7 @@
     {% if staff_list %}
     <ul class="people listview">
       {% for member in staff_list %}
-      <li class="person"><a href="{{ member.get_url }}">
+      <li class="person"><a href="{{ member.get_absolute_url }}">
 	{% if member.photo %}
 	<img src="{{ member.photo.url }}" />
 	{% else %}

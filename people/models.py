@@ -51,6 +51,5 @@ class Person(models.Model):
     def __unicode__(self):
         return self.name
 
-    def get_url(self):
+    def get_absolute_url(self):
         return u"/people/%s/" % self.slug
-

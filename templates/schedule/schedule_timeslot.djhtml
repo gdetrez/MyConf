@@ -2,7 +2,7 @@
   <h4 class="time">{{ sessions.0 }}</h4>
   <ul class="sessions">
     {% for session in sessions.1 %}
-      <li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters.all %}, by {{ session.presenters.all|join:", " }}{% endif %}
+      <li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>, by {{ session.presenters_html|safe }}
         <dl class="session_info_inline">
           {% if session.track %}
           <dt>Track</dt>
