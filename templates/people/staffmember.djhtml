@@ -16,10 +16,13 @@
 
   
   <dl>
-    {% if staff_member.micro_biography %}
+    {% if staff_member.biography %}
+    <dt>Biography</dt>
+    <dd>{{ staff_member.biography }}</dd>
+    {% else %}{% if staff_member.micro_biography %}
     <dt>Biography</dt>
     <dd>{{ staff_member.micro_biography }}</dd>
-    {% endif %}
+    {% endif %}{% endif %}
 
     {% if staff_member.physical_location %}
     <dt>Location</dt>
