@@ -88,7 +88,7 @@ def session(request, pk):
     end_timerange = (
         session.time_slot.begin + timedelta(minutes=5),
         session.time_slot.end)
-    query = Q(time_slot__begin__range=timerange) | Q(time_slot__end__range=timerange)
+    query = Q(time_slot__begin__range=begin_timerange) | Q(time_slot__end__range=end_timerange)
     concurrent_sessions = Session.objects.filter(query).exclude(pk=pk).order_by('time_slot__begin')
 
 
