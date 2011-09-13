@@ -30,8 +30,8 @@ def schedule(request):
 
     sat_am = []
     ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011, 11, 12, 10),
-            datetime(2011, 11, 12, 12)
+            datetime(2011, 11, 12, 09, 15),
+            datetime(2011, 11, 12, 12, 00)
             ))
     for ts in ts:
         sat_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
@@ -46,7 +46,7 @@ def schedule(request):
 
     sun_am = []
     ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,13,10,00),
+            datetime(2011,11,13,09,15),
             datetime(2011,11,13,12,00)
             ))
     for ts in ts:
@@ -54,8 +54,8 @@ def schedule(request):
 
     sun_pm = []
     ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,12,14,15),
-            datetime(2011,11,12,18,15)
+            datetime(2011,11,13,14,15),
+            datetime(2011,11,13,18,15)
             ))
     for ts in ts:
         sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
