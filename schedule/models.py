@@ -77,7 +77,7 @@ SESSION_KIND_CHOICES = (
 
 class Session(models.Model):
     title = models.CharField(max_length=200, unique = True)
-    description = models.TextField()
+    description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
     track = models.ForeignKey('Track', blank=True, null=True)
     time_slot = models.ForeignKey('TimeSlot', blank=True, null=True)
     room = models.ForeignKey('Room', blank=True, null=True)

@@ -18,7 +18,7 @@
   <dl>
     {% if staff_member.biography %}
     <dt>Biography</dt>
-    <dd>{{ staff_member.biography }}</dd>
+    <dd>{{ staff_member.biography|markdown }}</dd>
     {% else %}{% if staff_member.micro_biography %}
     <dt>Biography</dt>
     <dd>{{ staff_member.micro_biography }}</dd>

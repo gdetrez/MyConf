@@ -39,7 +39,36 @@ class Person(models.Model):
     physical_location = models.CharField(max_length=200, blank=True,
                                          help_text="Country or city name")
 
-    biography = models.TextField(blank=True, help_text="For speakers' bio")
+    biography = models.TextField(blank=True, 
+                                 help_text="For speakers' bio. Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
+# <pre>
+# =Heading1=
+# ==Heading2==
+# ===Heading3===
+
+# **bold**     _italic_
+# `inline code`
+
+# links: [link text here](link.address.here "link title here")
+
+# * An item in a bulleted (unordered) list
+#     * A subitem, indented with 4 spaces
+# * Another item in a bulleted list
+
+#     verbatim code block
+#     is indeted with
+#     at least 4 spaces
+
+# Horizontal rule
+# ----
+
+
+# > "This entire paragraph of text will be enclosed in an HTML blockquote element.
+# Blockquote elements are reflowable. You may arbitrarily
+# wrap the text to your liking, and it will all be parsed
+# into a single blockquote element."
+# </pre>
+# """)
 
     # Flags
     staff = models.BooleanField()
