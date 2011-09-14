@@ -38,7 +38,7 @@ body {
        font-size: 16px;
        line-height:1.25em; /* 20px */ }
 
-/* Uncomment to display the typographic grid
+/* Uncomment to display the typographic grid*/
 .content {
     background-image: url("tgrid.png");
     background-position: left 16px;
@@ -87,3 +87,54 @@ ul, p, .subtitle {
 
 /* For some elements, a margin-top is also necessary */
 ul { margin-top: 1.25em; }
+
+/* **************************************************************************
+ ** Markdown syntax
+ *
+ * Here we style the output of markdown formated fields.
+ */
+.markdown {}
+.markdown h1,.markdown h2,.markdown h3,.markdown h4 {
+    font-family: inherit;
+}
+
+.markdown h1 {
+    font-size: 1.5em;
+    line-height: 40px;
+}
+.markdown h2 {
+    font-size: 1.25em;
+    line-height:1em;
+}
+.markdown h3 {
+    font-size: 1em;
+    line-height:1.25em;
+    border:none;
+    margin:0;
+}
+
+.markdown h4 {
+    font-size: 1em;
+    line-height:1.25em;
+    font-weight: normal;
+    text-decoration: underline;
+}
+
+.markdown ul, ol {
+    margin: 0 0 0 2em;
+}
+
+.markdown ul p, ol p {
+    margin: 0;
+}
+
+.markdown blockquote {
+    margin: 1.25em 0;
+    padding-left:1em;
+    border-left: thin solid #ccc;
+}
+
+.markdown hr {
+    height: 0px;
+    margin: 0 0 18px;
+}
