@@ -1,0 +1,87 @@
+/* -*- coding: utf-8 -*-
+ * Copyright (C) 2011 Grégoire Détrez, Patrik Willard
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/** STYLES FOR THE RESTAURANTS APP **/
+/** List of restaurants **/
+ul.restaurants { list-style-type: none;
+	    margin: 30px 0 30px 0; padding: 0;}
+ul.restaurants li { list-style-type:none; display:inline;
+	       margin:0; padding:0;}
+ul.restaurants a { display:block;
+	      margin: -1px 0 0;
+	      padding-top:10px;
+	      padding-bottom:9px;
+	      border-top: thin #ececec solid;
+	      border-bottom: thin #ececec solid;
+	      color: inherit;
+	      text-decoration:none;}
+#map.restaurants { margin-top:2.5em}
+/* in case the screen is bigger than 500px, we split listviews
+ * in 2 columns */
+@media screen and (min-width: 750px) {
+    ul.restaurants {
+	float:left; width:40%;
+	margin-right:1.25em;
+    }
+}
+
+.restaurants li a:after {
+    display:block;
+    clear:both; content: "."; 
+    height:0; visibility:hidden;
+}
+
+.restaurants li .left {
+    width: 75%;
+    float:left;
+}
+.restaurants li .right {
+    width: 25%
+    float:left;
+    text-align: right;
+}
+.restaurants .name {
+    display: block;
+    font-weight: bold;
+}
+
+/** List of restaurants **/
+.restaurants .description {
+    display: block;
+    font-style: italic;
+}
+
+/** List of restaurants **/
+.restaurants .status {
+    display: block;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+.restaurants .status.closed {
+    color: #a00;
+}
+
+.restaurants .status.open {
+    color:#0a0;
+}
+
+/** List of restaurants **/
+.restaurants .distance {
+    display: block;
+    color:gray;
+}

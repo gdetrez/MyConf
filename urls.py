@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import *
-from myconf.settings import MEDIA_ROOT, STATIC_URL, STATIC_ROOT
+from django.conf import settings
 from django.views.generic.simple import direct_to_template
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -16,6 +16,9 @@ urlpatterns = patterns('',
     # (r'^notifications/$', 'notifications.views.index'),
     (r'^schedule/$', 'myconf.schedule.views.schedule'),
     (r'^schedule/session/(?P<pk>\d+)/$', 'myconf.schedule.views.session'),
+                       
+    (r'^restaurants/$', 'myconf.restaurants.views.list'),
+
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
@@ -23,8 +26,13 @@ urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
                        
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': MEDIA_ROOT}),
+        {'document_root': settings.MEDIA_ROOT}),
 
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': STATIC_ROOT}),
+#    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
+#        {'document_root': STATIC_ROOT}),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('django.contrib.staticfiles.views',
+        url(r'^static/(?P<path>.*)$', 'serve'),
+    )

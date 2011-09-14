@@ -1,0 +1,56 @@
+{% extends "base.djhtml" %}
+
+{% block head-title %}Restaurants{% endblock %}
+
+{% block extra-headers %}
+<!-- Leaflet CSS --> 
+<link rel="stylesheet" href="/static/restaurants.css" />
+<link rel="stylesheet" href="/static/leaflet/leaflet.css" />
+<!--[if lte IE 8]><link rel="stylesheet" href="/static/leaflet/leaflet.ie.css" /><![endif]-->
+<!-- Leaflet JavaScript -->
+<script src="/static/leaflet/leaflet.js"></script>
+<script src="/static/map.js"></script>
+{% endblock %}
+
+
+{% block content %}
+
+    <h2>Restaurants</h2>
+    <span class="subtitle">Nearby places for lunch</span>
+    
+    <ul class="restaurants">
+      {% for restaurant in restaurant_list %}
+      <li class="restaurant">
+        <a href="{{ member.get_absolute_url }}">
+          <div class="left">
+          <span class="name">{{ restaurant.name }}</span>
+          <span class="description">{{ restaurant.one_line_description }}</span>
+          </div>
+          <div class="right">
+          <span class="distance">{{ restaurant.distance_unit }}</span>
+            {% if restaurant.open %}
+            <span class="status open">open</span>
+            {% else %}
+            <span class="status closed">closed</span>
+            {% endif %}
+          </div>
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+
+<div id="map" class="restaurants" style="height:400px;"></div>
+<script>
+  initmap();
+  {% for restaurant in restaurant_list %} 
+  var marker = new L.Marker(new L.LatLng({{restaurant.lattitude}},{{restaurant.longitude}}));
+map.addLayer(marker);
+
+// attach a given HTML content to the marker and immediately open it
+marker.bindPopup("<span class=\"name\">{{ restaurant.name }}</span> <span class=\"description\">{{ restaurant.one_line_description }}</span> <span class=\"distance\">{{ restaurant.distance_unit }}</span> {% if restaurant.open %}<span class=\"status open\">open</span>{% else %}<span class=\"status closed\">closed</span>{% endif %}");
+{% endfor %}                                                            
+
+
+</script>
+{% endblock %}
+    

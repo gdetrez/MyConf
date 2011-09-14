@@ -96,5 +96,5 @@ INSTALLED_APPS = (
     #'notifications',
     #'simulator',
     'myconf.schedule',
+    'myconf.restaurants',
 )
-
