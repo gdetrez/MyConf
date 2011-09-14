@@ -1,4 +1,5 @@
 {% extends "base.djhtml" %}
+{% load markup %}
 {% block head-title %}{{ staff_member.name }}, FSCONS staff{% endblock %}
 
 {% block content %}
