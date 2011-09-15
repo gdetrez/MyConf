@@ -11,7 +11,7 @@
   <li><a href="#" id="index_map">Map</a>
   <li><a href="/staff/" id="index_staff">Staff</a>
   <li><a href="#" id="index_notifications">Notifications</a>
-  <li><a href="#" id="index_restaurant">Restaurants</a>
+  <li><a href="/restaurants/" id="index_restaurant">Restaurants</a>
 </ul>
 
 {% endblock %}
