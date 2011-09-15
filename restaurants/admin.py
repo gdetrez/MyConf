@@ -17,6 +17,10 @@
 from myconf.restaurants.models import *
 from django.contrib import admin
 
+def opening_times_list(r):
+    return u"; ".join(map(unicode, r.opening_times.all()))
+opening_times_list.short_description = 'Opening times'
+
 class OpeningTimeInline(admin.TabularInline):
 #    verbose_name = "Presenter"
 #    verbose_name_plural = "Presenters"
@@ -43,7 +47,8 @@ class RestaurantAdmin(admin.ModelAdmin):
         OpeningTimeInline,
     ]
 
-    list_display = ('name', 'one_line_description', 'distance', 'open')
+    list_display = ('name', 'one_line_description', 'distance_unit', 
+                    opening_times_list, 'open')
     list_display_links = ('name',)
     search_fields = ('name', 'one_line_description', 'description')
 

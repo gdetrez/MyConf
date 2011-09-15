@@ -13,9 +13,10 @@ class OpeningTime(models.Model):
     
     def is_now(self):
         return self.begin <= datetime.now() and self.end > datetime.now()
-        # def __unicode__(self):
-    #     return u"%s – %s" % (self.begin.strftime('%A %d, %H.%M'),
-    #                          self.end.strftime('%H.%M'))
+
+    def __unicode__(self):
+        return u"%s – %s" % (self.begin.strftime('%A %d: %H.%M'),
+                             self.end.strftime('%H.%M'))
 
 class Restaurant(models.Model):
     name = models.CharField(max_length=80)
