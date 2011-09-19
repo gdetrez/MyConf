@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 # Django settings for myconf project.
-from localsettings import *
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -98,3 +96,5 @@ INSTALLED_APPS = (
     'myconf.schedule',
     'myconf.restaurants',
 )
+
+from localsettings import *
