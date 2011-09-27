@@ -216,3 +216,15 @@ ul { margin-top: 1.25em; }
     height: 0px;
     margin: 0 0 18px;
 }
+
+
+
+
+
+.coming-soon {
+font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
+text-transform:uppercase;
+text-align: center;
+font-size: 10em;
+line-height: 1em;
+}

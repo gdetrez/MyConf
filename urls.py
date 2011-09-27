@@ -20,12 +20,16 @@ urlpatterns = patterns('',
     
     (r'^restaurants/$', 'myconf.restaurants.views.list'),
 
-    (r'^information/sleeping/$',
-     direct_to_template, {'template': 'information/sleeping.djhtml'}),
-    (r'^information/gettingthere/$',
-     direct_to_template, {'template': 'information/gettingthere.djhtml'}),
     (r'^information/$',
      direct_to_template, {'template': 'information/index.djhtml'}),
+    (r'^information/getting-there/$',
+     direct_to_template, {'template': 'information/gettingthere.djhtml'}),
+    (r'^information/sleeping/$',
+     direct_to_template, {'template': 'information/sleeping.djhtml'}),
+    (r'^information/going-out/$',
+     direct_to_template, {'template': 'soon.djhtml'}),
+    (r'^information/currency/$',
+     direct_to_template, {'template': 'soon.djhtml'}),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
