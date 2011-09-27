@@ -230,4 +230,37 @@ header navigation {
 #eating { background-image: url("ic_eating_32.png");}
 #sleeping { background-image: url("ic_sleeping_32.png");}
 #gettingthere { background-image: url("ic_gettingthere_32.png");}
-#currency { background-image: url("ic_currency_32.png");}}
+#currency { background-image: url("ic_currency_32.png");}
+
+
+/* Style for bus/ferry line numbers */
+.line_number {
+    display:inline-block;
+    background-color: #003273;
+    color: #FFFFFF;
+/*    border-color: #FFFFFF #DDDDDD #DDDDDD #FFFFFF;
+    border-style: solid;
+    border-width: 1px;*/
+    font-weight: bold;
+/*    padding-bottom: 0.3em;
+    padding-top: 0.3em;*/
+    text-align: center;
+    width: 2.5em;
+}
+
+a.footnote { text-decoration: none;}
+p.footnote { color:grey; font-style: italic; }
+
+
+.infobox {
+    background: none repeat scroll 0 0 #EEEEFF;
+    border: thin solid #000099;
+    padding: 1.25em 1.5em;
+    margin: 1.25em 0;
+}
+
+
+@media screen and (min-width: 500px) {
+    .infobox { margin:1.25em; float:right; width:15em;}
+}
+

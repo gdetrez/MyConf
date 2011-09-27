@@ -89,6 +89,12 @@ ul, p, .subtitle {
 ul { margin-top: 1.25em; }
 
 /* **************************************************************************
+ ** Links & text styles
+ *
+ */
+.bold { font-weigth: bold; }
+
+/* **************************************************************************
  ** HTML content
  *
  * Here we style manualy entered html content
@@ -99,30 +105,42 @@ ul { margin-top: 1.25em; }
     font-family: inherit;
 }
 
-.content h1 {
+.content h3 {
     font-size: 1.5em;
     line-height: 40px;
 }
-.content h2 {
+.content h4 {
     font-size: 1.25em;
     line-height:1em;
 }
-.content h3 {
+.content h5 {
     font-size: 1em;
     line-height:1.25em;
     border:none;
     margin:1.25em  0 1.25em;
 }
-.content h4 {
+.content h6 {
     font-size: 1em;
     line-height:1.25em;
     font-weight: normal;
     text-decoration: underline;
 }
 
+.infobox h3, .infobox h4, .infobox h5, .infobox h5 {
+    font-size: 1em;
+    line-height:1.25em;
+    border:none;
+    margin:1.25em  0 1.25em;
+}    
+
 .content p, .content ul {
     margin-top: 1.25em;
 }
+
+.content ul p, .content ol p, .content dl p {
+    margin: 0;
+}
+
 
 .content ul, ol {
     margin: 0 0 0 2em;

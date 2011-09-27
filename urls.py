@@ -22,7 +22,10 @@ urlpatterns = patterns('',
 
     (r'^information/sleeping/$',
      direct_to_template, {'template': 'information/sleeping.djhtml'}),
-    (r'^information/$', direct_to_template, {'template': 'information/index.djhtml'}),
+    (r'^information/gettingthere/$',
+     direct_to_template, {'template': 'information/gettingthere.djhtml'}),
+    (r'^information/$',
+     direct_to_template, {'template': 'information/index.djhtml'}),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
