@@ -19,7 +19,15 @@
 </div>
 {% with note="<sup><a class=\"footnote\" href=\"#note1\">*</a></sup>" %}
 
-<h3>By plane</h3>
+<h3>Table of content</h3>
+<ul>
+<li><a href="#byplane">By plane</a></li>
+<li><a href="#bytrain">By train or bus</a></li>
+<li><a href="#bycar">By car</a></li>
+<li><a href="#public">Public transports</a></li>
+</ul>
+
+<h3><a name="byplane">By plane</a></h3>
 
 <p>Gothenburg has two international airports: <a class="bold" href="http://swedavia.se/en/Goteborg/Traveller-information/">Landvetter</a> and 
 <a class="bold" href="http://www.goteborgairport.se/eng.asp">Göteborg City Airport</a>. Both airports have a bus connection to the city.
@@ -34,9 +42,7 @@ Terminalen*. The price from City Airport is 60 SEK{{ note }} (or 110{{ note }} S
 <p>Buses from both airports arrive at Nils Ericson Terminalen, located at
 Drottningtorget near the central station. You can not pay with cash, but most credit and debit cards are accepted. You can find more information on the bus compagnie website : <a href="http://www.flygbussarna.se/?lang=EN">http://www.flygbussarna.se/?lang=EN</a>.
 
-
-
-<h3>By train or bus</h3>
+<h3><a name="bytrain">By train or bus</a></h3>
 
 <p>There are many trains and buses coming from Stockholm, Oslo and
 Copenhagen. Trains are usually every hour or so. Prices start from
@@ -47,7 +53,7 @@ to Nils Ericson Terminalen at Drottningtorget, which is a major
 traffic point for public trams and buses going to different parts of
 the city. For more information please visit <a href="http://www.sj.se">www.sj.se</a> for trains and <a href="http://www.safflebussen.se">www.safflebussen.se</a> or <a href="http://www.swebusexpress.se">www.swebusexpress.se</a> for bus schedules.</p>
 
-<h3>By car</h3>
+<h3><a name="bycar">By car</a></h3>
 
 <p>If coming on the <b>E6 from Oslo</b>, take <b>exit 77</b> and follow the
 signs towards <b>Norra Älvstranden</b> and <b>Lindholmen</b>. After 2 kilometers you take a left and drive under a railroad bridge. Take the first left,
@@ -57,14 +63,18 @@ and then right in the roundabout. Drive straight and you will find the
 <p>If coming on the <b>40 from Jönköping</b> OR the <b>E20 from Malmö</b>, drive straight through Gothenburg towards <b>Hisingen</b>. Then follow signs
 <b>Norra Älvstranden</b> and <b>Lindholmen</b>. After 2 kilometers you take a left and drive under a railroad bridge. Take the first left, and then right in the roundabout. Drive straight and you will find the <b>IT University</b> on your left hand sideafter ca 600 meters.
 
-<h3>Public transports</h3>
+<h3><a name="public">Public transports</a></h3>
 
 <div class="infobox">
-  <h4><img style="vertical-align: top" src="/site_media/symbols/bus_stop.png" alt="By bus" /> Lindholmen <span class="line_number">16</span><span style="visibility:hidden;">,</span> <span class="line_number">31</span></h4>
-  
+  <h4><img style="vertical-align: top" src="/site_media/symbols/bus_stop.png" alt="By bus" /> Lindholmen</h4>
+
+<p>Lines: <span class="line_number">16</span><span style="visibility:hidden;">,</span> <span class="line_number">31</span></p>
+
   <p>From the central station (centralstationen), go to the bus stop called <b>Nordstan</b> and take bus number <b>16</b> direction Eketrägatan. Get off the bus at <b>Lindholmen</b>. The trip taks about 8 minutes.</p>
 
-  <h4><img style="vertical-align: top;" src="/site_media/symbols/ferry_stop.png" alt="By ferry" /> Lindholmspiren <span class="line_number">180</span><span style="visibility:hidden;">,</span> <span class="line_number">183</span></h4>
+  <h4><img style="vertical-align: top;" src="/site_media/symbols/ferry_stop.png" alt="By ferry" /> Lindholmspiren</h4>
+
+<p>Lines: <span class="line_number">180</span><span style="visibility:hidden;">,</span> <span class="line_number">183</span></p>
 
   <p>You can also join the venu by boat. The stop is called <b>Lindhomspiren</b> and the ferries leave from either <b>Lilla Bommen</b> or <b>Rosenlund</b>.<dd></p>
 

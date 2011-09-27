@@ -255,12 +255,12 @@ p.footnote { color:grey; font-style: italic; }
 .infobox {
     background: none repeat scroll 0 0 #EEEEFF;
     border: thin solid #000099;
-    padding: 1.25em 1.5em;
-    margin: 1.25em 0;
+    padding: .75em 1.5em;
+    margin: -0.75em 0 .75;
 }
 
 
 @media screen and (min-width: 500px) {
-    .infobox { margin:1.25em; float:right; width:15em;}
+    .infobox { margin: -0.75em 0 0.75em 1.25em; float:right; width:15em;}
 }
 
