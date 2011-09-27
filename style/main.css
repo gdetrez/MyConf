@@ -98,6 +98,11 @@ header navigation {
 }
 #index_manifesto { background-image: url("ic_manifesto_black.png");
 	    background-position: 7px center;}
+#index_information { background-image: url("ic_information_24.png");
+	    background-position: 13px center;
+	    padding-left: 50px;
+	    font-size: 0.8em;
+}
 #index_map { background-image: url("ic_map_black.png");
 	    background-position: 9px center;
 	    padding-left: 50px;
@@ -209,3 +214,20 @@ header navigation {
 	width: 30%; float: left;
 	margin-right: 3%;}
 }
+
+/* A special case of listview is a clickable menu with 32x32 icons.
+ * For this we add hover and the icons
+/* **** Main menu **** */
+.listview.menu a { background-repeat: no-repeat;
+    padding-left: 50px;
+    background-position: 9px center;
+  }
+
+.listview.menu a:hover { background-color: #f8f8f8;}
+.listview.menu a:hover:after { float:right; content: "»"; margin-right:5px;}
+
+#goingout { background-image: url("ic_goingout_32.png");}
+#eating { background-image: url("ic_eating_32.png");}
+#sleeping { background-image: url("ic_sleeping_32.png");}
+#gettingthere { background-image: url("ic_gettingthere_32.png");}
+#currency { background-image: url("ic_currency_32.png");}}

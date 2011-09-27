@@ -1,0 +1,35 @@
+{% extends "base.djhtml" %}
+{% block head-title %}Welcome to My Conf{% endblock %}
+
+{% block content %}
+<h2>Sleeping</h2>
+<span class="subtitle">ZZzzzzzzz</span>
+
+<div class="content">
+
+  <p>When looking for accommodation, it's good to select something which is close to a tram line, or even better: bus number 16, which will take you directly to the FSCONS venue.</p>
+
+<h3>Hotels</h3>
+
+<p>The following hotels are recommended for FSCONS participants. They are both reasonably located for travels to and from the FSCONS venue.</p>
+
+<ul>
+  <li><a href="http://www.hotel11.se/">Quality Hotel 11</a></li>
+  <li><a href="http://www.accorhotels.com/gb/hotel-2896-ibis-goteborg-city/index.shtml">Ibis Göteborg City Hotel</a></li>
+</ul>
+
+<h3>Hostels</h3>
+
+<ul>
+  <li><a href="http://www.hostel-gothenburg.com/">Hostelling International Stigbergsliden</a></li>
+  <li><a href="http://www.sgsveckobostader.se/">SGS Veckobostäder</a></li>
+  <li><a href="http://www.slottsskogenvh.se/">Slottsskogens Youth Hostel</a></li>
+  <li><a href="http://www.goteborgsvandrarhem.se/">Göteborgs Vandrarhem</a></li>
+  <li><a href="http://www.vandrarhem.com/content">Kvibergs Hostel</a></li>
+  <li><a href="http://www.grethes.com/eg.htm">Grethe's Hostel</a></li>
+</ul>
+
+  <p>You can find additional information about sleeping in Gothenburg at <a href="http://wikitravel.org/en/G%C3%B6teborg#Sleep">Wikitravel Göteborg: Sleeping</a>.</p>
+
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.djhtml" %}
+{% block head-title %}Practical information{% endblock %}
+
+{% block content %}
+<h2>Practical information</h2>
+<span class="subtitle">Managing life during the conference</span>
+
+<ul id="main-navigation" class="listview menu">
+  <li><a href="getting-there/" id="gettingthere">Getting there</a>
+  <li><a href="sleeping/" id="sleeping">Sleeping</a>
+  <li><a href="/restaurants/" id="eating">Eating</a>
+  <li><a href="goint-out/" id="goingout">Going out</a>
+  <li><a href="currency/" id="currency">Currency</a>
+</ul>
+
+{% endblock %}
