@@ -95,6 +95,7 @@ INSTALLED_APPS = (
     #'simulator',
     'myconf.schedule',
     'myconf.restaurants',
+    'myconf.colors',
 )
 
 from localsettings import *

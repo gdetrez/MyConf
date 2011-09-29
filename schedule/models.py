@@ -22,7 +22,7 @@ from django.template.defaultfilters import date
 from django.conf import settings
 from django.contrib.auth.models import User
 from myconf.people.models import Person
-
+from myconf.colors.fields import ColorField 
 class TimeSlot(models.Model):
     begin = models.DateTimeField()
     end = models.DateTimeField()
@@ -57,13 +57,10 @@ class Room(models.Model):
 
 class Track(models.Model):
     name = models.CharField(max_length=200, unique = True)
-    css_class = models.CharField(max_length=16)
-
-    def get_html_color(self):
-        if self.color in ['red', 'black', 'blue', 'yellow']:
-            return self.color
-        else:
-            return "#%s" % self.color
+    slug = models.SlugField(help_text="The slug is used to build the URL. Usually a ASCII representation of the name (only lowerase, numbers and hyphen)")
+    color = ColorField(default='ffffff')
+    description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
+    
 
     def __unicode__(self):
         return self.name

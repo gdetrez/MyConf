@@ -25,8 +25,11 @@ admin.site.register(TimeSlot, TimeSlotAdmin)
 admin.site.register(Room)
 
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ('name', 'css_class')
+    list_display = ('name','color')
     list_display_links = ('name',)
+    prepopulated_fields = {
+        'slug': ['name']
+        }
 
 admin.site.register(Track, TrackAdmin)
 
