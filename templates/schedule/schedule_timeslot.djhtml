@@ -8,9 +8,10 @@
           {% if session.track %}
           <dt>Track</dt>
           <dd>
-            <span style="background:#{{ session.track.color|saturation:20|lightness:100 }}">
+            <a href="{{ session.track.get_absolute_url }}" class="track"
+               style="background:#{{ session.track.color|saturation:20|lightness:100 }}">
               {{ session.track }}
-            </span>
+            </a>
           </dd>
           {% endif %}
           {% if session.room %}

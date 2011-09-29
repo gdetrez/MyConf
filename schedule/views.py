@@ -21,6 +21,7 @@ from myconf.schedule.models import *
 from django.contrib.auth.decorators import login_required
 from datetime import timedelta, datetime
 from django.db.models import Q
+from django.shortcuts import render_to_response, get_object_or_404
 
 #@login_required(login_url='/admin/')
 def schedule(request):
@@ -70,6 +71,13 @@ def schedule(request):
     })
     return HttpResponse(t.render(c))
 
+def track(request, slug):
+    track = get_object_or_404(Track, slug=slug)
+    t = loader.get_template('schedule/track.djhtml')
+    c = Context({
+            'track': track,
+            })
+    return HttpResponse(t.render(c))
 
 def session(request, pk):
     session = Session.objects.get(pk=pk)

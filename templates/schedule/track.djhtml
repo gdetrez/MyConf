@@ -1,0 +1,47 @@
+{% extends "base.djhtml" %}
+{% load markup %}
+{% block head-title %}Track: {{ track }}{% endblock %}
+
+{% block extra-headers %}
+<link rel="stylesheet" href="/site_media/style/schedule.css" type="text/css"  media="screen">
+{% endblock %}
+
+{% block content %}
+<h2>{{ track }}</h2>
+<span class="subtitle">One of FSCONS' tracks</span>
+
+
+<div class="description markdown">{{ track.description|markdown }}</div>
+
+{% if track.speakers %}
+<h3>Who's there ?</h3>
+<ul class="people listview">
+  {% for person in track.speakers %}
+  <li class="person"><a href="{{ person.get_absolute_url }}">
+    {% if person.photo %}
+    <img src="{{ person.photo.url }}" />
+    {% else %}
+    <img src="/site_media/style/user_anonymous.png" />
+    {% endif %}
+    <span class="name">{{ person.name }}</span>
+    {% if person.physical_location %}
+    <br /><span class="location">{{ person.physical_location }}</span>
+    {% endif %}
+  </a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<h3>What's there ?</h3>
+<ul class="session_list">
+{% for session in track.sessions.all %}
+    <li>
+      <span class="time">{{ session.time_slot.begin|date:"D H:i" }} - {{ session.time_slot.end|date:"H:i" }}</span>
+      <a href="{{ session.get_absolute_url }}">{{ session }}</a>
+    </li>
+{% empty %}
+    <li>Sorry, no session in this list!</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

@@ -60,7 +60,12 @@ class Track(models.Model):
     slug = models.SlugField(help_text="The slug is used to build the URL. Usually a ASCII representation of the name (only lowerase, numbers and hyphen)")
     color = ColorField(default='ffffff')
     description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
+
+    def speakers(self):
+        return Person.objects.filter(talks__track = self.pk)
     
+    def get_absolute_url(self):
+        return "/schedule/track/%s/" % self.slug
 
     def __unicode__(self):
         return self.name
@@ -75,7 +80,8 @@ SESSION_KIND_CHOICES = (
 class Session(models.Model):
     title = models.CharField(max_length=200, unique = True)
     description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
-    track = models.ForeignKey('Track', blank=True, null=True)
+    track = models.ForeignKey('Track', blank=True, null=True,
+                              related_name='sessions')
     time_slot = models.ForeignKey('TimeSlot', blank=True, null=True)
     room = models.ForeignKey('Room', blank=True, null=True)
     intended_audience = models.TextField(blank=True)

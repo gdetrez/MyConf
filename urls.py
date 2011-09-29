@@ -16,7 +16,8 @@ urlpatterns = patterns('',
     # (r'^notifications/$', 'notifications.views.index'),
     (r'^schedule/$', 'myconf.schedule.views.schedule'),
     (r'^schedule/session/(?P<pk>\d+)/$', 'myconf.schedule.views.session'),
-                       
+    (r'^schedule/track/(?P<slug>[\w\d-]+)/$', 'myconf.schedule.views.track'),
+    
     (r'^restaurants/$', 'myconf.restaurants.views.list'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
@@ -25,8 +26,10 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
                        
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
-        {'document_root': settings.MEDIA_ROOT}),
+    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.MEDIA_ROOT,
+            'show_indexes' : True,
+            }),
 
 #    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
 #        {'document_root': STATIC_ROOT}),
