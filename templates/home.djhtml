@@ -5,6 +5,8 @@
 <h2>Welcome to My Conf</h2>
 <span class="subtitle">FSCONS' community application</span>
 
+<p class="warning">Work in progress</p>
+
 <ul id="main-navigation" class="listview">
   <li><a href="/schedule/" id="index_schedule">Schedule</a>
   <li><a href="#" id="index_manifesto">Manifesto</a>
