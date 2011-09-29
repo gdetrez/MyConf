@@ -202,6 +202,39 @@ dl.session_info dd {
     font-weight: bold;
 }
 
+/* Registration */
+.registration {}
+
+.registration a {
+    background: none repeat scroll 0 0 red;
+    border-color: gray black;
+    border-style: solid;
+    border-width: thin;
+    color: white;
+    display: block;
+    font-weight: bold;
+--    margin: 0 auto;
+    padding: 0.75em 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.registration p { color:grey; font-style: italic;}
+
+@media screen and (min-width: 500px) {
+    .registration {
+--	margin-left:auto;
+--	margin-right: auto;
+	width: 30em;
+    }
+
+    .registration a {
+	width: 10em;
+    }
+}
+
 /* ************************************************************************ */
 /*                            SESSION_LIST                                  */
 /* ************************************************************************ */

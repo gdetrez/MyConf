@@ -35,6 +35,13 @@
 
 <div class="description markdown">{{ session.description|markdown }}</div>
 
+{% if session.kind == "W" %}
+<div class="registration">
+  <a href="{{ session.get_absolute_url }}register/">Register</a>
+  <p>In order for us to be able to plan the workshop sessions and which rooms to put them in, the deadline for letting us know about your attendence of any of the workshops are October 28th.</p>
+</div>
+{% endif %}
+
 <h3>Concurrent events:</h3>
 {% include "schedule/session_list.djhtml" with session_list=concurrent_sessions %}
 
