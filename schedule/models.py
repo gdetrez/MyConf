@@ -62,7 +62,7 @@ class Track(models.Model):
     description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
 
     def speakers(self):
-        return Person.objects.filter(talks__track = self.pk)
+        return Person.objects.filter(talks__track = self.pk, talks__time_slot__isnull=False)
     
     def get_absolute_url(self):
         return "/schedule/track/%s/" % self.slug
