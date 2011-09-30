@@ -5,12 +5,12 @@
 <h2>Practical information</h2>
 <span class="subtitle">Managing life during the conference</span>
 
-<ul id="main-navigation" class="listview menu">
-  <li><a href="getting-there/" id="gettingthere">Getting there</a>
-  <li><a href="sleeping/" id="sleeping">Sleeping</a>
-  <li><a href="/restaurants/" id="eating">Eating</a>
-  <li><a href="going-out/" id="goingout">Going out</a>
-  <li><a href="currency/" id="currency">Currency</a>
+<ul class="listview menu">
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_gettingthere_32.png');" href="getting-there/">Getting there</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_sleeping_32.png');" href="sleeping/">Sleeping</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_eating_32.png');" href="/restaurants/">Eating</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_goingout_32.png');" href="going-out/">Going out</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_currency_32.png');" href="currency/">Currency</a>
 </ul>
 
 {% endblock %}

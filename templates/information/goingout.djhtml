@@ -1,0 +1,24 @@
+{% extends "base.djhtml" %}
+{% block head-title %}Welcome to My Conf{% endblock %}
+
+{% block content %}
+<h2>Going out</h2>
+<span class="subtitle">Suit up!</span>
+
+<div class="content">
+  <p>Here are some ideas of things to do and places to visit when in Gothenburg!</p>
+
+<p>Museums, events &amp; sightseeing:</p><ul>
+<li><a href="http://www.aeroseum.se/english/">Aeroseum</a> - Aviation Discovery Centre</li>
+<li><a href="http://www.varldskulturmuseet.se/smvk/jsp/polopoly.jsp?d=126&amp;l=en_US">Museum of World Culture</a></li>
+<li><a href="http://www.varldskulturmuseet.se/smvk/jsp/polopoly.jsp?d=126&amp;l=en_US">Guided tour of Gunnebo House</a></li>
+<li>The <a href="http://www.designmuseum.se/">Röhsska Museum</a> of Design, Fashion and Decorative Arts</li>
+<li>Gallery <a href="http://www.konstepidemin.se/index_eng.htm">Konstepidemin</a></li>
+<li><a href="http://www.konstepidemin.se/index_eng.htm">Gothenburg Museum of Art</a></li>
+<li>Christmas at <a href="http://www.liseberg.com/en/home/">Liseberg</a> - Sweden’s largest Christmas market</li>
+<li><a href="http://goteborg.com/sv/Evenemang/Evenemang-Startsida/">go:teborg events calendar</a></li>
+<li><a href="http://goteborg.com/">Tourist Office</a></li>
+</ul>
+
+</div>
+{% endblock %}

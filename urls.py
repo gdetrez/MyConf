@@ -27,7 +27,7 @@ urlpatterns = patterns('',
     (r'^information/sleeping/$',
      direct_to_template, {'template': 'information/sleeping.djhtml'}),
     (r'^information/going-out/$',
-     direct_to_template, {'template': 'soon.djhtml'}),
+     direct_to_template, {'template': 'information/goingout.djhtml'}),
     (r'^information/currency/$',
      direct_to_template, {'template': 'soon.djhtml'}),
 

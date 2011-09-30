@@ -20,11 +20,12 @@
 {% with note="<sup><a class=\"footnote\" href=\"#note1\">*</a></sup>" %}
 
 <h3>Table of content</h3>
-<ul>
-<li><a href="#byplane">By plane</a></li>
-<li><a href="#bytrain">By train or bus</a></li>
-<li><a href="#bycar">By car</a></li>
-<li><a href="#public">Public transports</a></li>
+<ul class="listview menu">
+  <li>
+    <a style="background-image:url('{{ STATIC_URL }}style/ic_by_plane_32.png');" href="#byplane">By plane</a></li>
+<li><a style="background-image:url('{{ STATIC_URL }}style/ic_by_train_32.png');"href="#bytrain">By train or bus</a></li>
+<li><a style="background-image:url('{{ STATIC_URL }}style/ic_by_car_32.png');" href="#bycar">By car</a></li>
+<li><a style="background-image:url('{{ STATIC_URL }}style/ic_by_transport_32.png');" href="#public">Public transports</a></li>
 </ul>
 
 <h3><a name="byplane">By plane</a></h3>
@@ -66,13 +67,13 @@ and then right in the roundabout. Drive straight and you will find the
 <h3><a name="public">Public transports</a></h3>
 
 <div class="infobox">
-  <h4><img style="vertical-align: top" src="/site_media/symbols/bus_stop.png" alt="By bus" /> Lindholmen</h4>
+  <h4><img style="vertical-align: top" src="{{ STATIC_URL }}style/symbols/bus_stop.png" alt="By bus" /> Lindholmen</h4>
 
 <p>Lines: <span class="line_number">16</span><span style="visibility:hidden;">,</span> <span class="line_number">31</span></p>
 
   <p>From the central station (centralstationen), go to the bus stop called <b>Nordstan</b> and take bus number <b>16</b> direction Eketrägatan. Get off the bus at <b>Lindholmen</b>. The trip taks about 8 minutes.</p>
 
-  <h4><img style="vertical-align: top;" src="/site_media/symbols/ferry_stop.png" alt="By ferry" /> Lindholmspiren</h4>
+  <h4><img style="vertical-align: top;" src="{{ STATIC_URL }}style/symbols/ferry_stop.png" alt="By ferry" /> Lindholmspiren</h4>
 
 <p>Lines: <span class="line_number">180</span><span style="visibility:hidden;">,</span> <span class="line_number">183</span></p>
 

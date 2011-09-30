@@ -24,7 +24,7 @@
 /* **** LAYOUT **** */
 #main { margin-top: 2.5em; }
 
-.content {
+.wrapper {
     max-width:50em;
     margin:0 auto 0;
     padding: 0 .5em;}
@@ -216,22 +216,17 @@ header navigation {
 }
 
 /* A special case of listview is a clickable menu with 32x32 icons.
- * For this we add hover and the icons
+ * For this we add hover and space the icons.
+ * the actual icon is better specified in a style attribute on the element
+ * itself.
 /* **** Main menu **** */
 .listview.menu a { background-repeat: no-repeat;
-    padding-left: 50px;
+   padding-left: 50px;
     background-position: 9px center;
   }
 
 .listview.menu a:hover { background-color: #f8f8f8;}
 .listview.menu a:hover:after { float:right; content: "»"; margin-right:5px;}
-
-#goingout { background-image: url("ic_goingout_32.png");}
-#eating { background-image: url("ic_eating_32.png");}
-#sleeping { background-image: url("ic_sleeping_32.png");}
-#gettingthere { background-image: url("ic_gettingthere_32.png");}
-#currency { background-image: url("ic_currency_32.png");}
-
 
 /* Style for bus/ferry line numbers */
 .line_number {

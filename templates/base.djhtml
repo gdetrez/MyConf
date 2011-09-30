@@ -13,7 +13,7 @@
     </head>
     <body>
         <header>
-            <div class="content">
+            <div class="wrapper">
                 <img alt="FSCONS logo" src="{{ STATIC_URL }}style/logo-small.png" />
                 <h1><a href="/">My FSCONS</a></h1>
                 <navigation>
@@ -25,7 +25,7 @@
             </div>
         </header>
 
-        <div class="content" id="main">
+        <div class="wrapper" id="main">
             {% block content %}
             {% endblock %}
         </div>
