@@ -38,8 +38,16 @@ body {
        font-size: 16px;
        line-height:1.25em; /* 20px */ }
 
-/* Uncomment to display the typographic grid
-.content {
+/* To prevent sup elements from disturbing the base grid,
+ * we give them a smaller line height
+ */
+sup { line-height: 0;}
+b { font-size: inherit;
+  line-height: 0;}
+
+
+/* Uncomment to display the typographic grid*/
+.wrapper {
     background-image: url("tgrid.png");
     background-position: left 16px;
 }
@@ -108,6 +116,7 @@ ul { margin-top: 1.25em; }
 .content h3 {
     font-size: 1.5em;
     line-height: 40px;
+    margin-bottom: 20px;
 }
 .content h4 {
     font-size: 1.25em;

@@ -171,7 +171,7 @@ header navigation {
  *
  * Be aware that margin, padding and dimension are calculated to
  * agree with the typographic grid of 20px. */
-.listview { list-style-type: none;
+ul.listview { list-style-type: none;
 	    margin: 30px 0 30px 0; padding: 0;}
 .listview li { list-style-type:none; display:inline;
 	       margin:0; padding:0;}
@@ -188,7 +188,7 @@ header navigation {
  * in 2 columns */
 @media screen and (min-width: 500px) {
     .listview:after {
-	clear:both;
+	clear:left;
 	content: ".";
 	height:0;
 	visibility:hidden;
