@@ -1,5 +1,5 @@
 {% extends "base.djhtml" %}
-{% block head-title %}Welcome to My Conf{% endblock %}
+{% block head-title %}Going out{% endblock %}
 
 {% block content %}
 <h2>Going out</h2>
