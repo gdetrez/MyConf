@@ -12,7 +12,7 @@
 	{% if member.photo %}
 	<img src="{{ member.photo.url }}" />
 	{% else %}
-	<img src="/site_media/style/user_anonymous.png" />
+	<img src="{{ STATIC_URL }}style/user_anonymous.png" />
 	{% endif %}
 	<span class="name">{{ member.name }}</span>
 	{% if member.physical_location %}

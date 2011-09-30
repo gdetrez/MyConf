@@ -1,17 +1,17 @@
 .color-picker-preview {
     border:1px solid #ccc;
     height:23px;
-    left:122px;
-    position:absolute;
-    top:0;
     width:23px;
+    /*position:absolute;
+    top:0;*/
+    display: inline-block;
+    vertical-align:bottom;
+    margin-left: 15px;
     -moz-border-radius:4px;
 }
 .color-picker-preview div {
     height:19px;
-    left:2px;
-    position:absolute;
-    top:2px;
+    margin: 2px;
     width:19px;
     -moz-border-radius:2px;
 }

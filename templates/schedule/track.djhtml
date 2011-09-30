@@ -3,13 +3,12 @@
 {% block head-title %}Track: {{ track }}{% endblock %}
 
 {% block extra-headers %}
-<link rel="stylesheet" href="/site_media/style/schedule.css" type="text/css"  media="screen">
+<link rel="stylesheet" href="{{ STATIC_URL }}style/schedule.css" type="text/css"  media="screen">
 {% endblock %}
 
 {% block content %}
 <h2>{{ track }}</h2>
 <span class="subtitle">One of FSCONS' tracks</span>
-
 
 <div class="description markdown">{{ track.description|markdown }}</div>
 
@@ -21,7 +20,7 @@
     {% if person.photo %}
     <img src="{{ person.photo.url }}" />
     {% else %}
-    <img src="/site_media/style/user_anonymous.png" />
+    <img src="{{ STATIC_URL }}style/user_anonymous.png" />
     {% endif %}
     <span class="name">{{ person.name }}</span>
     {% if person.physical_location %}

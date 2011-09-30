@@ -3,7 +3,7 @@
 {% block head-title %}{{ session }}{% endblock %}
 
 {% block extra-headers %}
-<link rel="stylesheet" href="/site_media/style/schedule.css" type="text/css"  media="screen">
+<link rel="stylesheet" href="{{ STATIC_URL }}style/schedule.css" type="text/css"  media="screen">
 {% endblock %}
 
 {% block content %}

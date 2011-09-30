@@ -15,13 +15,13 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # Create your views here.
-from django.http import HttpResponse
-from django.template import Context, loader
-from myconf.schedule.models import *
-from django.contrib.auth.decorators import login_required
 from datetime import timedelta, datetime
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
+from django.template import loader, RequestContext
+from myconf.schedule.models import *
 
 #@login_required(login_url='/admin/')
 def schedule(request):
@@ -62,7 +62,7 @@ def schedule(request):
         sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     t = loader.get_template('schedule/schedule.djhtml')
-    c = Context({
+    c = RequestContext(request,{
         'friday_sessions': friday,
         'sat_am': sat_am,
         'sat_pm': sat_pm,
@@ -74,7 +74,7 @@ def schedule(request):
 def track(request, slug):
     track = get_object_or_404(Track, slug=slug)
     t = loader.get_template('schedule/track.djhtml')
-    c = Context({
+    c = RequestContext(request,{
             'track': track,
             })
     return HttpResponse(t.render(c))
@@ -114,7 +114,7 @@ def session(request, pk):
     ).exclude(pk=pk).order_by('time_slot__begin')[:3]
 
     t = loader.get_template('schedule/session_detail.djhtml')
-    c = Context({
+    c = RequestContext(request,{
             'session': session,
             'sessions_after': sessions_after,
             'concurrent_sessions': concurrent_sessions,

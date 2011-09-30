@@ -9,5 +9,6 @@
 *.sqlite
 localsettings.py
 db.sqlite
-media/avatars/
-sitestatic/
+_static
+_uploads
+.svn/

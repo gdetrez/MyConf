@@ -15,13 +15,13 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from django.http import HttpResponse
-from django.template import Context, loader
+from django.template import RequestContext, loader
 from myconf.restaurants.models import Restaurant
 
 def list(request):
     rests = Restaurant.objects.all().order_by("distance")
     t = loader.get_template('restaurants/list.djhtml')
-    c = Context({
+    c = RequestContext(request, {
         'restaurant_list': rests,
     })
     return HttpResponse(t.render(c))

@@ -14,15 +14,16 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-import datetime
+from datetime import datetime
 from django.db import models
-
-# Create your models here.
 from django.template.defaultfilters import date
 from django.conf import settings
 from django.contrib.auth.models import User
 from myconf.people.models import Person
 from myconf.colors.fields import ColorField 
+
+now = datetime.now
+
 class TimeSlot(models.Model):
     begin = models.DateTimeField()
     end = models.DateTimeField()
@@ -30,7 +31,7 @@ class TimeSlot(models.Model):
     unique_together = (("begin", "end"),)
 
     def passed(self):
-        if datetime.datetime.now() > self.end:
+        if now() > self.end:
             return True
         return False
 

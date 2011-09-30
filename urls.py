@@ -26,16 +26,15 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),
                        
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.MEDIA_ROOT,
-            'show_indexes' : True,
-            }),
-
-#    (r'^static/(?P<path>.*)$', 'django.views.static.serve',
-#        {'document_root': STATIC_ROOT}),
 )
 
 if settings.DEBUG:
     urlpatterns += patterns('django.contrib.staticfiles.views',
-        url(r'^static/(?P<path>.*)$', 'serve'),
-    )
+        url(r'^static/(?P<path>.*)$', 'serve', {
+                'show_indexes' : True,
+                }))
+    urlpatterns += patterns('',
+        url(r'^_uploads/(?P<path>.*)$', 'django.views.static.serve', {
+                'show_indexes' : True,
+                'document_root': settings.MEDIA_ROOT,
+                }))

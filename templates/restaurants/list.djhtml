@@ -4,12 +4,12 @@
 
 {% block extra-headers %}
 <!-- Leaflet CSS --> 
-<link rel="stylesheet" href="/static/restaurants.css" />
-<link rel="stylesheet" href="/static/leaflet/leaflet.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}/restaurants.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.css" />
 <!--[if lte IE 8]><link rel="stylesheet" href="/static/leaflet/leaflet.ie.css" /><![endif]-->
 <!-- Leaflet JavaScript -->
-<script src="/static/leaflet/leaflet.js"></script>
-<script src="/static/map.js"></script>
+<script src="{{ STATIC_URL }}leaflet/leaflet.js"></script>
+<script src="{{ STATIC_URL }}map.js"></script>
 {% endblock %}
 
 
