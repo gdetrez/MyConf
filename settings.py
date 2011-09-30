@@ -64,7 +64,7 @@ STATIC_ROOT = ROOTDIR + "_static/"
 
 # Extra directories where static files needs to be harvested
 STATICFILES_DIRS = (
-    ("style", ROOTDIR + "/style/"),
+    ("style", ROOTDIR + "style/"),
 )
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
