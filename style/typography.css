@@ -38,7 +38,7 @@ body {
        font-size: 16px;
        line-height:1.25em; /* 20px */ }
 
-/* To prevent sup elements from disturbing the base grid,
+/* To prevent <sup/> and <b/> elements from disturbing the base grid,
  * we give them a smaller line height
  */
 sup { line-height: 0;}

@@ -172,7 +172,8 @@ header navigation {
  * Be aware that margin, padding and dimension are calculated to
  * agree with the typographic grid of 20px. */
 ul.listview { list-style-type: none;
-	    margin: 30px 0 30px 0; padding: 0;}
+	      margin: 30px 0 30px 0 !important;
+	      padding: 0;}
 .listview li { list-style-type:none; display:inline;
 	       margin:0; padding:0;}
 .listview a { display:block;
