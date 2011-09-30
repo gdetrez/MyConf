@@ -1,19 +1,10 @@
-
+# -*- mode:pyton -*-
 # Absolute path to the root of the project.
 # i.e. the folder where this file is.
-# ROOTDIR="/home/user/myconf"
+ROOTDIR="CNAHGEME"
 
-# Absolute path to the directory that holds media.
-# Example: "/home/user/myconf/media"
-MEDIA_ROOT = 'CHANGEME'
-
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    # Example: "/home/user/myconf/templates"
-    'CHANGEME'
-)
+DEBUG = True                                      # defined in localsettings
+TEMPLATE_DEBUG = DEBUG                            # defined in localsettings
 
 DATABASES = {
     'default': {
@@ -26,7 +17,3 @@ DATABASES = {
     }
 }
 
-# Configuring the staticfiles applications
-STATIC_URL = '/static/'
-# Example: "/home/user/myconf/sitestatic"
-STATIC_ROOT = "CHANGEME"
