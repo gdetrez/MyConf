@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 # Django settings for myconf project.
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+
+# import local settings (non commited to git)
+from localsettings import *
+
+#DEBUG = True                                      # defined in localsettings
+#TEMPLATE_DEBUG = DEBUG                            # defined in localsettings
 
 ADMINS = (
-    # ('Grégoire', 'gdetrez@fripost.org'),
+    ('Grégoire', 'gdetrez@crans.org'),
 )
 
 MANAGERS = ADMINS
@@ -12,12 +16,9 @@ MANAGERS = ADMINS
 AUTH_PROFILE_MODULE = 'people.Profile'
 
 # XMPP server configuration.
-XMPP_PUBSUB_HOST = "pubsub.zjyto.net"
-XMPP_JID = "myconf-django@zjyto.net"
-XMPP_PASSWORD = "0000"
-
-
-
+#XMPP_PUBSUB_HOST = "pubsub.zjyto.net"
+#XMPP_JID = "myconf-django@zjyto.net"
+#XMPP_PASSWORD = "0000"
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -36,17 +37,35 @@ SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = True
+USE_I18N = False
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale
-USE_L10N = True
-
+USE_L10N = False
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
 MEDIA_URL = '/_uploads/'
+
+# Absolute path to the directory that holds media.
+# Example: "/home/media/media.lawrence.com/"
+MEDIA_ROOT = ROOTDIR + '_uploads/'
+
+# URL that handles the static files served from STATIC_ROOT and collected by 
+# the collectstatic managment command. Make sure to use a
+# trailing slash if there is a path component (optional in other cases).
+# Examples: "http://static.lawrence.com", "http://example.com/static/"
+STATIC_URL = '/static/'
+
+# Absolute path to the directory where static files are collected.
+# Example: "/home/static/media.lawrence.com/"
+STATIC_ROOT = ROOTDIR + "_static/"
+
+# Extra directories where static files needs to be harvested
+STATICFILES_DIRS = (
+    ("style", ROOTDIR + "/style/"),
+)
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -61,6 +80,13 @@ TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
 #     'django.template.loaders.eggs.Loader',
+)
+
+TEMPLATE_DIRS = (
+    ROOTDIR + "templates/"
+    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Always use forward slashes, even on Windows.
+    # Don't forget to use absolute paths, not relative paths.
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,5 +122,3 @@ INSTALLED_APPS = (
     'myconf.restaurants',
     'myconf.colors',
 )
-
-from localsettings import *
