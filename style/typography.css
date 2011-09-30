@@ -46,7 +46,7 @@ b { font-size: inherit;
   line-height: 0;}
 
 
-/* Uncomment to display the typographic grid*/
+/* Uncomment to display the typographic grid
 .wrapper {
     background-image: url("tgrid.png");
     background-position: left 16px;
