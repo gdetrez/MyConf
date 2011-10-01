@@ -1,5 +1,6 @@
 {% extends "base.djhtml" %}
 {% load markup %}
+{% load colors %}
 {% block head-title %}{{ session }}{% endblock %}
 
 {% block extra-headers %}
@@ -8,7 +9,12 @@
 
 {% block content %}
 <h2>{{ session }}</h2>
-<span class="subtitle">{{ session.track }}</span>
+<span class="subtitle">
+<a href="{{ session.track.get_absolute_url }}" class="track"
+   style="background:#{{ session.track.color|saturation:20|lightness:100 }}">
+  {{ session.track }}
+</a>
+</span>
 
 <dl class="session_info">
   {% if session.time_slot %}
