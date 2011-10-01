@@ -47,6 +47,8 @@ class Restaurant(models.Model):
             if ot.is_now():
                 return True
         return False
-    
+    open.short_description = 'Open now'
+
     def distance_unit(self):
         return u"%dm" % self.distance
+    distance_unit.short_description = 'Walking distance'
