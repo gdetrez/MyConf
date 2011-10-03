@@ -10,11 +10,11 @@
 <div class="infobox">
 <h3>Address</h3>
 
-<address>Forskningsgången 6, Göteborg, Sweden</address>
+<address>Forskningsgången 6, Gothenburg, Sweden</address>
 
-<p>Note that Friday's worshops will take place in a diferent venue:
+<p>Note that Friday's worshops will take place at a different venue:
 
-<address>Lennart Torstenssonsgatan 8, Göteborg, Sweden</address>
+<address>Lennart Torstenssonsgatan 8, Gothenburg, Sweden</address>
 
 </div>
 {% with note="<sup><a class=\"footnote\" href=\"#note1\">*</a></sup>" %}
@@ -37,11 +37,12 @@
 
 <p>Buses to and from City Airport are organised according to the specific
 flights. A bus will be waiting when you arrive and a bus leaves 2
-hours and 20 minutes before a specific flight from *Nils Ericson
-Terminalen*. The price from City Airport is 60 SEK{{ note }} (or 110{{ note }} SEK incl. return).</p>
+hours and 20 minutes before a specific flight from <b>Nils Ericson
+Terminalen</b>, the main bus terminal by the
+Central Station. The price from City Airport is 60 SEK{{ note }} (or 110{{ note }} SEK incl. return).</p>
 
 <p>Buses from both airports arrive at Nils Ericson Terminalen, located at
-Drottningtorget near the central station. You can not pay with cash, but most credit and debit cards are accepted. You can find more information on the bus compagnie website : <a href="http://www.flygbussarna.se/?lang=EN">http://www.flygbussarna.se/?lang=EN</a>.
+Drottningtorget near the Central Station. You can not pay cash, but most credit and debit cards are accepted. You can find more information on the bus compagny website : <a href="http://www.flygbussarna.se/?lang=EN">http://www.flygbussarna.se/?lang=EN</a>.
 
 <h3><a name="bytrain">By train or bus</a></h3>
 
@@ -51,8 +52,8 @@ around 400 SEK and go up. Buses are every few hours, usually take more
 time than the train, prices are between 200 and 340 SEK{{ note }} depending on
 where you are coming from. The Central Station is located right next
 to Nils Ericson Terminalen at Drottningtorget, which is a major
-traffic point for public trams and buses going to different parts of
-the city. For more information please visit <a href="http://www.sj.se">www.sj.se</a> for trains and <a href="http://www.safflebussen.se">www.safflebussen.se</a> or <a href="http://www.swebusexpress.se">www.swebusexpress.se</a> for bus schedules.</p>
+traffic point for trams and buses going to different parts of
+the city. For more information please visit <a href="http://www.sj.se">www.sj.se</a> for trains and <a href="http://www.gobybus.se/">www.gobybus.se</a> or <a href="http://www.swebusexpress.se">www.swebusexpress.se</a> for bus schedules.</p>
 
 <h3><a name="bycar">By car</a></h3>
 
@@ -62,7 +63,7 @@ and then right in the roundabout. Drive straight and you will find the
 <b>IT University</b> on your left hand side after ca 600 meters.</p>
 
 <p>If coming on the <b>40 from Jönköping</b> OR the <b>E20 from Malmö</b>, drive straight through Gothenburg towards <b>Hisingen</b>. Then follow signs
-<b>Norra Älvstranden</b> and <b>Lindholmen</b>. After 2 kilometers you take a left and drive under a railroad bridge. Take the first left, and then right in the roundabout. Drive straight and you will find the <b>IT University</b> on your left hand sideafter ca 600 meters.
+<b>Norra Älvstranden</b> and <b>Lindholmen</b>. After 2 kilometers you take a left and drive under a railroad bridge. Take the first left, and then right in the roundabout. Drive straight and you will find the <b>IT University</b> on your left hand side after ca 600 meters.
 
 <h3><a name="public">Public transports</a></h3>
 
@@ -71,17 +72,17 @@ and then right in the roundabout. Drive straight and you will find the
 
 <p>Lines: <span class="line_number">16</span><span style="visibility:hidden;">,</span> <span class="line_number">31</span></p>
 
-  <p>From the central station (centralstationen), go to the bus stop called <b>Nordstan</b> and take bus number <b>16</b> direction Eketrägatan. Get off the bus at <b>Lindholmen</b>. The trip taks about 8 minutes.</p>
+  <p>From the Central Station (Centralstationen), go to the bus stop called <b>Nordstan</b> and take bus number <b>16</b> direction Eketrägatan. Get off the bus at <b>Lindholmen</b>. The trip taks about 8 minutes.</p>
 
   <h4><img style="vertical-align: top;" src="{{ STATIC_URL }}style/symbols/ferry_stop.png" alt="By ferry" /> Lindholmspiren</h4>
 
 <p>Lines: <span class="line_number">180</span><span style="visibility:hidden;">,</span> <span class="line_number">183</span></p>
 
-  <p>You can also join the venu by boat. The stop is called <b>Lindhomspiren</b> and the ferries leave from either <b>Lilla Bommen</b> or <b>Rosenlund</b>.<dd></p>
+  <p>You can reach join the venue by boat. The stop is called <b>Lindhomspiren</b> and the ferries leave from either <b>Lilla Bommen</b> or <b>Rosenlund</b>.<dd></p>
 
 </div>
 
-<p>You can find information on public transportation in Göteborg at the
+<p>You can find information on public transportation in Gothenburg at the
 <a href="http://vasttrafik.se/en/Startpage/Are-you-a-tourist/">Västtrafik site</a>. There you may <a href="http://vasttrafik.se/en/Startpage/Travel-planner/">plan your trip</a> (the nearest stop to the IT University is called <b>Lindholmen, GÖTEBORG (Hållplats)</b>), find the <a href="http://vasttrafik.se/ImageVault/Images/id_1518/ImageVaultHandler.aspx">route network map</a> (lines passing Lindholmen are buses <b>16</b> and <b>31</b>), and find general information.</p>
 
 <p>The best-value for public transportation for a week-end stay in Gothenburg, is to purchase either a <a href="http://vasttrafik.se/Priser--Produkter/Fardbevis-och-priser/Korttidsladdningar/1--och-3-dygnsladdning-Goteborg/">3-day travel pass</a> (130 SEK{{ note }} for unlimited travel within Gothenburg city) or a <a href="http://vasttrafik.se/Priser--Produkter/Fardbevis-och-priser/Korttidsladdningar/Femresorsladdning/">5 trip card</a> for 83 SEK{{ note }}
@@ -94,17 +95,16 @@ train central, and Nils Ericson bus terminal) and also the Pressbyrån
 
 <p>There's also an <a href="https://market.android.com/details?id=de.hafas.android.vasttrafik">Android app</a> for the timetables etc (in Swedish).</p>
 
-<p>If you prefer to pay cash, please note that the trams have machines
-that accept only coins while the buses don't accept cash at all.</p>
+<p>If you prefer to pay on board, please note that the trams have machines
+that accept coins &amp; cards only while the buses don't accept cash at all.</p>
 
 <p>Here's the IT University on <a href="http://www.openstreetmap.org/?mlat=57.706683&amp;mlon=11.937125&amp;zoom=15&amp;layers=B000FTF">Open Street map</a>.</p>
 
 <p>And here's how you get from the bus stop to the IT University courtesy
 of <a href="http://kartor.eniro.se/query?mop=aq&amp;mapstate=8%3B11.93637%3B57.70762%3Ba%3B11.93217%3B57.70927%3B11.94058%3B57.70598%3B624%3B461%3B0%3B1&amp;mapcomp=%3B%3B%3BForskningsg%E5ngen%3B6%3B%3B41756%3BG%D6TEBORG%3B%3B%3B%3B%3B11.937184233255643%3B57.706630147500725%3B0%3B0%3B%3BG%D6TEBORG%3Bmaps_address.254197.11%3B0&amp;what=map_adr&amp;searchInMap=1&amp;geo_area=Forskningsg%E5ngen%206%2C%20G%D6TEBORG&amp;stq=0&amp;pis=0&amp;mymap=LTNhZTNiNzc6MTI0NTFhODUxNDk6LTdmZTM%3D">kartor.eniro.se</a>.</p>
 
-<p>Here's a view of the IT university venue building from the bus stop
-Lindholmen:
-Lindholmen bus stop</p>
+<!-- p>Here's a view of the IT university venue building from the bus stop
+Lindholmen: Lindholmen bus stop</p -->
 
 <p class="footnote"><a name="note1">*:</a> prices are given for information only and may not be accurate. <a href="/information/currency/">More information about currency.</a></p>
 
