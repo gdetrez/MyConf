@@ -9,12 +9,14 @@
 
 {% block content %}
 <h2>{{ session }}</h2>
+{% if session.track %}
 <span class="subtitle">
 <a href="{{ session.track.get_absolute_url }}" class="track"
    style="background:#{{ session.track.color|saturation:20|lightness:100 }}">
   {{ session.track }}
 </a>
 </span>
+{% endif %}
 
 <dl class="session_info">
   {% if session.time_slot %}
