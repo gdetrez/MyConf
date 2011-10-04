@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
-        <title>{% block head-title%} XXXXXXX {% endblock %} | My fscons</title>
-        <!-- ma template.css -->
-        <link rel="stylesheet" href="{{ STATIC_URL }}style/main.css" type="text/css"  media="screen">
+    <head profile="http://www.w3.org/2005/10/profile">
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width" />
+      <title>{% block head-title%} XXXXXXX {% endblock %} | My fscons</title>
+      <link rel="icon" 
+            type="image/ico" 
+            href="http://my.fscons.org/favicon.ico"/>
+      <!-- ma template.css -->
+      <link rel="stylesheet" href="{{ STATIC_URL }}style/main.css" type="text/css"  media="screen">
 
         {% block extra-headers %}
         {% endblock %}
