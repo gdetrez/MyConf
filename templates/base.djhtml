@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width" />
       <title>{% block head-title%} XXXXXXX {% endblock %} | My fscons</title>
       <link rel="icon" 
-            type="image/ico" 
+            type="image/ico"
             href="http://my.fscons.org/favicon.ico"/>
       <!-- ma template.css -->
       <link rel="stylesheet" href="{{ STATIC_URL }}style/main.css" type="text/css"  media="screen">
