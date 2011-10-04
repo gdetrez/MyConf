@@ -24,8 +24,11 @@ class TimeSlotAdmin(admin.ModelAdmin):
 admin.site.register(TimeSlot, TimeSlotAdmin)
 admin.site.register(Room)
 
+def session_count(track):
+    return track.sessions.count()
+
 class TrackAdmin(admin.ModelAdmin):
-    list_display = ('name','color')
+    list_display = ('name','slug', 'color', session_count)
     list_display_links = ('name',)
     prepopulated_fields = {
         'slug': ['name']
