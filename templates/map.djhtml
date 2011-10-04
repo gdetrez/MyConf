@@ -1,0 +1,10 @@
+{% extends "base.djhtml" %}
+{% block head-title %}Welcome to My Conf{% endblock %}
+
+{% block content %}
+<h2>Map</h2>
+<span class="subtitle">Preliminary area map</span>
+
+<img src="https://fscons.org/sites/default/files/venue/map-venue.png" alt="Map of the venue area, picturing location of ATMs, bus and ferry stops and the FSCONS venue." />
+
+{% endblock %}

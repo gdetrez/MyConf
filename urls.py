@@ -20,6 +20,9 @@ urlpatterns = patterns('',
     
     (r'^restaurants/$', 'myconf.restaurants.views.list'),
 
+    (r'^map/$',
+     direct_to_template, {'template': 'map.djhtml'}),
+
     (r'^information/$',
      direct_to_template, {'template': 'information/index.djhtml'}),
     (r'^information/getting-there/$',
