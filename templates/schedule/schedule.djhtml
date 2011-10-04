@@ -11,7 +11,7 @@
 
 <div class="schedule">
 
-<p>Please note that this schedule is a work in progress. I will change a lot before the conference, so stay tuned! We decided to publish it early in accordance with the transparency objective listed in <a href="http://fscons.org/manifesto">FSCONS' manifesto</a>.</p>
+<p>Please note that this schedule is a work in progress. It will change a lot before the conference, so stay tuned! We decided to publish it early in accordance with the transparency objective listed in <a href="http://fscons.org/manifesto">FSCONS' manifesto</a>.</p>
 
 <h3 class="day">Friday (November 11th)</h3>
 {% for sessions in friday_sessions %}
