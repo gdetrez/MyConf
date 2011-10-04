@@ -22,7 +22,7 @@
                 <navigation>
                     <li><a id="nav_schedule" href="/schedule/"><span>Schedule</span></a>
                     <!-- li><a id="nav_manifesto" href="/manifesto/"><span>Manifesto</span></a-->
-                    <!-- li><a id="nav_map" href="/map/"><span>Map</span></a-->
+                    <li><a id="nav_map" href="/map/"><span>Map</span></a>
                     <!-- li><a id="nav_notifications" href="/notifications/"><span>Notifications</span></a-->
                 </navigation>
             </div>

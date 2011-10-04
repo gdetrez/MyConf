@@ -10,7 +10,7 @@
 <ul id="main-navigation" class="listview">
   <li><a href="/schedule/" id="index_schedule">Schedule</a>
   <!-- li><a href="#" id="index_manifesto">Manifesto</a -->
-  <!-- li><a href="#" id="index_map">Map</a -->
+  <li><a href="/map/" id="index_map">Map</a>
   <li><a href="/information/" id="index_information">Practical Information</a>
   <li><a href="/staff/" id="index_staff">Staff</a>
   <!-- li><a href="#" id="index_notifications">Notifications</a -->
