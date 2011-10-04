@@ -12,3 +12,4 @@ db.sqlite
 _static
 _uploads
 .svn/
+venv/
