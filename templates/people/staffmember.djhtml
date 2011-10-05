@@ -12,9 +12,9 @@
 
   <div class="user-picture">
     {% if staff_member.photo %}
-    <img src="{{ staff_member.photo.url }}" />
+    <img src="{{ staff_member.photo.url }}" alt="Picture of {{ staff_member.name }}" />
     {% else %}
-    <img src="/site_media/style/user_anonymous.png" />
+    <img src="{{ STATIC_URL }}style/user_anonymous.png" alt="Anonymous lego face (No picture for this person)" />
     {% endif %}
   </div>
 

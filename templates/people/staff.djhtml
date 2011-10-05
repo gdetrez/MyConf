@@ -10,9 +10,9 @@
       {% for member in staff_list %}
       <li class="person"><a href="{{ member.get_absolute_url }}">
 	{% if member.photo %}
-	<img src="{{ member.photo.url }}" />
+        <img src="{{ member.photo.url }}" alt="Picture of {{ staff_member.name }}" />
 	{% else %}
-	<img src="{{ STATIC_URL }}style/user_anonymous.png" />
+	<img src="{{ STATIC_URL }}style/user_anonymous.png" alt="Anonymous lego face (No picture for this person)" />
 	{% endif %}
 	<span class="name">{{ member.name }}</span>
 	{% if member.physical_location %}
