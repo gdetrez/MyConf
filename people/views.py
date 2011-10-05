@@ -17,6 +17,7 @@
 from django.http import HttpResponse
 from django.template import RequestContext, loader
 from myconf.people.models import Person
+from django.shortcuts import render_to_response, get_object_or_404
 
 def staff(request):
     staff = Person.objects.filter(staff=True).order_by("name")
@@ -27,7 +28,7 @@ def staff(request):
     return HttpResponse(t.render(c))
 
 def user(request, slug):
-    staff_member = Person.objects.get(slug=slug)
+    staff_member = get_object_or_404(Person, slug=slug)
     t = loader.get_template('people/staffmember.djhtml')
     c = RequestContext(request, {
         'staff_member': staff_member,

@@ -80,7 +80,7 @@ def track(request, slug):
     return HttpResponse(t.render(c))
 
 def session(request, pk):
-    session = Session.objects.get(pk=pk)
+    session = get_object_or_404(Session, pk=pk)
     # Session starting up to 30 minutes after the end
     # of this one
     timerange = (
