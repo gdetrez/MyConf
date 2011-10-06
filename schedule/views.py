@@ -97,16 +97,12 @@ def session(request, pk):
         
         
     # 3 next talks in the same room
-    timerange = (
-        session.time_slot.begin,
-        session.time_slot.end)
-    query = Q(time_slot__begin__range=timerange) | Q(time_slot__end__range=timerange)
     next_sessions_in_room = Session.objects.filter(
         room=session.room,
-        time_slot__begin__gte=session.time_slot.end,
-        time_slot__begin__year=session.time_slot.begin.year,
-        time_slot__begin__month=session.time_slot.begin.month,
-        time_slot__begin__day=session.time_slot.begin.day
+        time_slot__begin__gte = end,
+        time_slot__begin__year = begin.year,
+        time_slot__begin__month = begin.month,
+        time_slot__begin__day = begin.day
         ).exclude(pk=pk).order_by('time_slot__begin')[:3]
     
     t = loader.get_template('schedule/session_detail.djhtml')
