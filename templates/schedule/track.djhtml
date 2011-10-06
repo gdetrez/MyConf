@@ -3,7 +3,12 @@
 {% block head-title %}Track: {{ track }}{% endblock %}
 
 {% block extra-headers %}
-<link rel="stylesheet" href="{{ STATIC_URL }}style/schedule.css" type="text/css"  media="screen">
+<link rel="stylesheet"
+      href="{{ STATIC_URL }}schedule/style.css"
+      type="text/css"  media="screen">
+<link rel="stylesheet"
+      href="{{ STATIC_URL }}people/style.css"
+      type="text/css"  media="screen">
 {% endblock %}
 
 {% block content %}
@@ -20,7 +25,7 @@
     {% if person.photo %}
     <img src="{{ person.photo.url }}" />
     {% else %}
-    <img src="{{ STATIC_URL }}style/user_anonymous.png" />
+    <img src="{{ STATIC_URL }}people/user_anonymous.png" />
     {% endif %}
     <span class="name">{{ person.name }}</span>
     {% if person.physical_location %}
