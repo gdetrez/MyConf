@@ -1,6 +1,12 @@
 {% extends "base.djhtml" %}
 {% load markup %}
-{% block head-title %}{{ staff_member.name }}, FSCONS staff{% endblock %}
+{% block head-title %}{{ staff_member.name }} @ FSCONS{% endblock %}
+
+{% block extra-headers %}
+<link rel="stylesheet"
+      href="{{ STATIC_URL }}people/style.css"
+      type="text/css"  media="screen">
+{% endblock %}
 
 {% block content %}
 <div class="user-profile">
@@ -14,7 +20,7 @@
     {% if staff_member.photo %}
     <img src="{{ staff_member.photo.url }}" alt="Picture of {{ staff_member.name }}" />
     {% else %}
-    <img src="{{ STATIC_URL }}style/user_anonymous.png" alt="Anonymous lego face (No picture for this person)" />
+    <img src="{{ STATIC_URL }}people/user_anonymous.png" alt="Anonymous lego face (No picture for this person)" />
     {% endif %}
   </div>
 

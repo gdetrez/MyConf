@@ -1,0 +1,54 @@
+/* -*- coding: utf-8 -*-
+ * Copyright (C) 2011 Grégoire Détrez, Patrik Willard
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation; either version 3 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ * 
+ * should have received a copy of the GNU Affero General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* VERTICAL RYTHM: all vertical space should be a multiple of 1.25em */
+
+/* ***************************************************************************
+ ** STYLES FOR THE 'PEOPLE' APP
+ *
+ */
+
+/** List of people */
+.people li a .name { font-weight: bold; }
+.people li a .location { color:gray; font-style: italic; }
+.people li a:hover { background: #f8f8f8 url("./list_link_right.png") right center no-repeat;}
+.people img {
+    height: 2.5em;
+    float:left;
+    margin: 0 .75em; }
+/* clearing */
+.people li a:after {
+    clear:both;
+    content: ".";
+    height:0;
+    visibility:hidden;
+    display:block;}
+
+
+/** INDIVIDUAL PERSON INFO */
+.user-profile dt { color: Gray; font-weight: bold; }
+.user-profile dt:after { content: ':' }
+.user-profile dd { margin:0 0 1.25em 0;}
+.user-profile .user-picture { text-align:center; }
+.user-profile .user-picture img { height: 12.5em; margin:1.25em; }
+
+/* For screen bigger than 500px
+ * instead of centering the image under the name, we push it on the right */
+@media screen and (min-width: 500px) {
+    .user-profile .user-picture img {
+	height: 12.5em; margin:1.25em; float:right; }
+}

@@ -18,21 +18,30 @@
 /* NB: in css @import statements have to be included at the very top of the
  * file otherwise (some) browsers won't see them. */
 @import 'typography.css';
-/* defines the vertical grid: all vertical space should be a multiple of
- * 1.25em */
 
-/* **** LAYOUT **** */
-#main { margin-top: 2.5em; }
+/* VERTICAL RYTHM: all vertical space should be a multiple of 1.25em */
+
+/* ***************************************************************************
+ * Main Layout
+ * This defines the main structure of the layout, applied to every pages.
+ */
+#main { margin-top: 2.5em; /* 2 lines of space before the content */ }
 
 .wrapper {
+    /* Limiting width helps avoids too long lines on big screens */
     max-width:50em;
     margin:0 auto 0;
-    padding: 0 .5em;}
+    padding: 0 1em;
+}
 
+/* ***************************************************************************
+ * Header
+ * Style and layout
+ */
 header {
     color: #f5f5f5;
     background: #1a1a1a url("./line.png") repeat-x top left;
-    margin: 0 0 0 0;
+    margin: 0;
     padding:1em 0;}
     /* clearing after the header */
     header:after {
@@ -54,109 +63,44 @@ header img {
     vertical-align: top;
 }
 
-/** header navigation
- *
- * We replace the menu texts by icons.
- */
+/** header navigation */
 header navigation {
-    float:right;
+    display: block;
+    margin:0 auto;
     list-style-type:none;
     width:198px;
     padding:0;}
-    header navigation a {
-	display:block;
-	float:left;
-	margin:0 10px;
-	height:32px;
-	background-position: center;
-	background-repeat:no-repeat; }
-        header navigation a span { display:none; }
-    #nav_schedule {
-	background-image: url("./ic_schedule_24.png");
-	width: 24px; }
-    #nav_manifesto {
-	background-image: url("./ic_manifesto_24.png");
-	width: 36px; }
-    #nav_map {
-	background-image: url("./ic_map_24.png");
-	width: 32px; }
-    #nav_notifications {
-	background-image: url("./ic_notification_24.png");
-	width: 26px; }
 
-
-/* **** Main menu **** */
-#main-navigation a { background-repeat: no-repeat;
-		     padding-left: 60px;}
-#index_schedule { background-image: url("ic_schedule_black.png");
-	    background-position: 13px center;
-	    padding-left: 50px;
-}
-#index_profile { background-image: url("ic_profile_black.png");
-	    background-position: 14px center;
-	    padding-left: 50px;
-}
-#index_manifesto { background-image: url("ic_manifesto_black.png");
-	    background-position: 7px center;}
-#index_information { background-image: url("ic_information_24.png");
-	    background-position: 13px center;
-	    padding-left: 50px;
-	    font-size: 0.8em;
-}
-#index_map { background-image: url("ic_map_black.png");
-	    background-position: 9px center;
-	    padding-left: 50px;
-}
-#index_restaurant { background-image: url("ic_restaurant_black.png");
-	    background-position: 8.5px center;
-	    padding-left: 50px;
-}
-#index_notifications { background-image: url("ic_notifications_black.png");
-	    background-position: 12px center;
-	    padding-left: 50px;
-}
-#index_staff { background-image: url("ic_staff_black.png");
-	    background-position: 1.5px center;
-	    padding-left: 50px;
-}
-#main-navigation a:hover { background-color: #f8f8f8;}
-#main-navigation a:hover:after { float:right; content: "»"; margin-right:5px;}
-
-/** STYLES FOR THE 'PEOPLE' APP
- *
- * This section contains style for the 'people' app templates
+/* By default, the navigation is centered under the title.
+ * For screen bigger than 500px we can push it in the right top corner.
  */
-
-/** List of people */
-.people li a .name { font-weight: bold; }
-.people li a .location { color:gray; font-style: italic; }
-.people li a:hover { background: #f8f8f8 url("./list_link_right.png") right center no-repeat;}
-.people img {
-    height: 2.5em;
-    float:left;
-    margin: 0 .75em; }
-/* clearing */
-.people li a:after {
-    clear:both;
-    content: ".";
-    height:0;
-    visibility:hidden;
-    display:block;}
-
-
-/** INDIVIDUAL PERSON INFO */
-.user-profile dt { color: Gray; font-weight: bold; }
-.user-profile dt:after { content: ':' }
-.user-profile dd { margin:0 0 1.25em 0;}
-.user-profile .user-picture { text-align:center; }
-.user-profile .user-picture img { height: 12.5em; margin:1.25em; }
-
-/* For screen bigger than 500px
- * instead of centering the image under the name, we push it on the right */
 @media screen and (min-width: 500px) {
-    .user-profile .user-picture img {
-	height: 12.5em; margin:1.25em; float:right; }
+    header navigation { float:right; }
 }
+
+
+header navigation a {
+    display:block;
+    float:left;
+    margin:0 10px;
+    height:32px;
+    background-position: center;
+    background-repeat:no-repeat;}
+
+/* We replace the menu texts by icons.*/
+header navigation a span { display:none; }
+#nav_schedule {
+    background-image: url("./ic_schedule_24.png");
+    width: 24px;}
+#nav_manifesto {
+    background-image: url("./ic_manifesto_24.png");
+    width: 36px;}
+#nav_map {
+    background-image: url("./ic_map_24.png");
+    width: 32px;}
+#nav_notifications {
+    background-image: url("./ic_notification_24.png");
+    width: 26px;}
 
 /* ***************************************************************************
  * LIST VIEW
@@ -171,7 +115,8 @@ header navigation {
  *
  * Be aware that margin, padding and dimension are calculated to
  * agree with the typographic grid of 20px. */
-ul.listview { list-style-type: none;
+ul.listview,
+navigation.listview { list-style-type: none;
 	      margin: 30px 0 30px 0 !important;
 	      padding: 0;}
 .listview li { list-style-type:none; display:inline;
@@ -229,33 +174,71 @@ ul.listview { list-style-type: none;
 .listview.menu a:hover { background-color: #f8f8f8;}
 .listview.menu a:hover:after { float:right; content: "»"; margin-right:5px;}
 
+/* ***************************************************************************
+ * Home Screen Menu
+ */
+#main-navigation a {
+    background-repeat: no-repeat;
+    padding-left: 60px;}
+#index_schedule {
+    background-image: url("ic_schedule_black.png");
+    background-position: 13px center;
+    padding-left: 50px;}
+#index_profile {
+    background-image: url("ic_profile_black.png");
+    background-position: 14px center;
+    padding-left: 50px;}
+#index_manifesto {
+    background-image: url("ic_manifesto_black.png");
+    background-position: 7px center;}
+#index_information {
+    background-image: url("ic_information_24.png");
+    background-position: 13px center;
+    padding-left: 50px;
+    font-size: 0.8em;}
+#index_map {
+    background-image: url("ic_map_black.png");
+    background-position: 9px center;
+    padding-left: 50px;}
+#index_restaurant {
+    background-image: url("ic_restaurant_black.png");
+    background-position: 8.5px center;
+    padding-left: 50px;}
+#index_notifications { 
+    background-image: url("ic_notifications_black.png");
+    background-position: 12px center;
+    padding-left: 50px;}
+#index_staff {
+    background-image: url("ic_staff_black.png");
+    background-position: 1.5px center;
+    padding-left: 50px;}
+#main-navigation a:hover { background-color: #f8f8f8;}
+#main-navigation a:hover:after { float:right; content: "»"; margin-right:5px;}
+
+/* ***************************************************************************
+ * Other special styles
+ */
+
 /* Style for bus/ferry line numbers */
 .line_number {
     display:inline-block;
     background-color: #003273;
     color: #FFFFFF;
-/*    border-color: #FFFFFF #DDDDDD #DDDDDD #FFFFFF;
-    border-style: solid;
-    border-width: 1px;*/
     font-weight: bold;
-/*    padding-bottom: 0.3em;
-    padding-top: 0.3em;*/
     text-align: center;
     width: 2.5em;
 }
 
+/* Footnotes */
 a.footnote { text-decoration: none;}
 p.footnote { color:grey; font-style: italic; }
 
-
+/* Information boxes */
 .infobox {
     background: none repeat scroll 0 0 #EEEEFF;
     border: thin solid #000099;
     padding: .75em 1.5em;
-    margin: -0.75em 0 .75;
-}
-
-
+    margin: -0.75em 0 .75;}
 @media screen and (min-width: 500px) {
     .infobox { margin: -0.75em 0 0.75em 1.25em; float:right; width:15em;}
 }
