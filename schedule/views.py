@@ -82,22 +82,17 @@ def track(request, slug):
 def session(request, pk):
     session = get_object_or_404(Session, pk=pk, time_slot__isnull=False)
 
+    # shortcut variable to this session begin and end times
+    begin = session.time_slot.begin
+    end = session.time_slot.end
     # Session starting up to 30 minutes after the end
     # of this one
-    timerange = (
-        session.time_slot.end,
-        session.time_slot.end + timedelta(minutes=30))
+    timerange = (end, end + timedelta(minutes=30))
     sessions_after = Session.objects.filter(
         time_slot__begin__range=timerange).order_by('time_slot__begin')
         
     # Concurrent sessions
-    begin_timerange = (
-        session.time_slot.begin,
-        session.time_slot.end - timedelta(minutes=5))
-    end_timerange = (
-        session.time_slot.begin + timedelta(minutes=5),
-        session.time_slot.end)
-    query = Q(time_slot__begin__range=begin_timerange) | Q(time_slot__end__range=end_timerange)
+    query = Q(time_slot__begin__lt = end) & Q(time_slot__end__gt = begin)
     concurrent_sessions = Session.objects.filter(query).exclude(pk=pk).order_by('time_slot__begin')
         
         
