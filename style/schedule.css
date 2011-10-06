@@ -216,3 +216,23 @@ dl.session_info dd {
     color: #00ff00;
     font-size: 1em;
 }
+
+/* ************************************************************************ */
+/*                          RELATED EVENTS LIST                             */
+/* ************************************************************************ */
+.related_events {}
+.related_events li {
+    display:block;
+    list-style-type:none;
+    margin:.75em;
+    border: thin gray solid;
+    padding: .75em;
+}
+.related_events li .name {
+    font-weight: bold;
+}
+.related_events li a {}
+.related_events li .info {
+    color:gray;
+    font-style: italic;
+}

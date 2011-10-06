@@ -71,5 +71,21 @@
 <ul class="sessions">
     <li class="session party">Social Event</li>
 </ul>
+
+<h3>Related events</h3>
+These events are arranged in co-operation with <a href="http://ffkp.se">FFKP</a> and FSCONS:
+
+<ul class="related_events">
+<li>
+  <span class="name">GothPyCon][</span><br/>
+  <a href="http://www.meetup.com/GothPy/events/32864862/" style="">http://www.meetup.com/GothPy/events/32864862/</a><br />
+    <span class="info">Saturday, October 29, 2011, 9:30 AM (Swedish)</span>
+  </a>
+</li>
+</ul>
+
+
 </div>
+
+
 {% endblock %}
