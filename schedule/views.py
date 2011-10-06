@@ -80,7 +80,8 @@ def track(request, slug):
     return HttpResponse(t.render(c))
 
 def session(request, pk):
-    session = get_object_or_404(Session, pk=pk)
+    session = get_object_or_404(Session, pk=pk, time_slot__isnull=False)
+
     # Session starting up to 30 minutes after the end
     # of this one
     timerange = (
@@ -88,7 +89,7 @@ def session(request, pk):
         session.time_slot.end + timedelta(minutes=30))
     sessions_after = Session.objects.filter(
         time_slot__begin__range=timerange).order_by('time_slot__begin')
-
+        
     # Concurrent sessions
     begin_timerange = (
         session.time_slot.begin,
@@ -98,8 +99,8 @@ def session(request, pk):
         session.time_slot.end)
     query = Q(time_slot__begin__range=begin_timerange) | Q(time_slot__end__range=end_timerange)
     concurrent_sessions = Session.objects.filter(query).exclude(pk=pk).order_by('time_slot__begin')
-
-
+        
+        
     # 3 next talks in the same room
     timerange = (
         session.time_slot.begin,
@@ -111,8 +112,8 @@ def session(request, pk):
         time_slot__begin__year=session.time_slot.begin.year,
         time_slot__begin__month=session.time_slot.begin.month,
         time_slot__begin__day=session.time_slot.begin.day
-    ).exclude(pk=pk).order_by('time_slot__begin')[:3]
-
+        ).exclude(pk=pk).order_by('time_slot__begin')[:3]
+    
     t = loader.get_template('schedule/session_detail.djhtml')
     c = RequestContext(request,{
             'session': session,
