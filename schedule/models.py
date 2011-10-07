@@ -78,6 +78,13 @@ SESSION_KIND_CHOICES = (
     ('O', 'Other'),
 )
 
+SESSION_KIND_CHOICES = (
+    ('T', 'Talk'),
+    ('W', 'Workshop'),
+    ('K', 'Keynote'),
+    ('O', 'Other'),
+)
+
 class Session(models.Model):
     title = models.CharField(max_length=200, unique = True)
     description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")

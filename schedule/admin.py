@@ -62,6 +62,7 @@ class SessionAdmin(admin.ModelAdmin):
     inlines = [
         PresenterInline,
     ]
+    list_display = ('title', 'time_slot', 'room')
 
     list_display = (unicode, presenter_list,
                     'time_slot', 'room')

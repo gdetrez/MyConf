@@ -122,3 +122,4 @@ INSTALLED_APPS = (
     'myconf.restaurants',
     'myconf.colors',
 )
+
