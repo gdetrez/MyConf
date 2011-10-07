@@ -1,0 +1,40 @@
+{% extends "base.djhtml" %}
+{% block head-title %}{{ session }}{% endblock %}
+
+{% block extra-headers %}
+<link rel="stylesheet"
+      href="{{ STATIC_URL }}schedule/style.css"
+      type="text/css"  media="screen">
+{{ form.media }}
+{% endblock %}
+
+
+{% block content %}
+<h2>Signup form</h2>
+<span class="subtitle">{{ session }}</span>
+
+<form action="" method="post">{% csrf_token %}
+
+{% for error in form.non_field_errors %}
+<p class="error">{{ error|escape }}</p>
+{% endfor %}
+
+{# Include the hidden fields #}
+{% for hidden in form.hidden_fields %}
+{{ hidden }}
+{% endfor %}
+{# Include the visible fields #}
+{% for field in form.visible_fields %}
+<div class="fieldWrapper{% if field.errors %} errors{% endif %}">
+  {{ field.label_tag }}
+  {{ field }}
+  {% for error in field.errors %}
+  <p class="error">{{ error|escape }}</p>
+  {% endfor %}
+  <div class="help">{{ field.help_text }}</div>
+</div>
+{% endfor %}
+<p class="submit"><input type="submit" value="Signup" /></p>
+
+</form>
+{% endblock %}

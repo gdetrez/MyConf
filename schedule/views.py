@@ -111,5 +111,6 @@ def session(request, pk):
             'sessions_after': sessions_after,
             'concurrent_sessions': concurrent_sessions,
             'next_sessions_in_room': next_sessions_in_room,
+            'signedup':request.GET.get('signedup',None) == 'ok'
             })
     return HttpResponse(t.render(c))

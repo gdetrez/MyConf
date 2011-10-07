@@ -37,8 +37,14 @@
 
 {% if session.kind == "W" %}
 <div class="registration">
-  <a href="{{ session.get_absolute_url }}register/">Register</a>
+
   <p>In order for us to be able to plan the workshop sessions and which rooms to put them in, the deadline for letting us know about your attendence of any of the workshops are October 28th.</p>
+
+  {% if signedup %}
+  <a class="done" href="{{ session.get_absolute_url }}signup/">Already signed-up</a>
+  {% else %}
+  <a href="{{ session.get_absolute_url }}signup/">Sign-up</a>
+{% endif %}
 </div>
 {% endif %}
 

@@ -1,0 +1,38 @@
+form {
+    max-width: 20em;
+}
+
+form p {
+    margin:0;;
+}
+
+input {
+    border: thin gray solid;
+    line-height: 1.25em;
+    padding: .625em;
+    width:20em;
+    box-shadow:inset 0 0 10px #ddd;
+}
+
+
+label {
+    display:block;
+    font-weight: bold;
+    text-shadow: 0px 1px 1px #ddd;
+
+}
+
+
+form .help {
+    color: grey;
+    font-style: italic;
+}
+form .fieldWrapper {
+    margin-bottom: 1.25em;
+}
+form div.errors input {
+    border-color: #dd0000;
+}
+form p.error {
+    color:#dd0000;
+}

@@ -121,5 +121,6 @@ INSTALLED_APPS = (
     'myconf.schedule',
     'myconf.restaurants',
     'myconf.colors',
+    'apps.signup',
 )
 

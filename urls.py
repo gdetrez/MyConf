@@ -16,6 +16,8 @@ urlpatterns = patterns('',
     # (r'^notifications/$', 'notifications.views.index'),
     (r'^schedule/$', 'myconf.schedule.views.schedule'),
     (r'^schedule/session/(?P<pk>\d+)/$', 'myconf.schedule.views.session'),
+    (r'^schedule/session/(?P<session_pk>\d+)/signup/$',
+     'myconf.apps.signup.views.signup'),
     (r'^schedule/track/(?P<slug>[\w\d-]+)/$', 'myconf.schedule.views.track'),
     
     (r'^restaurants/$', 'myconf.restaurants.views.list'),
