@@ -17,7 +17,7 @@
 <dl class="session_info">
   {% if session.time_slot %}
   <dt>Day</dt>
-  <dd>{{ session.time_slot.begin|date:"l" }}</dd>
+  <dd>{{ session.time_slot.begin|date:"l jS \o\f F, Y" }}</dd>
   <dt>Start</dt>
   <dd>{{ session.time_slot.begin|date:"H:i" }}</dd>
   <dt>End</dt>
