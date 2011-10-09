@@ -61,6 +61,8 @@ def schedule(request):
     for ts in ts:
         sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
+
+    tracks = Track.objects.all().order_by("name")
     t = loader.get_template('schedule/schedule.djhtml')
     c = RequestContext(request,{
         'friday_sessions': friday,
@@ -68,6 +70,7 @@ def schedule(request):
         'sat_pm': sat_pm,
         'sun_pm': sun_pm,
         'sun_am': sun_am,
+        'tracks': tracks,
     })
     return HttpResponse(t.render(c))
 
