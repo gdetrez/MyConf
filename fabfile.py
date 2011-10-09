@@ -8,4 +8,4 @@ def deploy():
     with cd(code_dir):
         run("git pull")
         run("python manage.py collectstatic --noinput")
-        sudo("touch ../wsgi/myconf.wsgi")
+        sudo("/etc/init.d/apache2 restart")
