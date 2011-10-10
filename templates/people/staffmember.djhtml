@@ -4,6 +4,9 @@
 
 {% block extra-headers %}
 <link rel="stylesheet"
+      href="{{ STATIC_URL }}schedule/style.css"
+      type="text/css"  media="screen">
+<link rel="stylesheet"
       href="{{ STATIC_URL }}people/style.css"
       type="text/css"  media="screen">
 {% endblock %}
@@ -49,5 +52,21 @@
     <dd class="location"><a href="{{ staff_member.microblog }}">{{ staff_member.microblog }}</a></dd>
     {% endif %}
   </dl>
+
+  {% if staff_member.talks %}
+    <div style="clear:both"></div>
+    <h3>My talks</h3>
+    <ul class="session_list">
+      {% for session in staff_member.talks.all %}
+        {% if session.time_slot %}
+          <li> 
+            <span class="time">{{ session.time_slot.begin|date:"D H:i" }} - {{ session.time_slot.end|date:"H:i" }}</span>
+            <a href="{{ session.get_absolute_url }}">{{ session }}</a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+
 </div>
 {% endblock %}
