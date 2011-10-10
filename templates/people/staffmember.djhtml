@@ -53,7 +53,7 @@
     {% endif %}
   </dl>
 
-  {% if staff_member.talks %}
+  {% if staff_member.talks.all %}
     <div style="clear:both"></div>
     <h3>My talks</h3>
     <ul class="session_list">
