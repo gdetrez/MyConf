@@ -38,7 +38,7 @@
 
 <h3>What's there ?</h3>
 <ul class="session_list">
-{% for session in track.sessions.all %}
+{% for session in sessions %}
 {% if session.time_slot %}
     <li>
       <span class="time">{{ session.time_slot.begin|date:"D H:i" }} - {{ session.time_slot.end|date:"H:i" }}</span>

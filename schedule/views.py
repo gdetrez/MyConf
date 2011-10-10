@@ -79,6 +79,7 @@ def track(request, slug):
     t = loader.get_template('schedule/track.djhtml')
     c = RequestContext(request,{
             'track': track,
+            'sessions': track.sessions.all().order_by("time_slot__begin"),
             })
     return HttpResponse(t.render(c))
 
