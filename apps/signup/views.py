@@ -25,10 +25,8 @@ class SignupForm(ModelForm):
 def signup(request, session_pk):
     session = get_object_or_404(Session, pk=session_pk)
     if request.method == 'POST': # If the form has been submitted...
-        print "Submitted"
         form = SignupForm(request.POST) # A form bound to the POST data
         if form.is_valid(): # All validation rules pass
-            print "valid!"
             form.save()
             return HttpResponseRedirect(session.get_absolute_url() + "?signedup=ok") # Redirect after POST
     else:
