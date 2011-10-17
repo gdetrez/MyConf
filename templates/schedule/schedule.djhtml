@@ -23,6 +23,13 @@
 {% endfor %}
 </p>
 
+{% if thursday_sessions %}
+<h3 class="day">Thursday (November 10th)</h3>
+{% for sessions in thursday_sessions %}
+  {% include "schedule/schedule_timeslot.djhtml" %}
+{% endfor %}
+{% endif %}
+
 <h3 class="day">Friday (November 11th)</h3>
 {% for sessions in friday_sessions %}
   {% include "schedule/schedule_timeslot.djhtml" %}
