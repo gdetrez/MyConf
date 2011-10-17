@@ -25,6 +25,10 @@ from myconf.schedule.models import *
 
 #@login_required(login_url='/admin/')
 def schedule(request):
+    thursday = []
+    for ts in TimeSlot.objects.filter(begin__day=10):
+        thursday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
+
     friday = []
     ts = TimeSlot.objects.filter(begin__range=(
             datetime(2011, 11, 11, 9, 00),
@@ -92,6 +96,7 @@ def schedule(request):
     tracks = Track.objects.all().order_by("name")
     t = loader.get_template('schedule/schedule.djhtml')
     c = RequestContext(request,{
+        'thursday_sessions': thursday,
         'friday_sessions': friday,
         'friday_social': friday_social,
         'sat_am': sat_am,
