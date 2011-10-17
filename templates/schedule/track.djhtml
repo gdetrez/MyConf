@@ -20,7 +20,7 @@
 {% if track.speakers %}
 <h3>Who's there ?</h3>
 <ul class="people listview">
-  {% for person in track.speakers %}
+  {% for person in track.speakers.distinct %}
   <li class="person"><a href="{{ person.get_absolute_url }}">
     {% if person.photo %}
     <img src="{{ person.photo.url }}" />
