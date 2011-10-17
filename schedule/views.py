@@ -26,8 +26,20 @@ from myconf.schedule.models import *
 #@login_required(login_url='/admin/')
 def schedule(request):
     friday = []
-    for ts in TimeSlot.objects.filter(begin__day=11):
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011, 11, 11, 9, 00),
+            datetime(2011, 11, 11, 19, 00)
+            ))
+    for ts in ts:
         friday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
+
+    friday_social = []
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011, 11, 11, 19, 00),
+            datetime(2011, 11, 11, 21, 00)
+            ))
+    for ts in ts:
+        friday_social.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     sat_am = []
     ts = TimeSlot.objects.filter(begin__range=(
@@ -45,6 +57,14 @@ def schedule(request):
     for ts in ts:
         sat_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
+    sat_social = []
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011,11,12,19,00),
+            datetime(2011,11,13,01,00)
+            ))
+    for ts in ts:
+        sat_social.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
+
     sun_am = []
     ts = TimeSlot.objects.filter(begin__range=(
             datetime(2011,11,13, 9,15),
@@ -61,15 +81,25 @@ def schedule(request):
     for ts in ts:
         sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
+    sun_social = []
+    ts = TimeSlot.objects.filter(begin__range=(
+            datetime(2011,11,13,19,00),
+            datetime(2011,11,14,01,00)
+            ))
+    for ts in ts:
+        sat_social.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
 
     tracks = Track.objects.all().order_by("name")
     t = loader.get_template('schedule/schedule.djhtml')
     c = RequestContext(request,{
         'friday_sessions': friday,
+        'friday_social': friday_social,
         'sat_am': sat_am,
         'sat_pm': sat_pm,
+        'sat_social': sat_social,
         'sun_pm': sun_pm,
         'sun_am': sun_am,
+        'sun_social': sun_social,
         'tracks': tracks,
     })
     return HttpResponse(t.render(c))
