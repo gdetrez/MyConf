@@ -5,7 +5,11 @@
 <h2>Welcome to My Conf</h2>
 <span class="subtitle">FSCONS' community application</span>
 
-<p class="warning">Work in progress</p>
+<p>Welcome to FSCONS!</p>
+<p>We're the largest gathering for free culture, free software and a free society in the Nordic countries. The conference is organised by the <a href="http://ffkp.se/">Society for Free Culture and Software</a> in Göteborg, Sweden.</p>
+<p>
+ <strong>The conference takes place the 11-13th of November 2011!</strong>
+</p>
 
 <ul id="main-navigation" class="listview">
   <li><a href="/schedule/" id="index_schedule">Schedule</a>
