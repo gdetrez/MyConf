@@ -29,6 +29,12 @@ h4.time {
     margin: 2.5em 0 1.25em 0;    
 }
 
+h4.social-event {
+    margin: 0 0 0 0.50em !important;
+    padding: 0 0 0 0.6em !important;
+    font-size: 1.5em !important;
+}
+
 ul.sessions {
     margin: 0;
     padding:0;
@@ -45,6 +51,7 @@ ul.sessions li {
     font-variant: small-caps;
     color: #555;
     text-align:center;
+    border-bottom: 2px solid #999;
 }
 
 /* Special typography for TBA */
