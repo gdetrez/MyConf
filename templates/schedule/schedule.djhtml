@@ -25,7 +25,7 @@
 
 <h3 class="day">Friday (November 11th)</h3>
 <div class="warning">
-<p class="warning">Note: the workshops on Friday take place in a different location. <a href="http://fscons.org/venue#Friday">More informations</a>.</p>
+<p class="warning">Note: the workshops on Friday take place in a different location. <a href="http://fscons.org/venue#Friday">More informations about Friday's location</a>.</p>
 {% for sessions in friday_sessions %}
   {% include "schedule/schedule_timeslot.djhtml" %}
 {% empty %}
