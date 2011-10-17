@@ -18,10 +18,10 @@ from myconf.schedule.models import *
 from django.contrib import admin
 from myconf.people.models import Person
 
-# class TimeSlotAdmin(admin.ModelAdmin):
-#     list_display = ('day', 'begin_time', 'end_time', 'duration')
+class TimeSlotAdmin(admin.ModelAdmin):
+    list_display = ('day', 'begin_time', 'end_time', 'duration')
 
-# admin.site.register(TimeSlot, TimeSlotAdmin)
+admin.site.register(TimeSlot, TimeSlotAdmin)
 admin.site.register(Room)
 
 def session_count(track):
