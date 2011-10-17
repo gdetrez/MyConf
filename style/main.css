@@ -38,33 +38,33 @@
  * Header
  * Style and layout
  */
-header {
+.header {
     color: #f5f5f5;
     background: #1a1a1a url("./line.png") repeat-x top left;
     margin: 0;
     padding:1em 0;}
     /* clearing after the header */
-    header:after {
+    .header:after {
 	clear:both; content: "."; height:0; visibility:hidden; display:block;}
 
-header h1 {
+.header h1 {
     margin:0;
     padding:0;
     display:inline;
     font-size: 2em;    /* 32px */
     line-height:1.25em /* 40px */}
-    header h1 a {
+    .header h1 a {
 	color: #f5f5f5;
 	text-decoration: none;}
 
 /* Logo */
-header img {
+.header img {
     height: 40px;
     vertical-align: top;
 }
 
 /** header navigation */
-header navigation {
+.header .navigation {
     display: block;
     margin:0 auto;
     list-style-type:none;
@@ -75,11 +75,11 @@ header navigation {
  * For screen bigger than 500px we can push it in the right top corner.
  */
 @media screen and (min-width: 500px) {
-    header navigation { float:right; }
+    .header .navigation { float:right; }
 }
 
 
-header navigation a {
+.header .navigation a {
     display:block;
     float:left;
     margin:0 10px;
@@ -88,7 +88,7 @@ header navigation a {
     background-repeat:no-repeat;}
 
 /* We replace the menu texts by icons.*/
-header navigation a span { display:none; }
+.header .navigation a span { display:none; }
 #nav_schedule {
     background-image: url("./ic_schedule_24.png");
     width: 24px;}
