@@ -113,6 +113,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     # Add markup
     'django.contrib.markup',
+
+    # Add tagging
+    'taggit',
     
     # MyConf apps
     'myconf.people',

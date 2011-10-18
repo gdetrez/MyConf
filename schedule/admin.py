@@ -52,7 +52,7 @@ class SessionAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
                 'fields': ('title', 'kind',
-                           'description', 'intended_audience', )
+                           'description', 'intended_audience', 'tags')
         }),
         ('Scheduling', {
                 'classes':('collapse',),

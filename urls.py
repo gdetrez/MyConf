@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     (r'^schedule/session/(?P<session_pk>\d+)/signup/$',
      'myconf.apps.signup.views.signup'),
     (r'^schedule/track/(?P<slug>[\w\d-]+)/$', 'myconf.schedule.views.track'),
+    (r'^schedule/tag/(?P<slug>[\w\d-]+)/$', 'myconf.schedule.views.tag'),
     
     (r'^restaurants/$', 'myconf.restaurants.views.list'),
 
