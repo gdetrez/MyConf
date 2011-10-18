@@ -23,109 +23,50 @@
 {% endfor %}
 </p>
 
-{% if thursday_sessions %}
-<h3 class="day">Thursday (November 10th)</h3>
-{% for sessions in thursday_sessions %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
-{% endfor %}
-{% endif %}
-
-<h3 class="day">Friday (November 11th)</h3>
-<div class="warning">
-<p class="warning">Note: the workshops on Friday take place in a different location. <a href="/information/venue#workshops">More informations about Friday's location</a>.</p>
-{% for sessions in friday_sessions %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
-{% empty %}
-  <p class="empty">Nothing yet, stay tuned !</p>
-{% endfor %}
-</div>
-
-<h4 class="time">19:00</h4>
-<ul class="sessions">
-    <li class="session party">Social Event</li>
-    <p>
-      The Friday social event is a get-together for everyone attending FSCONS.
-      Following from the workshops during the day, we'll meet at the main
-      FSCONS venue for drinks and pre-conference activities.
-    </p>
-</ul>
-
-<!-- friday_social -->
-{% for sessions in friday_social %}
-  {% include "schedule/schedule_timeslot.djhtml" with timeclass="social-event" %}
-{% endfor %}
-
-<h3 class="day">Saturday (November 12th)</h3>
-
-<h4 class="time">09:15</h4>
-<ul class="sessions">
-    <li class="session breakfast">Breakfast</li>
-    <p>
-      Breakfast is served in the café area of the conference venue. We'll
-      offer sandwiches, juice, coffee and tea to those who arrive early.
-    </p>
-</ul>
-
-<!-- sat_am -->
-{% for sessions in sat_am %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
+{% regroup sessions by time_slot.begin as timess %}
+{% for time in timess %}
+    {% ifchanged %}
+        <h3 class="day">{{ time.grouper|date:"l (F jS)" }}</h3>
+        {% if time.grouper|date:"Y-m-d" = "2011-11-11" %}
+        <p class="warning">Note: the workshops on Friday take place in a different location. <a href="/information/venue#workshops">More informations about Friday's location</a>.</p>
+        {% endif %}
+    {% endifchanged %}
+    <section{% if sessions.2 %} class="done"{% endif %}>
+      <h4 class="time{% if timeclass %} {{timeclass}}{% endif %}">
+        {{ time.grouper|date:"G:i" }}
+      </h4>
+      <ul class="sessions">
+        {% for session in time.list %}
+        {% if session.kind = 'O'%}
+        <li class="session breakfast other">
+          <span class="title">{{ session.title }}</span>
+          <p>{{ session.description }}</p>
+        </li>
+        {% else %}
+        <li class="session">
+          <a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters_html %}, by {{ session.presenters_html|safe }}{% endif %}
+        <dl class="session_info_inline">
+          {% if session.track %}
+          <dt>Track</dt>
+          <dd>
+            <a href="{{ session.track.get_absolute_url }}" class="track"
+               style="background:#{{ session.track.color|saturation:20|lightness:100 }}">
+              {{ session.track }}
+            </a>
+          </dd>
+          {% endif %}
+          {% if session.room %}
+          <dt>Room</dt>
+          <dd>{{ session.room }}</dd>
+          {% endif %}
+        </dl>
+      </li>
+      {% endif %}
+      {% endfor %}
+      </ul>
+    </section>
 {% endfor %}
 
-<h4 class="time">12:45</h4>
-<ul class="sessions">
-    <li class="session lunch">Lunch</li>
-</ul>
-
-<!-- sat_pm -->
-{% for sessions in sat_pm %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
-{% endfor %}
-
-<h4 class="time">19:00</h4>
-<ul class="sessions">
-    <li class="session party">Social Event</li>
-</ul>
-
-<!-- sat_social -->
-{% for sessions in sat_social %}
-  {% include "schedule/schedule_timeslot.djhtml" with timeclass="social-event" %}
-{% endfor %}
-
-<h3 class="day">Sunday (November 13th)</h3>
-
-<h4 class="time">09:15</h4>
-<ul class="sessions">
-    <li class="session breakfast">Breakfast</li>
-    <p>
-      Breakfast is served in the café area of the conference venue. We'll
-      offer sandwiches, juice, coffee and tea to those who arrive early.
-    </p>
-</ul>
-
-<!-- sun_am -->
-{% for sessions in sun_am %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
-{% endfor %}
-
-<h4 class="time">12:45</h4>
-<ul class="sessions">
-    <li class="session lunch">Lunch</li>
-</ul>
-
-<!-- sun_pm -->
-{% for sessions in sun_pm %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
-{% endfor %}
-
-<h4 class="time">19:00</h4>
-<ul class="sessions">
-    <li class="session party">Social Event</li>
-</ul>
-
-<!-- sun_social -->
-{% for sessions in sun_social %}
-  {% include "schedule/schedule_timeslot.djhtml" %}
-{% endfor %}
 
 <h3>Related events</h3>
 These events are arranged in co-operation with <a href="http://ffkp.se">FFKP</a> and FSCONS:
