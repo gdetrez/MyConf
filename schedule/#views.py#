@@ -56,7 +56,7 @@ def tag(request, slug):
     c = RequestContext(request,{
             'tag': tag,
             'sessions': sessions,
-            'speakers': speakers,
+            'speakers': speakersgit ,
             })
     return HttpResponse(t.render(c))
 

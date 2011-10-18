@@ -21,6 +21,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from myconf.people.models import Person
 from myconf.colors.fields import ColorField 
+from taggit.managers import TaggableManager
 
 now = datetime.now
 
@@ -91,6 +92,8 @@ class Session(models.Model):
 
     presenters = models.ManyToManyField(Person, related_name='talks')
     
+    tags = TaggableManager()
+
     class Meta:
         unique_together = (("time_slot", "room"),)
 
