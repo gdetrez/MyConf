@@ -75,13 +75,7 @@ SESSION_KIND_CHOICES = (
     ('T', 'Talk'),
     ('W', 'Workshop'),
     ('K', 'Keynote'),
-    ('O', 'Other'),
-)
-
-SESSION_KIND_CHOICES = (
-    ('T', 'Talk'),
-    ('W', 'Workshop'),
-    ('K', 'Keynote'),
+    ('L', 'Lightning talkssc'),
     ('O', 'Other'),
 )
 
