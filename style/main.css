@@ -44,7 +44,7 @@
 
 
 article, aside, canvas, details,
-figcaption, figure, footer, header,
+figure, footer, header,
 hgroup, nav, section, summary, video {
     display: block;
 }
@@ -270,8 +270,9 @@ figure {
 figure img { display: block; margin: 0 auto 1.25em;}
 
 figcaption {
-    display:block;
-    margin:0;
+    margin:0 auto;
+    width:20em;
+    
 }
 
 /* By default, the navigation is centered under the title.
@@ -281,3 +282,4 @@ figcaption {
     figure { float:right;}
 }
 
+h3 { clear: both;}
