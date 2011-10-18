@@ -47,11 +47,20 @@ ul.sessions li {
 }
 
 /* Special typography for food/social events */
-.session.breakfast, .session.lunch, .session.party {
+.session.other .title {
+    display:block;
     font-variant: small-caps;
     color: #555;
     text-align:center;
-    border-bottom: 2px solid #999;
+/*    border-bottom: 2px solid #999;*/
+}
+
+/* Special typography for food/social events */
+.session.other p {
+    color: #555;
+    text-align:center;
+    font-style: italic;
+/*    border-bottom: 2px solid #999;*/
 }
 
 /* Special typography for TBA */
