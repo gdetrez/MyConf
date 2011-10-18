@@ -25,86 +25,12 @@ from myconf.schedule.models import *
 
 #@login_required(login_url='/admin/')
 def schedule(request):
-    thursday = []
-    for ts in TimeSlot.objects.filter(begin__day=10):
-        thursday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    friday = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011, 11, 11, 9, 00),
-            datetime(2011, 11, 11, 19, 00)
-            ))
-    for ts in ts:
-        friday.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    friday_social = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011, 11, 11, 19, 00),
-            datetime(2011, 11, 11, 21, 00)
-            ))
-    for ts in ts:
-        friday_social.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    sat_am = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011, 11, 12, 9, 15),
-            datetime(2011, 11, 12, 12, 00)
-            ))
-    for ts in ts:
-        sat_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    sat_pm = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,12,14,15),
-            datetime(2011,11,12,18,15)
-            ))
-    for ts in ts:
-        sat_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    sat_social = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,12,19,00),
-            datetime(2011,11,13,01,00)
-            ))
-    for ts in ts:
-        sat_social.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    sun_am = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,13, 9,15),
-            datetime(2011,11,13,12,00)
-            ))
-    for ts in ts:
-        sun_am.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    sun_pm = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,13,14,15),
-            datetime(2011,11,13,18,15)
-            ))
-    for ts in ts:
-        sun_pm.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
-    sun_social = []
-    ts = TimeSlot.objects.filter(begin__range=(
-            datetime(2011,11,13,19,00),
-            datetime(2011,11,14,01,00)
-            ))
-    for ts in ts:
-        sat_social.append(("%s" % (str(ts.begin.time())[0:5]), Session.objects.filter(time_slot__id = ts.id), ts.passed()))
-
     tracks = Track.objects.all().order_by("name")
+    sessions = Session.objects.filter(time_slot__isnull = False).order_by("time_slot__begin", "title")
+
     t = loader.get_template('schedule/schedule.djhtml')
     c = RequestContext(request,{
-        'thursday_sessions': thursday,
-        'friday_sessions': friday,
-        'friday_social': friday_social,
-        'sat_am': sat_am,
-        'sat_pm': sat_pm,
-        'sat_social': sat_social,
-        'sun_pm': sun_pm,
-        'sun_am': sun_am,
-        'sun_social': sun_social,
+        'sessions': sessions,
         'tracks': tracks,
     })
     return HttpResponse(t.render(c))
