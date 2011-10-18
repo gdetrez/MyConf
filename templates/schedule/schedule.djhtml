@@ -40,7 +40,8 @@
         {% if session.kind = 'O'%}
         <li class="session breakfast other">
           <span class="title">{{ session.title }}</span>
-          <p>{{ session.description }}</p>
+          <div class="description markdown">
+          {{ session.description|markdown }}</div>
         </li>
         {% else %}
         <li class="session">
