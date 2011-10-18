@@ -9,8 +9,14 @@
 
 <h3>Main venue</h3>
 
-<p>The main venue for the conference is the IT University:
-<address>Forskningsgången 6, Gothenburg, Sweden</address>
+<p>The main venue for the conference is the IT University: Forskningsgången 6, Gothenburg, Sweden.
+
+<figure>
+<img src="{{ STATIC_URL}}style/photos/lindholmenHlpl600.png" 
+     alt="Photo of Workshop venue entrance"
+     title="Workshop venue entrance" height="280"/>
+<figcaption>Here's a view of the IT university venue building from the bus stop Lindholmen. <span class="copyright">(The photo is licensed under <a href="http://www.flickr.com/photos/43304196@N06/4055451049/">CC-BY-NC</a>)</figcaption>
+</figure> 
 
 <h3><a name="workshops">Workshops venue</a></h3>
 
