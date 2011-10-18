@@ -1,0 +1,38 @@
+{% extends "base.djhtml" %}
+{% block head-title %}Getting there{% endblock %}
+
+{% block content %}
+<h2>Venue(s)</h2>
+<span class="subtitle">Here we are</span>
+
+<div class="content">
+
+<h3>Main venue</h3>
+
+<p>The main venue for the conference is the IT University:
+<address>Forskningsgången 6, Gothenburg, Sweden</address>
+
+<h3><a name="workshops">Workshops venue</a></h3>
+
+<p>Note that Friday's worshops will take place at a different location:
+<address>Lennart Torstenssonsgatan 8, Gothenburg, Sweden</address>
+
+<p>Workshops are all on Friday November 11th. They are on the premises of <a href="http://www.svenska.gu.se/forskning/sprakbanken/?showMap=true&amp;mapAlias=svenskaspraket&amp;keepArticle=true&amp;mapTitle=Spr%E5kbanken" title="Map and information">Språkbanken, Lennart Torstenssonsgatan 6-8</a>.</p>
+
+ 
+
+
+<figure> 
+<img src="{{ STATIC_URL}}style/photos/sprakdata_entrance.png" 
+     alt="Photo of Workshop venue entrance"
+     title="Workshop venue entrance" height="280"/>
+<figcaption>Photo of Workshop venue entrance.</figcaption>
+</figure> 
+
+<p>sdfs</p>
+
+</div>
+
+
+</div>
+{% endblock %}

@@ -48,7 +48,7 @@ ul.sessions li {
 }
 
 /* Special typography for TBA */
-.session.tba {
+.session.tba, .empty {
     font-style:italic;
     color: #555;
 #    text-align:center;
@@ -173,11 +173,21 @@ dl.session_info_inline dd {
     font-weight: bold;
 }
 
+/** Friday note */
+div.warning {
+}
+
+p.warning {
+    background: #ffeeaa url("note-50.png") 5px center no-repeat;
+    padding: 1.25em 10px 1.25em 60px;
+}
+
 /* ************************************************************************ */
 /*                           SESSION DETAILS                                */
 /* ************************************************************************ */
 dl.session_info {
-    background: none repeat scroll 0 0 #FFFFAA;
+    /* old bg: #FFFFAA */
+    background: none repeat scroll 0 0 #FFeeAA;
     border: thin solid #999900;
     padding: 1.25em 1.5em;
     margin: 1.25em 0;
