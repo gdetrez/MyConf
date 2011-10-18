@@ -25,7 +25,15 @@
  * Main Layout
  * This defines the main structure of the layout, applied to every pages.
  */
-#main { margin-top: 2.5em; /* 2 lines of space before the content */ }
+
+/* By default, we put one blank between the header and the content.
+ * But for bigger screen, it is safer to have more.
+ */
+#main { margin-top: 1.25em; /* 1 line1 of space before the content */ }
+
+@media screen and (min-width: 500px) {
+    #main { margin-top: 2.5em; /* 2 lines of space before the content */ }
+}
 
 .wrapper {
     /* Limiting width helps avoids too long lines on big screens */
@@ -248,5 +256,28 @@ p.footnote { color:grey; font-style: italic; }
     margin: -0.75em 0 .75;}
 @media screen and (min-width: 500px) {
     .infobox { margin: -0.75em 0 0.75em 1.25em; float:right; width:15em;}
+}
+
+/* Figures */
+figure {
+    display:block;
+    margin: auto;
+    border: thin black solid;
+    padding: 1.25em;
+    text-align: center;
+    margin: -1px 0;
+}
+figure img { display: block; margin: 0 auto 1.25em;}
+
+figcaption {
+    display:block;
+    margin:0;
+}
+
+/* By default, the navigation is centered under the title.
+ * For screen bigger than 500px we can push it in the right top corner.
+ */
+@media screen and (min-width: 500px) {
+    figure { float:right;}
 }
 

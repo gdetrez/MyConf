@@ -6,6 +6,7 @@
 <span class="subtitle">Managing life during the conference</span>
 
 <ul class="listview menu">
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_venue_32.png');" href="venue/">Venue</a>
   <li><a style="background-image:url('{{ STATIC_URL }}style/ic_gettingthere_32.png');" href="getting-there/">Getting there</a>
   <li><a style="background-image:url('{{ STATIC_URL }}style/ic_sleeping_32.png');" href="sleeping/">Sleeping</a>
   <li><a style="background-image:url('{{ STATIC_URL }}style/ic_eating_32.png');" href="/restaurants/">Eating</a>
