@@ -23,6 +23,13 @@
 {% endfor %}
 </p>
 
+{% if thursday_sessions %}
+<h3 class="day">Thursday (November 10th)</h3>
+{% for sessions in thursday_sessions %}
+  {% include "schedule/schedule_timeslot.djhtml" %}
+{% endfor %}
+{% endif %}
+
 <h3 class="day">Friday (November 11th)</h3>
 <div class="warning">
 <p class="warning">Note: the workshops on Friday take place in a different location. <a href="/information/venue#workshops">More informations about Friday's location</a>.</p>
@@ -33,11 +40,30 @@
 {% endfor %}
 </div>
 
+<h4 class="time">19:00</h4>
+<ul class="sessions">
+    <li class="session party">Social Event</li>
+    <p>
+      The Friday social event is a get-together for everyone attending FSCONS.
+      Following from the workshops during the day, we'll meet at the main
+      FSCONS venue for drinks and pre-conference activities.
+    </p>
+</ul>
+
+<!-- friday_social -->
+{% for sessions in friday_social %}
+  {% include "schedule/schedule_timeslot.djhtml" with timeclass="social-event" %}
+{% endfor %}
+
 <h3 class="day">Saturday (November 12th)</h3>
 
 <h4 class="time">09:15</h4>
 <ul class="sessions">
     <li class="session breakfast">Breakfast</li>
+    <p>
+      Breakfast is served in the café area of the conference venue. We'll
+      offer sandwiches, juice, coffee and tea to those who arrive early.
+    </p>
 </ul>
 
 <!-- sat_am -->
@@ -60,11 +86,20 @@
     <li class="session party">Social Event</li>
 </ul>
 
+<!-- sat_social -->
+{% for sessions in sat_social %}
+  {% include "schedule/schedule_timeslot.djhtml" with timeclass="social-event" %}
+{% endfor %}
+
 <h3 class="day">Sunday (November 13th)</h3>
 
 <h4 class="time">09:15</h4>
 <ul class="sessions">
     <li class="session breakfast">Breakfast</li>
+    <p>
+      Breakfast is served in the café area of the conference venue. We'll
+      offer sandwiches, juice, coffee and tea to those who arrive early.
+    </p>
 </ul>
 
 <!-- sun_am -->
@@ -86,6 +121,11 @@
 <ul class="sessions">
     <li class="session party">Social Event</li>
 </ul>
+
+<!-- sun_social -->
+{% for sessions in sun_social %}
+  {% include "schedule/schedule_timeslot.djhtml" %}
+{% endfor %}
 
 <h3>Related events</h3>
 These events are arranged in co-operation with <a href="http://ffkp.se">FFKP</a> and FSCONS:

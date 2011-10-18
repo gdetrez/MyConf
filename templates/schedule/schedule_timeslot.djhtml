@@ -1,9 +1,9 @@
 {% load colors %}
 <section{% if sessions.2 %} class="done"{% endif %}>
-  <h4 class="time">{{ sessions.0 }}</h4>
+  <h4 class="time{% if timeclass %} {{timeclass}}{% endif %}">{{ sessions.0 }}</h4>
   <ul class="sessions">
     {% for session in sessions.1 %}
-      <li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>, by {{ session.presenters_html|safe }}
+      <li class="session"><a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters_html %}, by {{ session.presenters_html|safe }}{% endif %}
         <dl class="session_info_inline">
           {% if session.track %}
           <dt>Track</dt>
