@@ -1,5 +1,6 @@
 {% extends "base.djhtml" %}
 {% load colors %}
+{% load markup %}
 {% block head-title %}Schedule{% endblock %}
 
 {% block extra-headers %}
