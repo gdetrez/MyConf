@@ -33,6 +33,8 @@ urlpatterns = patterns('',
      direct_to_template, {'template': 'information/sleeping.djhtml'}),
     (r'^information/going-out/$',
      direct_to_template, {'template': 'information/goingout.djhtml'}),
+    (r'^information/venue/$',
+     direct_to_template, {'template': 'information/venue.djhtml'}),
     (r'^information/currency/$',
      direct_to_template, {'template': 'soon.djhtml'}),
 
