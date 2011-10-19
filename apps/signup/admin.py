@@ -17,4 +17,9 @@
 from django.contrib import admin
 from myconf.apps.signup.models import *
 
-admin.site.register(SessionSignup)
+class SessionSignupAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'session',)
+    list_filter = ('session',)
+    search_fields = ('full_name', 'email', 'session__title',)
+
+admin.site.register(SessionSignup, SessionSignupAdmin)
