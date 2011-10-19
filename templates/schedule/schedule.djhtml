@@ -46,7 +46,7 @@
         </li>
         {% else %}
         <li class="session">
-          <a href="{{ session.get_absolute_url }}">{{ session }}</a>{% if session.presenters_html %}, by {{ session.presenters_html|safe }}{% endif %}
+          <a href="{{ session.get_absolute_url }}">{{ session.display_title }}</a>{% if session.presenters_html %}, by {{ session.presenters_html|safe }}{% endif %}
         <dl class="session_info_inline">
           {% if session.track %}
           <dt>Track</dt>
