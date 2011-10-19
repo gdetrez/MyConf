@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
 # Django settings for myconf project.
 
+import sys, os
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
+
+
 # import local settings (non commited to git)
 from localsettings import *
 
@@ -118,12 +124,12 @@ INSTALLED_APPS = (
     'taggit',
     
     # MyConf apps
-    'myconf.people',
+    'apps.people',
     #'notifications',
     #'simulator',
-    'myconf.schedule',
-    'myconf.restaurants',
-    'myconf.colors',
+    'apps.schedule',
+    'apps.restaurants',
+    'apps.colors',
     'apps.signup',
 )
 

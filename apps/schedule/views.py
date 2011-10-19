@@ -21,7 +21,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import loader, RequestContext
-from myconf.schedule.models import *
+from myconf.apps.schedule.models import *
 from taggit.models import Tag
 
 #@login_required(login_url='/admin/')
