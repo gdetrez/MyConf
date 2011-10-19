@@ -112,6 +112,14 @@ class Session(models.Model):
         return html
     presenters_html.allow_tags=True
 
+    def display_title(self):
+        """ This is almost the same than the __unicode__ function
+        but it only prepend the kind for keynotes and workshops. """
+        if self.kind in ['K', 'W']:
+            return u"%s: %s" % (self.get_kind_display(), self.title)
+        else:
+            return self.title
+
     def __unicode__(self):
         return u"%s: %s" % (self.get_kind_display(), self.title)
 
