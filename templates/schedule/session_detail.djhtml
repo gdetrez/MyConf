@@ -35,7 +35,7 @@
 
 <div class="description markdown">{{ session.description|markdown }}</div>
 
-{% if session.kind == "W" %}
+{% if session.kind == "W" or session.pk == 66 %}
 <div class="registration">
 
   <p>In order for us to be able to plan the workshop sessions and which rooms to put them in, the deadline for letting us know about your attendence of any of the workshops are October 28th.</p>
