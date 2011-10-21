@@ -92,7 +92,7 @@ class Session(models.Model):
 
     presenters = models.ManyToManyField(Person, related_name='talks')
     
-    tags = TaggableManager()
+    tags = TaggableManager(blank=True)
 
     class Meta:
         unique_together = (("time_slot", "room"),)
