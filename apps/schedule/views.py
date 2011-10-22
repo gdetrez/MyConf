@@ -27,7 +27,7 @@ from taggit.models import Tag
 #@login_required(login_url='/admin/')
 def schedule(request):
     tracks = Track.objects.all().order_by("name")
-    sessions = Session.objects.filter(time_slot__isnull = False).order_by("time_slot__begin", "title")
+    sessions = Session.objects.filter(time_slot__isnull = False).order_by("time_slot__begin", "room")
 
     t = loader.get_template('schedule/schedule.djhtml')
     c = RequestContext(request,{
