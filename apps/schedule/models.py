@@ -52,6 +52,10 @@ class TimeSlot(models.Model):
         return u"%s – %s" % (self.begin.strftime('%A %d, %H.%M'),
                              self.end.strftime('%H.%M'))
 
+    class Meta:
+        ordering = ('begin', )
+
+
 class Room(models.Model):
     name = models.CharField(max_length=200, unique = True)
     def __unicode__(self):
@@ -100,9 +104,6 @@ class Session(models.Model):
 
     class Meta:
         unique_together = (("time_slot", "room"),)
-
-    unique_together = (("time_slot", "room"),)
-
 
     def presenters_html(self):
         html = ""
