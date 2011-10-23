@@ -71,6 +71,7 @@ STATIC_ROOT = ROOTDIR + "_static/"
 # Extra directories where static files needs to be harvested
 STATICFILES_DIRS = (
     ("style", ROOTDIR + "style/"),
+    ("", ROOTDIR + "static/"),
 )
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
@@ -131,5 +132,6 @@ INSTALLED_APPS = (
     'apps.restaurants',
     'apps.colors',
     'apps.signup',
+    'apps.map',
 )
 

@@ -35,6 +35,10 @@
     #main { margin-top: 2.5em; /* 2 lines of space before the content */ }
 }
 
+/* and no margin for full screen #main */
+#main.fullscreen {
+    margin-top: 0;
+}
 .wrapper {
     /* Limiting width helps avoids too long lines on big screens */
     max-width:50em;
@@ -42,6 +46,13 @@
     padding: 0 1em;
 }
 
+.fullscreen {
+    /* Limiting width helps avoids too long lines on big screens */
+    max-width: none;
+    width:100%;
+    margin:0;
+    padding:0;
+}
 
 article, aside, canvas, details,
 figure, footer, header,
