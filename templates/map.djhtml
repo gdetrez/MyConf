@@ -56,7 +56,7 @@
   );
 
   map.addLayer(new L.Marker(
-    new L.LatLng(57.708088,11.93809), 
+    new L.LatLng(57.708246,11.938173), 
     {icon: new BusIcon()})
   );
 
