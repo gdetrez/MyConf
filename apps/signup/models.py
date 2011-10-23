@@ -8,7 +8,7 @@ class SessionSignup(models.Model):
     email = models.EmailField( help_text = "Note that it should be the same email address you used when you registered for the conference." )
     date = models.DateTimeField(auto_now=True)
  
-    session = models.ForeignKey(Session)
+    session = models.ForeignKey(Session, related_name='signups')
     
     class Meta:
         unique_together = (("email", "session"),)
