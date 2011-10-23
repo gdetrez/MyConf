@@ -1,0 +1,9 @@
+# Create your views here.
+
+def map(request):
+    rests = Restaurant.objects.all().order_by("distance")
+    t = loader.get_template('restaurants/list.djhtml')
+    c = RequestContext(request, {
+        'restaurant_list': rests,
+    })
+    return HttpResponse(t.render(c))

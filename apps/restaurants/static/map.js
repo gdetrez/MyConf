@@ -30,13 +30,8 @@ function initmap() {
     var osmAttrib='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
     var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 18, attribution: osmAttrib});
     
-    map.setView(hull,14);
+    map.setView(hull,16);
     map.addLayer(osm);
     //map.on('moveend', onMapMove);
 
-    var marker = new L.Marker(new L.LatLng(57.70673, 11.93686));
-    map.addLayer(marker);
-
-    // attach a given HTML content to the marker and immediately open it
-    marker.bindPopup("FSCONS venue<br />Here we are...").openPopup();
 }

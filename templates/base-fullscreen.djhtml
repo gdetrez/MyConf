@@ -1,0 +1,16 @@
+{% extends "base.djhtml" %}
+
+{% block wrapper %}
+<script>
+  function set_main_height() {
+    var h = $(window).height() - $("#header").outerHeight();
+    $(".fullscreen").height(h);
+  }
+  $(set_main_height);  
+  $(window).resize(set_main_height);
+</script>
+<div class="wrapper fullscreen" id="main">
+  {% block content %}
+  {% endblock %}
+</div>
+{% endblock %}

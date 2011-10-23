@@ -1,10 +1,72 @@
-{% extends "base.djhtml" %}
-{% block head-title %}Welcome to My Conf{% endblock %}
+{% extends "base-fullscreen.djhtml" %}
+{% block head-title %}Map{% endblock %}
+{% block extra-headers %}
+<!-- Leaflet CSS --> 
+<link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.css" />
+<!--[if lte IE 8]><link rel="stylesheet" href="/static/leaflet/leaflet.ie.css" /><![endif]-->
+<!-- Leaflet JavaScript -->
+<script src="{{ STATIC_URL }}jquery-1.6.4.min.js"></script>
+<script src="{{ STATIC_URL }}leaflet/leaflet.js"></script>
+<script src="{{ STATIC_URL }}map.js"></script>
+{% endblock %}
+
 
 {% block content %}
-<h2>Map</h2>
-<span class="subtitle">Preliminary area map</span>
+<div id="map" class="fullscreen" style="width:100%;height:500px;"></div>
+<script>
+  $(function() {
+  initmap();
 
-<img src="https://fscons.org/sites/default/files/venue/map-venue.png" alt="Map of the venue area, picturing location of ATMs, bus and ferry stops and the FSCONS venue." />
+  var VenueIcon = L.Icon.extend({
+  iconUrl: '{{ STATIC_URL }}icons/venue.png',
+  shadowUrl: '{{ STATIC_URL }}icons/shadow.png',
+  iconSize: new L.Point(44, 44),
+  shadowSize: new L.Point(44, 44),
+  iconAnchor: new L.Point(42, 40),
+  popupAnchor: new L.Point(-18, -40)
+  });
+
+  var ATMIcon = VenueIcon.extend({
+    iconUrl: '{{ STATIC_URL }}icons/ATM.png'
+  });
+  var BoatIcon = VenueIcon.extend({
+    iconUrl: '{{ STATIC_URL }}icons/boat.png'
+  });
+  var BusIcon = VenueIcon.extend({
+    iconUrl: '{{ STATIC_URL }}icons/bus.png'
+  });
+
+  var iconATM = new ATMIcon();
+  
+  var marker = new L.Marker(new L.LatLng(57.706647, 11.937141), {icon: new VenueIcon()});
+  map.addLayer(marker);
+  // attach a given HTML content to the marker and immediately open it
+  marker.bindPopup("FSCONS venue<br />Here we are...");
+
+  var marker = new L.Marker(new L.LatLng(57.706085,11.940600), 
+    {icon: new ATMIcon()});
+  map.addLayer(new L.Marker(
+    new L.LatLng(57.706085,11.940600), 
+    {icon: new ATMIcon()})
+  );
+
+  map.addLayer(new L.Marker(
+    new L.LatLng(57.705661,11.939882),
+    {icon: new BoatIcon()})
+  );
+
+  map.addLayer(new L.Marker(
+    new L.LatLng(57.708088,11.93809), 
+    {icon: new BusIcon()})
+  );
+
+  map.addLayer(new L.Marker(
+    new L.LatLng(57.693977,11.981609), 
+    {icon: new VenueIcon()})
+  );
+
+});
+</script>
+
 
 {% endblock %}
