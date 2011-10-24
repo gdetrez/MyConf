@@ -56,11 +56,13 @@ ul.sessions li {
 }
 
 /* Special typography for food/social events */
-.session.other p {
+.session.other .description {
     color: #555;
-    text-align:center;
     font-style: italic;
 /*    border-bottom: 2px solid #999;*/
+}
+.session.other .description p {
+    text-align: center;
 }
 
 /* Special typography for TBA */
