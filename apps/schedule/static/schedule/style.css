@@ -65,6 +65,10 @@ ul.sessions li {
     text-align: center;
 }
 
+.session.other .description ul {
+    margin:0;
+}
+
 /* Special typography for TBA */
 .session.tba, .empty {
     font-style:italic;
