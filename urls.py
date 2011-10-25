@@ -38,6 +38,8 @@ urlpatterns = patterns('',
      direct_to_template, {'template': 'information/venue.djhtml'}),
     (r'^information/currency/$',
      direct_to_template, {'template': 'soon.djhtml'}),
+    (r'^information/accessibility/$',
+     direct_to_template, {'template': 'information/accessibility.djhtml'}),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
