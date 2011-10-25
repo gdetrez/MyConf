@@ -13,3 +13,4 @@ _static
 _uploads
 .svn/
 venv/
+fixtures/
