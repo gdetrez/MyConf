@@ -31,7 +31,13 @@
   {% for error in field.errors %}
   <p class="error">{{ error|escape }}</p>
   {% endfor %}
+{% comment %}
+The following is a very nasty hack to remove the "same email as registration"
+stuff on RMS Thursday signup.
+{% endcomment %}
+{% if session.pk != 66 %}
   <div class="help">{{ field.help_text }}</div>
+{% endif %}
 </div>
 {% endfor %}
 <p class="submit"><input type="submit" value="Signup" /></p>
