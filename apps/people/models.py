@@ -24,7 +24,8 @@ class Person(models.Model):
     name = models.CharField(max_length=30, help_text="Full name")
     slug = models.SlugField(primary_key=True,
                             help_text="The slug is used to build the URL. Could be a nickname or a ASCII representation of the name (only lowerase, numbers and hyphen)")
-    photo = models.ImageField(upload_to="avatars", blank=True,)
+    photo = models.ImageField(upload_to="avatars", blank=True,
+                              help_text="Use a square image, prefereably 200px large.")
 
     # Profile info
     blog = models.URLField(blank=True, verify_exists=False)
