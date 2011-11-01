@@ -1,5 +1,11 @@
 from apps.people.models import Person
-import json
+try:
+    import jsone
+except ImportError:
+    try:
+        import simplejson as json
+    except ImportError:
+        raise ImportError("Neither json or simplejson are available on your system")
 from django.core.management.base import BaseCommand, CommandError
 from django.db.models import Count
 class Command(BaseCommand):
