@@ -1,6 +1,6 @@
 from apps.people.models import Person
 try:
-    import jsone
+    import json
 except ImportError:
     try:
         import simplejson as json
