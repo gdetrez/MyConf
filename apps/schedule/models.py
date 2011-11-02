@@ -19,8 +19,8 @@ from django.db import models
 from django.template.defaultfilters import date
 from django.conf import settings
 from django.contrib.auth.models import User
-from myconf.apps.people.models import Person
-from myconf.apps.colors.fields import ColorField 
+from people.models import Person
+from colors.fields import ColorField 
 from taggit.managers import TaggableManager
 
 now = datetime.now

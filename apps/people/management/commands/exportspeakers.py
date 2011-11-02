@@ -1,4 +1,4 @@
-from apps.people.models import Person
+from people.models import Person
 try:
     import json
 except ImportError:

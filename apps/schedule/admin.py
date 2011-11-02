@@ -14,9 +14,9 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from myconf.apps.schedule.models import *
+from schedule.models import *
 from django.contrib import admin
-from myconf.apps.people.models import Person
+from people.models import Person
 
 class TimeSlotAdmin(admin.ModelAdmin):
     list_display = ('day', 'begin_time', 'end_time', 'duration')

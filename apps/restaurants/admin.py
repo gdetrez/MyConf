@@ -14,7 +14,7 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
-from myconf.apps.restaurants.models import *
+from restaurants.models import *
 from django.contrib import admin
 
 def opening_times_list(r):

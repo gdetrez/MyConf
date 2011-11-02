@@ -1,6 +1,6 @@
 from django.forms import ModelForm
-from myconf.apps.signup.models import SessionSignup
-from myconf.apps.schedule.models import Session
+from signup.models import SessionSignup
+from schedule.models import Session
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import loader, RequestContext

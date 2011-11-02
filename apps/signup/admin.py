@@ -15,7 +15,7 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from django.contrib import admin
-from myconf.apps.signup.models import *
+from signup.models import *
 
 
 class SessionSignupAdmin(admin.ModelAdmin):

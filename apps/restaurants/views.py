@@ -16,7 +16,7 @@
 
 from django.http import HttpResponse
 from django.template import RequestContext, loader
-from myconf.apps.restaurants.models import Restaurant
+from restaurants.models import Restaurant
 
 def list(request):
     rests = Restaurant.objects.all().order_by("distance")
