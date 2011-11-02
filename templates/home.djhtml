@@ -1,4 +1,5 @@
 {% extends "base.djhtml" %}
+{% load url from future %}
 {% block head-title %}Welcome to My Conf{% endblock %}
 
 {% block content %}
@@ -12,13 +13,13 @@
 </p>
 
 <ul id="main-navigation" class="listview">
-  <li><a href="/schedule/" id="index_schedule">Schedule</a>
+  <li><a href="{% url 'schedule:schedule' %}" id="index_schedule">Schedule</a>
   <!-- li><a href="#" id="index_manifesto">Manifesto</a -->
-  <li><a href="/map/" id="index_map">Map</a>
-  <li><a href="/information/" id="index_information">Practical Information</a>
-  <li><a href="/staff/" id="index_staff">Staff</a>
+  <li><a href="{% url 'map' %}" id="index_map">Map</a>
+  <li><a href="{% url 'information' %}" id="index_information">Practical Information</a>
+  <li><a href="{% url 'staff' %}" id="index_staff">Staff</a>
   <!-- li><a href="#" id="index_notifications">Notifications</a -->
-  <li><a href="/restaurants/" id="index_restaurant">Restaurants</a>
+  <li><a href="{% url 'restaurants' %}" id="index_restaurant">Restaurants</a>
 </ul>
 
 {% endblock %}

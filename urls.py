@@ -6,37 +6,36 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Example:
 
-    (r'^$', direct_to_template, {'template': 'home.djhtml'}),
+    url(r'^$', direct_to_template, {'template': 'home.djhtml'}, name="home"),
 
-    (r'^staff/$', 'myconf.apps.people.views.staff'),
-    (r'^people/(?P<slug>[\w\d-]+)/$', 'myconf.apps.people.views.user'),
+    url(r'^staff/$', 'myconf.apps.people.views.staff', name="staff"),
+    url(r'^people/(?P<slug>[\w\d-]+)/$', 'myconf.apps.people.views.user'),
 
-    (r'^schedule/', include('schedule.urls')),
-    (r'^restaurants/', include('restaurants.urls')),
+    url(r'^schedule/', include('schedule.urls', namespace="schedule")),
+    url(r'^restaurants/', include('restaurants.urls')),
 
-    (r'^map/$',
-     direct_to_template, {'template': 'map.djhtml'}),
+    url(r'^map/$',
+     direct_to_template, {'template': 'map.djhtml'}, name="map"),
 
-    (r'^information/$',
-     direct_to_template, {'template': 'information/index.djhtml'}),
-    (r'^information/getting-there/$',
-     direct_to_template, {'template': 'information/gettingthere.djhtml'}),
-    (r'^information/sleeping/$',
-     direct_to_template, {'template': 'information/sleeping.djhtml'}),
-    (r'^information/going-out/$',
-     direct_to_template, {'template': 'information/goingout.djhtml'}),
-    (r'^information/venue/$',
-     direct_to_template, {'template': 'information/venue.djhtml'}),
-    (r'^information/currency/$',
-     direct_to_template, {'template': 'soon.djhtml'}),
+    url(r'^information/$', direct_to_template,
+     {'template': 'information/index.djhtml'}, name="information"),
+    url(r'^information/getting-there/$', direct_to_template,
+     {'template': 'information/gettingthere.djhtml'}, name="gettingthere"),
+    url(r'^information/sleeping/$', direct_to_template,
+     {'template': 'information/sleeping.djhtml'}, name="sleeping"),
+    url(r'^information/going-out/$', direct_to_template,
+     {'template': 'information/goingout.djhtml'}, name="goingout"),
+    url(r'^information/venue/$', direct_to_template,
+     {'template': 'information/venue.djhtml'}, name="venue"),
+    url(r'^information/currency/$', direct_to_template,
+     {'template': 'soon.djhtml'}, name="currency"),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+    url(r'^admin/', include(admin.site.urls)),
                        
 )
 

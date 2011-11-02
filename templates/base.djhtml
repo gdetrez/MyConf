@@ -1,3 +1,4 @@
+{% load url from future %}
 <!DOCTYPE html>
 <html lang="en">
     <head profile="http://www.w3.org/2005/10/profile">
@@ -18,11 +19,11 @@
         <div class="header" id="header">
             <div class="wrapper">
                 <img alt="FSCONS logo" src="{{ STATIC_URL }}style/logo-small.png" />
-                <h1><a href="/">My FSCONS</a></h1>
+                <h1><a href="{% url 'home' %}">My FSCONS</a></h1>
                 <ul class="navigation">
-                    <li><a id="nav_schedule" href="/schedule/"><span>Schedule</span></a>
+                    <li><a id="nav_schedule" href="{% url 'schedule:schedule' %}"><span>Schedule</span></a>
                     <!-- li><a id="nav_manifesto" href="/manifesto/"><span>Manifesto</span></a-->
-                    <li><a id="nav_map" href="/map/"><span>Map</span></a>
+                    <li><a id="nav_map" href="{% url 'map' %}"><span>Map</span></a>
                     <!-- li><a id="nav_notifications" href="/notifications/"><span>Notifications</span></a-->
                 </ul>
             </div>

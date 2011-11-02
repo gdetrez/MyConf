@@ -1,4 +1,5 @@
 {% extends "base.djhtml" %}
+{% load url from future %}
 {% block head-title %}Practical information{% endblock %}
 
 {% block content %}
@@ -6,12 +7,12 @@
 <span class="subtitle">Managing life during the conference</span>
 
 <ul class="listview menu">
-  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_venue_32.png');" href="venue/">Venue</a>
-  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_gettingthere_32.png');" href="getting-there/">Getting there</a>
-  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_sleeping_32.png');" href="sleeping/">Sleeping</a>
-  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_eating_32.png');" href="/restaurants/">Eating</a>
-  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_goingout_32.png');" href="going-out/">Going out</a>
-  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_currency_32.png');" href="currency/">Currency</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_venue_32.png');" href="{% url 'venue' %}">Venue</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_gettingthere_32.png');" href="{% url 'gettingthere' %}">Getting there</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_sleeping_32.png');" href="{% url 'sleeping' %}">Sleeping</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_eating_32.png');" href="{% url 'restaurants' %}">Eating</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_goingout_32.png');" href="{% url 'goingout' %}">Going out</a>
+  <li><a style="background-image:url('{{ STATIC_URL }}style/ic_currency_32.png');" href="{% url 'currency' %}">Currency</a>
 </ul>
 
 {% endblock %}
