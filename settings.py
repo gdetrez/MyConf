@@ -2,6 +2,7 @@
 # Django settings for myconf project.
 
 import sys, os
+from os.path import join
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
@@ -56,7 +57,7 @@ MEDIA_URL = '/_uploads/'
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = ROOTDIR + '_uploads/'
+MEDIA_ROOT = os.path.join(ROOTDIR,'_uploads/')
 
 # URL that handles the static files served from STATIC_ROOT and collected by 
 # the collectstatic managment command. Make sure to use a
@@ -66,12 +67,12 @@ STATIC_URL = '/static/'
 
 # Absolute path to the directory where static files are collected.
 # Example: "/home/static/media.lawrence.com/"
-STATIC_ROOT = ROOTDIR + "_static/"
+STATIC_ROOT = os.path.join(ROOTDIR, "_static/")
 
 # Extra directories where static files needs to be harvested
 STATICFILES_DIRS = (
-    ("style", ROOTDIR + "style/"),
-    ("", ROOTDIR + "static/"),
+    ("style", os.path.join(ROOTDIR, "style/")),
+    ("", os.path.join(ROOTDIR, "static/")),
 )
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
@@ -90,7 +91,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_DIRS = (
-    ROOTDIR + "templates/"
+    os.path.join(ROOTDIR, "templates/"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
