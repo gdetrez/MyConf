@@ -6,7 +6,7 @@
 <!-- Leaflet CSS --> 
 <link rel="stylesheet" href="{{ STATIC_URL }}/restaurants.css" />
 <link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.css" />
-<!--[if lte IE 8]><link rel="stylesheet" href="/static/leaflet/leaflet.ie.css" /><![endif]-->
+<!--[if lte IE 8]><link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.ie.css" /><![endif]-->
 <!-- Leaflet JavaScript -->
 <script src="{{ STATIC_URL }}leaflet/leaflet.js"></script>
 <script src="{{ STATIC_URL }}map.js"></script>
