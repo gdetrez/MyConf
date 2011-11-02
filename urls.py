@@ -8,20 +8,13 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Example:
 
-    # (r'^myconf/', include('myconf.foo.urls')),
     (r'^$', direct_to_template, {'template': 'home.djhtml'}),
 
     (r'^staff/$', 'myconf.apps.people.views.staff'),
     (r'^people/(?P<slug>[\w\d-]+)/$', 'myconf.apps.people.views.user'),
-    # (r'^notifications/$', 'notifications.views.index'),
-    (r'^schedule/$', 'myconf.apps.schedule.views.schedule'),
-    (r'^schedule/session/(?P<pk>\d+)/$', 'myconf.apps.schedule.views.session'),
-    (r'^schedule/session/(?P<session_pk>\d+)/signup/$',
-     'myconf.apps.signup.views.signup'),
-    (r'^schedule/track/(?P<slug>[\w\d-]+)/$', 'myconf.apps.schedule.views.track'),
-    (r'^schedule/tag/(?P<slug>[\w\d-]+)/$', 'myconf.apps.schedule.views.tag'),
-    
-    (r'^restaurants/$', 'myconf.apps.restaurants.views.list'),
+
+    (r'^schedule/', include('schedule.urls')),
+    (r'^restaurants/', include('restaurants.urls')),
 
     (r'^map/$',
      direct_to_template, {'template': 'map.djhtml'}),
