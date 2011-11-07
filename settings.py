@@ -134,5 +134,6 @@ INSTALLED_APPS = (
     'apps.colors',
     'apps.signup',
     'apps.map',
+    'apps.scheduleapi'
 )
 
