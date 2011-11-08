@@ -101,8 +101,11 @@ def session(request, pk):
 def xml(request):
     sessions = Session.objects.\
         filter(time_slot__begin__range=(datetime(2011,11,12),datetime(2011,11,13))).\
-        order_by('time_slot__begin')
-    t = loader.get_template('xml/schedule.djxml')
+        order_by('time_slot__begin__year',
+                 'time_slot__begin__month',
+                 'time_slot__begin__day',
+                 "room__name")
+    t = loader.get_template('xml/schedule.xml')
     c = RequestContext(request,{
             'sessions': sessions,
             'conference': "FSCONS 2011",
