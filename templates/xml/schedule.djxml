@@ -1,0 +1,37 @@
+<schedule>
+  <conference>
+    <title>{{ conference }}</title>
+    <start>{{ start }}</start>
+    <end>{{ end }}</end>
+    <days>{{ days }}</days>
+    <timeslot_duration>00:05</timeslot_duration>
+  </conference>
+  {% regroup sessions by time_slot.begin.date as days %}
+  {% for day in days %}
+  <day date="{{ day.grouper|date:"Y-n-j" }}" index="{{ forloop.counter }}">
+    {% for session in day.list %}
+    <event id="{{ session.pk }}">
+      <start>{{ session.time_slot.begin|date:"H:i" }}</start>
+      <duration>{{ session.time_slot.duration }}</duration>
+      <room>Room: {{ session.room }}</room>
+      <slug>{{ session|slugify }}</slug>
+      <title>{{ session }}</title>
+      <subtitle/>
+      <track>{{ session.track }}</track>
+      <type>{{ session.get_kind_display }}</type>
+      <language>EN</language>
+      <abstract/>
+      <description>
+	{{ session.description }}
+      </description>
+      <persons>
+	{% for person in session.presenters.all %}
+	<person id="{{ person.pk }}">{{ person }}</person>
+	{% endfor %}
+      </persons>
+      <links></links>
+    </event>
+    {% endfor %}
+  </day>
+    {% endfor %}
+</schedule>

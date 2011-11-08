@@ -15,13 +15,13 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 # Create your views here.
-from datetime import timedelta, datetime
+from datetime import timedelta, datetime, date
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import loader, RequestContext
-from schedule.models import *
+from schedule.models import Session, Track
 from taggit.models import Tag
 
 #@login_required(login_url='/admin/')
@@ -93,5 +93,21 @@ def session(request, pk):
             'concurrent_sessions': concurrent_sessions,
             'next_sessions_in_room': next_sessions_in_room,
             'signedup':request.GET.get('signedup',None) == 'ok'
+            })
+    return HttpResponse(t.render(c))
+
+
+## XML views
+def xml(request):
+    sessions = Session.objects.\
+        filter(time_slot__begin__range=(datetime(2011,11,12),datetime(2011,11,13))).\
+        order_by('time_slot__begin')
+    t = loader.get_template('xml/schedule.djxml')
+    c = RequestContext(request,{
+            'sessions': sessions,
+            'conference': "FSCONS 2011",
+            'start': date(2011,11,11),
+            'end': date(2011,11,13),
+            'days': 3,
             })
     return HttpResponse(t.render(c))
