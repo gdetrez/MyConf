@@ -12,7 +12,7 @@ urlpatterns = patterns('',
     url(r'^staff/$', 'myconf.apps.people.views.staff', name="staff"),
     url(r'^people/(?P<slug>[\w\d-]+)/$', 'myconf.apps.people.views.user'),
 
-    url(r'^schedule/api/', include('scheduleapi.urls', namespace="schedule")),
+    url(r'^schedule/api/', include('scheduleapi.urls', namespace="scheduleapi")),
     url(r'^schedule/', include('schedule.urls', namespace="schedule")),
     url(r'^restaurants/', include('restaurants.urls')),
 
