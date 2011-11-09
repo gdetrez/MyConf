@@ -272,17 +272,19 @@ p.footnote { color:grey; font-style: italic; }
 /* Figures */
 figure {
     display:block;
-    margin: auto;
     border: thin black solid;
     padding: 1.25em;
     text-align: center;
-    margin: -1px 0 20px;
+    margin: -1px auto 20px;
 }
-figure img { display: block; margin: 0 auto 1.25em;}
+figure img {
+    display: block;
+    margin: 0 auto 1.25em;}
 
 figcaption {
+    display:block;
     margin:0 auto;
-    width:20em;    
+    max-width:20em;
 }
 
 /* By default, the navigation is centered under the title.
