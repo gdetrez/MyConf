@@ -15,10 +15,6 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-/* NB: in css @import statements have to be included at the very top of the
- * file otherwise (some) browsers won't see them. */
-@import 'typography.css';
-
 /* VERTICAL RYTHM: all vertical space should be a multiple of 1.25em */
 
 /* ***************************************************************************

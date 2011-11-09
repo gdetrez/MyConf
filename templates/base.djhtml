@@ -9,6 +9,8 @@
             type="image/ico"
             href="http://my.fscons.org/favicon.ico"/>
       <!-- ma template.css -->
+      <link rel="stylesheet" href="{{ STATIC_URL }}style/typography.css" type="text/css"  media="screen">
+
       <link rel="stylesheet" href="{{ STATIC_URL }}style/main.css" type="text/css"  media="screen">
         <!-- Leaflet CSS --> 
         <link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.css" />
