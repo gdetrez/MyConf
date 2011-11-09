@@ -279,7 +279,9 @@ figure {
 }
 figure img {
     display: block;
-    margin: 0 auto 1.25em;}
+    margin: 0 auto 1.25em;
+    max-width:100%;
+}
 
 figcaption {
     display:block;

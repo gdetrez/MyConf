@@ -21,8 +21,6 @@
 
 <h3><a name="workshops">Workshops venue</a></h3>
 
-<p>Workshops are all on Friday November 11th. They are on the premises of <a href="http://www.svenska.gu.se/forskning/sprakbanken/?showMap=true&amp;mapAlias=svenskaspraket&amp;keepArticle=true&amp;mapTitle=Spr%E5kbanken" title="Map and information">Språkbanken, Lennart Torstenssonsgatan 6-8</a>.</p>
-
 <figure> 
 <img src="{{ STATIC_URL}}style/photos/sprakdata_entrance.png" 
      alt="Photo of Workshop venue entrance"
