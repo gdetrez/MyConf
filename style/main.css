@@ -276,14 +276,13 @@ figure {
     border: thin black solid;
     padding: 1.25em;
     text-align: center;
-    margin: -1px 0;
+    margin: -1px 0 20px;
 }
 figure img { display: block; margin: 0 auto 1.25em;}
 
 figcaption {
     margin:0 auto;
-    width:20em;
-    
+    width:20em;    
 }
 
 /* By default, the navigation is centered under the title.
