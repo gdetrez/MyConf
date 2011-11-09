@@ -1,4 +1,5 @@
 {% extends "base.djhtml" %}
+{% load map %}
 {% block head-title %}Getting there{% endblock %}
 
 {% block content %}
@@ -22,9 +23,6 @@
 
 <p>Workshops are all on Friday November 11th. They are on the premises of <a href="http://www.svenska.gu.se/forskning/sprakbanken/?showMap=true&amp;mapAlias=svenskaspraket&amp;keepArticle=true&amp;mapTitle=Spr%E5kbanken" title="Map and information">Språkbanken, Lennart Torstenssonsgatan 6-8</a>.</p>
 
- 
-
-
 <figure> 
 <img src="{{ STATIC_URL}}style/photos/sprakdata_entrance.png" 
      alt="Photo of Workshop venue entrance"
@@ -32,6 +30,17 @@
 <figcaption>Photo of Workshop venue entrance.</figcaption>
 </figure> 
 
+<p>The venue for the Friday workshops is called “Språkbanken” and is part of Göteborg University, <a href="http://www.svenska.gu.se/english/research/sprakbanken/?languageId=100001&amp;contentId=-1&amp;disableRedirect=true&amp;returnUrl=http%3A%2F%2Fwww.svenska.gu.se%2Fforskning%2Fsprakbanken%2F%3FshowMap%3Dtrue%26mapAlias%3Dsvenskaspraket%26keepArticle%3Dtrue%26mapTitle%3DSpr%25E5kbanken&amp;showMap=true&amp;mapAlias=svenskaspraket&amp;keepArticle=true&amp;mapTitle=Spr%E5kbanken">the Department of Swedish</a>.</p>
+
+<p>The address is Lennart Torstenssonsgatan 6-8, and the area in Gothenburg where it’s located is called Johanneberg.</p>
+
+<p>Here’s a map and directions (by car) to <a href="http://kartor.eniro.se/m/ayjRt">Lennart Torstenssonsgatan 6</a> (courtesy of Eniro).</p>
+
+<p>And if you want to go by public transportation, please <a href="http://ur1.ca/5oovc">try the Västtrafik website</a> (link goes to example travel route from the Central Station). <a href="http://vasttrafik.se/Att-resa/Tidtabeller/?search=18&amp;county=G%C3%96TEBORG&amp;type=23&amp;show=2">Bus number 18</a> (you can take it from Brunnsparken in the center of Gothenburg near the central station) will take you there, and the nearest stop is Vidblicksgatan.</p>
+
+<p>Here’s the <a href="http://vasttrafik.se/TimeTablesExcel/ac2530f9-3277-48d5-99e5-55a12bf9bb4f.pdf">timetable for bus 18 from Brunnsparken towards Johanneberg</a>.</p>
+
+{% map 57.693977 11.981609 "margin:0 10%;width:80%;height:400px;clear:both;" %}
 </div>
 
 
