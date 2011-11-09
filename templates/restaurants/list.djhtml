@@ -3,13 +3,7 @@
 {% block head-title %}Restaurants{% endblock %}
 
 {% block extra-headers %}
-<!-- Leaflet CSS --> 
 <link rel="stylesheet" href="{{ STATIC_URL }}/restaurants.css" />
-<link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.css" />
-<!--[if lte IE 8]><link rel="stylesheet" href="{{ STATIC_URL }}leaflet/leaflet.ie.css" /><![endif]-->
-<!-- Leaflet JavaScript -->
-<script src="{{ STATIC_URL }}leaflet/leaflet.js"></script>
-<script src="{{ STATIC_URL }}map.js"></script>
 {% endblock %}
 
 
@@ -41,16 +35,13 @@
 
 <div id="map" class="restaurants" style="height:400px;"></div>
 <script>
-  initmap();
+  var map = initmap('map', 57.70673, 11.93686);
   {% for restaurant in restaurant_list %} 
-  var marker = new L.Marker(new L.LatLng({{restaurant.lattitude}},{{restaurant.longitude}}));
-map.addLayer(marker);
-
-// attach a given HTML content to the marker and immediately open it
-marker.bindPopup("<span class=\"name\">{{ restaurant.name }}</span> <span class=\"description\">{{ restaurant.one_line_description }}</span> <span class=\"distance\">{{ restaurant.distance_unit }}</span> {% if restaurant.open %}<span class=\"status open\">open</span>{% else %}<span class=\"status closed\">closed</span>{% endif %}");
-{% endfor %}                                                            
-
-
+    var marker = new L.Marker(new L.LatLng({{restaurant.lattitude}},{{restaurant.longitude}}));
+    map.addLayer(marker);
+    // attach a given HTML content to the marker and immediately open it
+    marker.bindPopup("<span class=\"name\">{{ restaurant.name }}</span> <span class=\"description\">{{ restaurant.one_line_description }}</span> <span class=\"distance\">{{ restaurant.distance_unit }}</span> {% if restaurant.open %}<span class=\"status open\">open</span>{% else %}<span class=\"status closed\">closed</span>{% endif %}");
+{% endfor %}
 </script>
 {% endblock %}
     

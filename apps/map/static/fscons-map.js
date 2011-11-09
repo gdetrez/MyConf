@@ -19,7 +19,6 @@
  * venue building.
  * It can then be extended further by adding more markers or other data.
  */
-var map;
 var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 var osmAttrib='Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
 var osm = new L.TileLayer(osmUrl,
@@ -51,7 +50,7 @@ var VenueIcon = new CVenueIcon();
 
 function initmap(id, lat, long) {
     // set up the map
-    map = new L.Map(id);
+    var map = new L.Map(id);
     var hull = new L.LatLng(lat, long);    
     map.setView(hull,16);
     map.addLayer(osm);
@@ -76,4 +75,5 @@ function initmap(id, lat, long) {
   // workshop venue
     map.addLayer(new L.Marker(new L.LatLng(57.693977,11.981609), 
 			      {icon: VenueIcon}));
+    return map;
 }

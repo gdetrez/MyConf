@@ -289,11 +289,14 @@ figcaption {
     max-width:20em;
 }
 
-/* By default, the navigation is centered under the title.
- * For screen bigger than 500px we can push it in the right top corner.
+/* By default, figures are placed between paragraphs.
+ * For screen bigger than 750px we can push them in the right.
  */
-@media screen and (min-width: 500px) {
-    figure { float:right;}
+@media screen and (min-width: 750px) {
+    figure {
+	float:right;
+	margin-left:20px;
+    }
 }
 
 h3 { clear: both;}
