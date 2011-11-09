@@ -42,8 +42,12 @@ var CBoatIcon = CVenueIcon.extend({
 var CBusIcon = CVenueIcon.extend({
     iconUrl: STATIC_URL + 'icons/bus.png'
 });
+var CRestaurantIcon = CVenueIcon.extend({
+    iconUrl: STATIC_URL + 'icons/restaurant.png'
+});
 
 var ATMIcon = new CATMIcon();
+var RestaurantIcon = new CRestaurantIcon();
 var BoatIcon = new CBoatIcon();
 var BusIcon = new CBusIcon();
 var VenueIcon = new CVenueIcon();

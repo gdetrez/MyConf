@@ -39,7 +39,8 @@
   $(function() {
     var map = initmap('map', 57.70673, 11.93686);
     add_restaurant = function(lat, long, popup, linkid) {
-    var marker = new L.Marker(new L.LatLng(lat, long));
+    var marker = new L.Marker(new L.LatLng(lat, long),
+    			      {icon:RestaurantIcon});
       map.addLayer(marker);
       // attach a given HTML content to the marker and immediately open it
       marker.bindPopup(popup);
