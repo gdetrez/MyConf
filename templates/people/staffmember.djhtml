@@ -1,5 +1,6 @@
 {% extends "base.djhtml" %}
 {% load markup %}
+{% load thumbnail %}
 {% block head-title %}{{ staff_member.name }} @ FSCONS{% endblock %}
 
 {% block extra-headers %}
@@ -21,7 +22,10 @@
 
   <div class="user-picture">
     {% if staff_member.photo %}
-    <img src="{{ staff_member.photo.url }}" alt="Picture of {{ staff_member.name }}" width="200" height="200" />
+      {% thumbnail staff_member.photo "200x200" as im %}
+        <img src="{{ im.url }}" alt="Picture of {{ staff_member.name }}"
+             width="200" height="200">
+      {% endthumbnail %}
     {% else %}
     <img src="{{ STATIC_URL }}people/user_anonymous.png" alt="Anonymous lego face (No picture for this person)" width="200" height="200" />
     {% endif %}

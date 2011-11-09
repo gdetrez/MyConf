@@ -3,8 +3,8 @@
 
 import sys, os
 from os.path import join
-
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+ROOT = PROJECT_ROOT
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
 
@@ -53,11 +53,11 @@ USE_L10N = False
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/_uploads/'
+MEDIA_URL = 'http://localhost:8000/_uploads/'
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = os.path.join(ROOTDIR,'_uploads/')
+MEDIA_ROOT = os.path.join(ROOT,'_uploads/')
 
 # URL that handles the static files served from STATIC_ROOT and collected by 
 # the collectstatic managment command. Make sure to use a
@@ -67,12 +67,12 @@ STATIC_URL = '/static/'
 
 # Absolute path to the directory where static files are collected.
 # Example: "/home/static/media.lawrence.com/"
-STATIC_ROOT = os.path.join(ROOTDIR, "_static/")
+STATIC_ROOT = os.path.join(ROOT, "_static/")
 
 # Extra directories where static files needs to be harvested
 STATICFILES_DIRS = (
-    ("style", os.path.join(ROOTDIR, "style/")),
-    ("", os.path.join(ROOTDIR, "static/")),
+    ("style", os.path.join(ROOT, "style/")),
+    ("", os.path.join(ROOT, "static/")),
 )
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
@@ -91,7 +91,7 @@ TEMPLATE_LOADERS = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(ROOTDIR, "templates/"),
+    os.path.join(ROOT, "templates/"),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -124,6 +124,8 @@ INSTALLED_APPS = (
 
     # Add tagging
     'taggit',
+    # add thumbnails
+    'sorl.thumbnail',
     
     # MyConf apps
     'apps.people',
@@ -136,4 +138,10 @@ INSTALLED_APPS = (
     'apps.map',
     'apps.scheduleapi'
 )
+
+#THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
+THUMBNAIL_DEBUG = DEBUG
+#THUMBNAIL_DUMMY = True
+THUMBNAIL_FORMAT = "PNG"
+THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.convert_engine.Engine'
 

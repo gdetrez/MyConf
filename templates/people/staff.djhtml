@@ -1,4 +1,5 @@
 {% extends "base.djhtml" %}
+{% load thumbnail %}
 {% block head-title %}Staff{% endblock %}
 
 {% block extra-headers %}
@@ -16,7 +17,9 @@
       {% for member in staff_list %}
       <li class="person"><a href="{{ member.get_absolute_url }}">
 	{% if member.photo %}
-        <img src="{{ member.photo.url }}" alt="Picture of {{ staff_member.name }}" width="40" height="40" />
+          {% thumbnail member.photo "40x40" as im %}
+          <img src="{{ im.url }}" alt="Picture of {{ staff_member.name }}" width="40" height="40">
+          {% endthumbnail %}
 	{% else %}
 	<img src="{{ STATIC_URL }}people/user_anonymous.png" alt="Anonymous lego face (No picture for this person)" width="40" height="40" />
 	{% endif %}

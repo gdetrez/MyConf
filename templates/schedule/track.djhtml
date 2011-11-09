@@ -21,17 +21,7 @@
 <h3>Who's there ?</h3>
 <ul class="people listview">
   {% for person in track.speakers.distinct %}
-  <li class="person"><a href="{{ person.get_absolute_url }}">
-    {% if person.photo %}
-    <img src="{{ person.photo.url }}" width="40" height="40" />
-    {% else %}
-    <img src="{{ STATIC_URL }}people/user_anonymous.png" width="40" height="40" />
-    {% endif %}
-    <span class="name">{{ person.name }}</span>
-    {% if person.physical_location %}
-    <br /><span class="location">{{ person.physical_location }}</span>
-    {% endif %}
-  </a></li>
+    {% include "people/person_li.djhtml" with person=person %}
   {% endfor %}
 </ul>
 {% endif %}
