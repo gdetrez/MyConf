@@ -7,12 +7,25 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 ROOT = PROJECT_ROOT
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
 
-# import local settings (non commited to git)
-from localsettings import *
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'devdb.sqlite',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}
 
-#DEBUG = True                                      # defined in localsettings
-#TEMPLATE_DEBUG = DEBUG                            # defined in localsettings
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}
 
 ADMINS = (
     ('Grégoire', 'gdetrez@crans.org'),
@@ -21,11 +34,6 @@ ADMINS = (
 MANAGERS = ADMINS
 
 AUTH_PROFILE_MODULE = 'people.Profile'
-
-# XMPP server configuration.
-#XMPP_PUBSUB_HOST = "pubsub.zjyto.net"
-#XMPP_JID = "myconf-django@zjyto.net"
-#XMPP_PASSWORD = "0000"
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -98,7 +106,9 @@ TEMPLATE_DIRS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -141,4 +151,10 @@ INSTALLED_APPS = (
 
 THUMBNAIL_DEBUG = DEBUG
 THUMBNAIL_FORMAT = "PNG"
+
+try:
+    # import local settings (non commited to git)
+    from localsettings import *
+except ImportError:
+    pass
 
