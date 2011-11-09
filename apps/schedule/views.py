@@ -21,6 +21,7 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import loader, RequestContext
+from people.models import Person
 from schedule.models import Session, Track
 from taggit.models import Tag
 
