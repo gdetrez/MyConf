@@ -53,7 +53,7 @@ USE_L10N = False
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://localhost:8000/_uploads/'
+MEDIA_URL = '/_uploads/'
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -139,9 +139,6 @@ INSTALLED_APPS = (
     'apps.scheduleapi'
 )
 
-#THUMBNAIL_KVSTORE = 'sorl.thumbnail.kvstores.redis_kvstore.KVStore'
 THUMBNAIL_DEBUG = DEBUG
-#THUMBNAIL_DUMMY = True
 THUMBNAIL_FORMAT = "PNG"
-THUMBNAIL_ENGINE = 'sorl.thumbnail.engines.convert_engine.Engine'
 
