@@ -15,7 +15,8 @@
     <ul class="restaurants">
       {% for restaurant in restaurant_list %}
       <li class="restaurant">
-        <a href="{{ member.get_absolute_url }}">
+        <a href="{{ member.get_absolute_url }}"
+           id="link-restaurant-{{restaurant.pk }}">
           <div class="left">
           <span class="name">{{ restaurant.name }}</span>
           <span class="description">{{ restaurant.one_line_description }}</span>
@@ -35,13 +36,24 @@
 
 <div id="map" class="restaurants" style="height:400px;"></div>
 <script>
-  var map = initmap('map', 57.70673, 11.93686);
-  {% for restaurant in restaurant_list %} 
-    var marker = new L.Marker(new L.LatLng({{restaurant.lattitude}},{{restaurant.longitude}}));
-    map.addLayer(marker);
-    // attach a given HTML content to the marker and immediately open it
-    marker.bindPopup("<span class=\"name\">{{ restaurant.name }}</span> <span class=\"description\">{{ restaurant.one_line_description }}</span> <span class=\"distance\">{{ restaurant.distance_unit }}</span> {% if restaurant.open %}<span class=\"status open\">open</span>{% else %}<span class=\"status closed\">closed</span>{% endif %}");
+  $(function() {
+    var map = initmap('map', 57.70673, 11.93686);
+    add_restaurant = function(lat, long, popup, linkid) {
+    var marker = new L.Marker(new L.LatLng(lat, long));
+      map.addLayer(marker);
+      // attach a given HTML content to the marker and immediately open it
+      marker.bindPopup(popup);
+      $(linkid).click(function () {
+        marker.openPopup();
+        return false;
+      })
+    }
+    {% for restaurant in restaurant_list %} 
+      add_restaurant({{restaurant.lattitude}},{{restaurant.longitude}},
+      "<span class=\"name\">{{ restaurant.name }}</span> <span class=\"description\">{{ restaurant.one_line_description }}</span> <span class=\"distance\">{{ restaurant.distance_unit }}</span> {% if restaurant.open %}<span class=\"status open\">open</span>{% else %}<span class=\"status closed\">closed</span>{% endif %}",
+      "#link-restaurant-{{restaurant.pk }}");
 {% endfor %}
+    });
 </script>
 {% endblock %}
     
