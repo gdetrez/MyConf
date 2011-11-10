@@ -26,6 +26,6 @@ class Command(BaseCommand):
         data = [{'name': s.name, 'speaker': True, 'mail':s.email} for s in speakers]
         if options['tsv']:
             for row in data:
-                print "%s\t%s" % (row['name'], row['mail'])
+                print (u"%s\t%s" % (row['name'], row['mail'])).encode('utf8')
         else: 
             print json.dumps(data)
