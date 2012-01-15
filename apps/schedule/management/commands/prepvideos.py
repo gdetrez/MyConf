@@ -50,9 +50,10 @@ class Command(BaseCommand):
                     ('description', s.description),
                     ]
                 file_path = os.path.join(sdir, "info.txt")
-                with codecs.open(file_path, 'w', encoding="utf-8") as f:
-                    for a,b in info:
-                        f.write("%s: %s\n" % (a,b))
+                f = codecs.open(file_path, 'w', encoding="utf-8")
+                for a,b in info:
+                    f.write("%s: %s\n" % (a,b))
+                f.close()
             tar = tarfile.open("videos.tar", "w")
-            tar.add(tdir)
+            tar.add(tdir, arcname=".")
             tar.close()
