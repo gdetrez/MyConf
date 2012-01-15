@@ -7,7 +7,7 @@ def deploy():
     local("git push")
     code_dir = '/var/django/myconf'
     with cd(code_dir):
-        run("git pull github master")
+        run("git pull origin master")
         run("python manage.py collectstatic --noinput")
         sudo("/etc/init.d/apache2 restart")
 
