@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.2 r9819"
-   sodipodi:docname="titles-template.svg"
+   sodipodi:docname="video-title.svg"
    inkscape:export-filename="/home/gdetrez/FSCONS/Videos/2011/20111113_hybrid-atelier/title.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
@@ -177,7 +177,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -203,11 +203,11 @@
          id="tspan4458">{{ by }}</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:120px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
+       style="font-size:120px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:end;line-height:83.33333%;letter-spacing:0px;word-spacing:0px;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Yanone Kaffeesatz;-inkscape-font-specification:Yanone Kaffeesatz"
        x="1820"
        y="332.36218"
        id="text4454"
-       sodipodi:linespacing="125%"><tspan
+       sodipodi:linespacing="83.33333%"><tspan
          sodipodi:role="line"
          id="tspan4456"
          x="1820"
