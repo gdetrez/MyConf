@@ -6,17 +6,6 @@ from django.template import defaultfilters
 import os, tempfile, codecs, tarfile
 from django.template import loader, Context
 
-def speakers(session):
-    r = ""
-    presenters = session.presenters.all()
-    for i, person in enumerate(presenters):
-        if i!=0 and i != len(presenters) -1:
-            r += ", "
-        elif i!=0 and i==len(presenters) -1:
-            r += " & "
-        r+= unicode(person)
-    return r
-
 class Command(BaseCommand):
     args = ''
     help = 'Export talks from the database and prepare video directories'
@@ -36,7 +25,7 @@ class Command(BaseCommand):
                 # Create info file
                 info = [
                     ('title', s.title),
-                    ('speakers', speakers(s)),
+                    ('speakers', s.get_speakers_display()),
                     ('date', s.time_slot.begin.strftime("%Y-%m-%d")),
                     ('time', s.time_slot.begin.strftime("%H:%M")),
                     ('room', s.room.name),
@@ -53,7 +42,8 @@ class Command(BaseCommand):
                 file_path = os.path.join(sdir, "title.svg")
                 f = codecs.open(file_path, 'w', encoding="utf-8")
                 f.write(t.render(Context({
-                            'title': s.title, 'by': u"by " + speakers(s),})))
+                            'title': s.title,
+                            'by': u"by " + s.get_speakers_display(),})))
                 f.close()
             tar = tarfile.open("videos.tar", "w")
             tar.add(tdir, arcname=".")

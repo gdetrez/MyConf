@@ -105,16 +105,30 @@ class Session(models.Model):
     class Meta:
         unique_together = (("time_slot", "room"),)
 
-    def presenters_html(self):
-        html = ""
+    def get_speakers_display(self, html=False):
+        """Generate a nice list (with comma and conjuction) of the speakers
+        That is suitable for display.
+        Optionally using html for link to the speaker page."""
+        r = ""
         presenters = self.presenters.all()
         for i, person in enumerate(presenters):
             if i!=0 and i != len(presenters) -1:
-                html += ", "
+                r += ", "
             elif i!=0 and i==len(presenters) -1:
-                html += " &amp; "
-            html+= "<a href=\"%s\">%s</a>"%(person.get_absolute_url(), person)
-        return html
+                if html:
+                    r += " &amp; "
+                else:
+                    r += " & "
+            if html:
+                r+= u"<a href=\"%s\">%s</a>" % \
+                    (person.get_absolute_url(), person)
+            else:
+                r+= unicode(person)
+        return r
+            
+
+    def presenters_html(self):
+        return self.get_speakers_display(html=True)
     presenters_html.allow_tags=True
 
     def display_title(self):
