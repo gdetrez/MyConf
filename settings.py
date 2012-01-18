@@ -146,7 +146,8 @@ INSTALLED_APPS = (
     'apps.colors',
     'apps.signup',
     'apps.map',
-    'apps.scheduleapi'
+    'apps.scheduleapi',
+    'apps.video_publish'
 )
 
 THUMBNAIL_DEBUG = DEBUG

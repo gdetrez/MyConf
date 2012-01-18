@@ -4,15 +4,7 @@ from django.core.management.base import BaseCommand, CommandError
 from django.db.models import Count
 from django.template import defaultfilters
 import os, tempfile, codecs, tarfile
-
-try:
-    import json
-except ImportError:
-    try:
-        import simplejson as json
-    except ImportError:
-        raise ImportError("Neither json or simplejson are available on your system")
-
+from django.template import loader, Context
 
 def speakers(session):
     r = ""
@@ -35,11 +27,13 @@ class Command(BaseCommand):
         data = []
         for s in sessions:
             if s.kind in ('T','K') and s.time_slot is not None:
+                # Create directory
                 slug = "%s_%s" % (
                     s.time_slot.begin.strftime("%Y%m%d"),
                     defaultfilters.slugify(s.title))
                 sdir = os.path.join(tdir, slug)
                 os.mkdir(sdir)
+                # Create info file
                 info = [
                     ('title', s.title),
                     ('speakers', speakers(s)),
@@ -53,6 +47,13 @@ class Command(BaseCommand):
                 f = codecs.open(file_path, 'w', encoding="utf-8")
                 for a,b in info:
                     f.write("%s: %s\n" % (a,b))
+                f.close()
+                # Create title
+                t = loader.get_template('video-title.svg')
+                file_path = os.path.join(sdir, "title.svg")
+                f = codecs.open(file_path, 'w', encoding="utf-8")
+                f.write(t.render(Context({
+                            'title': s.title, 'by': u"by " + speakers(s),})))
                 f.close()
             tar = tarfile.open("videos.tar", "w")
             tar.add(tdir, arcname=".")
