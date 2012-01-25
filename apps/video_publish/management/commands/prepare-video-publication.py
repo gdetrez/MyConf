@@ -10,32 +10,32 @@ class Command(BaseCommand):
     args = ''
     help = 'Export talks from the database and prepare video directories'
 
+    def mkFileName(self, session):
+        """Build a safe file name from the session information"""
+        speakers = defaultfilters.slugify(session.get_speakers_display())
+        title = defaultfilters.slugify(session.title)
+        if speakers != "":
+            return "%s--%s--FSCONS_2011" % (speakers, title)
+        else:
+            return "%s--FSCONS_2011" % (title)
+
+
     def handle(self, *args, **options):
         tdir = tempfile.mkdtemp()
         sessions = Session.objects.all()
         data = []
+        tar = tarfile.open("videos.tar", "w")
         for s in sessions:
             if s.kind in ('T','K') and s.time_slot is not None:
                 # Create directory
-                slug = "%s_%s" % (
-                    s.time_slot.begin.strftime("%Y%m%d"),
-                    defaultfilters.slugify(s.title))
+                slug = self.mkFileName(s)
                 sdir = os.path.join(tdir, slug)
                 os.mkdir(sdir)
-                # Create info file
-                info = [
-                    ('title', s.title),
-                    ('speakers', s.get_speakers_display()),
-                    ('date', s.time_slot.begin.strftime("%Y-%m-%d")),
-                    ('time', s.time_slot.begin.strftime("%H:%M")),
-                    ('room', s.room.name),
-                    ('kind', s.get_kind_display()),
-                    ('description', s.description),
-                    ]
-                file_path = os.path.join(sdir, "info.txt")
+                # Create metadata file
+                t = loader.get_template('video-metadata.xml')
+                file_path = os.path.join(sdir, "metadata.xml")
                 f = codecs.open(file_path, 'w', encoding="utf-8")
-                for a,b in info:
-                    f.write("%s: %s\n" % (a,b))
+                f.write(t.render(Context({'session':s})))
                 f.close()
                 # Create title
                 t = loader.get_template('video-title.svg')
@@ -45,6 +45,5 @@ class Command(BaseCommand):
                             'title': s.title,
                             'by': u"by " + s.get_speakers_display(),})))
                 f.close()
-            tar = tarfile.open("videos.tar", "w")
-            tar.add(tdir, arcname=".")
-            tar.close()
+                tar.add(sdir, arcname=slug)
+        tar.close()

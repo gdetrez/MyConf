@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<session kind="{{ session.get_kind_display }}">
+    <title>{{ session.title }}</title>
+    <speakers display="{{ session.get_speakers_display }}">
+      {% for speaker in session.presenters.all %}
+      <speaker>
+	{{ speaker.name }}
+      </speaker>
+      {% endfor %}
+    </speakers>
+    <track>{{ session.track.name }}</track>
+    <room>{{ session.room }}</room>
+    <timeslot begin="{{ session.time_slot.begin }}"
+	      end="{{ session.time_slot.end }}" />
+    <description>
+      {{ session.description }}
+    </description>
+</session>
