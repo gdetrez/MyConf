@@ -12,12 +12,8 @@ class Command(BaseCommand):
 
     def mkFileName(self, session):
         """Build a safe file name from the session information"""
-        speakers = defaultfilters.slugify(session.get_speakers_display())
         title = defaultfilters.slugify(session.title)
-        if speakers != "":
-            return "%s--%s--FSCONS_2011" % (speakers, title)
-        else:
-            return "%s--FSCONS_2011" % (title)
+        return "%s" % (title)
 
 
     def handle(self, *args, **options):
