@@ -12,5 +12,6 @@ db.sqlite
 _static
 _uploads
 .svn/
-venv/
+env/
 fixtures/
+.sass-cache
