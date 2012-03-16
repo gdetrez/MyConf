@@ -63,30 +63,9 @@ def tag(request, slug):
 
 def session(request, pk):
     session = get_object_or_404(Session, pk=pk, time_slot__isnull=False)
-
-    # shortcut variable to this session begin and end times
-    begin = session.time_slot.begin
-    end = session.time_slot.end
-    # Session starting up to 30 minutes after the end
-    # of this one
-    timerange = (end, end + timedelta(minutes=30))
-    sessions_after = Session.objects.filter(
-        time_slot__begin__range=timerange).order_by('time_slot__begin')
-        
-    # Concurrent sessions
-    query = Q(time_slot__begin__lt = end) & Q(time_slot__end__gt = begin)
-    concurrent_sessions = Session.objects.filter(query).exclude(pk=pk).order_by('time_slot__begin')
-        
-        
-    # 3 next talks in the same room
-    next_sessions_in_room = Session.objects.filter(
-        room=session.room,
-        time_slot__begin__gte = end,
-        time_slot__begin__year = begin.year,
-        time_slot__begin__month = begin.month,
-        time_slot__begin__day = begin.day
-        ).exclude(pk=pk).order_by('time_slot__begin')[:3]
-    
+    sessions_after = get_following_sessions(session, 30)
+    concurrent_sessions = get_concurrent_sessions(session)
+    next_sessions_in_room = get_next_n_sessions_in_room(3)
     t = loader.get_template('schedule/session_detail.djhtml')
     c = RequestContext(request,{
             'session': session,

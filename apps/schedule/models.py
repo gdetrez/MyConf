@@ -108,7 +108,7 @@ class Session(models.Model):
     def get_speakers_display(self, html=False):
         """Generate a nice list (with comma and conjuction) of the speakers
         That is suitable for display.
-        Optionally using html for link to the speaker page."""
+        Optionally using html for links to the speaker pages."""
         r = ""
         presenters = self.presenters.all()
         for i, person in enumerate(presenters):
