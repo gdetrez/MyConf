@@ -67,6 +67,8 @@ class Room(models.Model):
 
 class Track(models.Model):
     name = models.CharField(max_length=200, unique = True)
+    # TODO adding byline:
+    # byline = models.CharField(max_length=200)
     slug = models.SlugField(help_text="The slug is used to build the URL. Usually a ASCII representation of the name (only lowerase, numbers and hyphen)")
     color = ColorField(default='ffffff')
     description = models.TextField(help_text="Uses <a href=\"http://en.wikipedia.org/wiki/Markdown\">Markdown</a> syntax")
