@@ -4,7 +4,7 @@ env.hosts = ['fscons.org']
 
 @task(default=True)
 def deploy():
-    local("git push")
+    local("git push zjyto")
     code_dir = '/var/django/myconf'
     with cd(code_dir):
         run("git pull origin master")
