@@ -24,6 +24,7 @@ from django.template import loader, RequestContext
 from people.models import Person
 from schedule.models import Session, Track
 from taggit.models import Tag
+from schedule.utils import get_following_sessions, get_concurrent_sessions, get_next_n_sessions_in_room
 
 #@login_required(login_url='/admin/')
 def schedule(request):
@@ -65,7 +66,7 @@ def session(request, pk):
     session = get_object_or_404(Session, pk=pk, time_slot__isnull=False)
     sessions_after = get_following_sessions(session, 30)
     concurrent_sessions = get_concurrent_sessions(session)
-    next_sessions_in_room = get_next_n_sessions_in_room(3)
+    next_sessions_in_room = get_next_n_sessions_in_room(session, 3)
     t = loader.get_template('schedule/session_detail.djhtml')
     c = RequestContext(request,{
             'session': session,
