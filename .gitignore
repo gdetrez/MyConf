@@ -4,14 +4,9 @@
 # exclude patterns (uncomment them if you want to use them):
 *.pyc
 *~
-*.swp
 *.db
-*.sqlite
-localsettings.py
-db.sqlite
 _static
 _uploads
-.svn/
-env/
 fixtures/
+.svn/
 .sass-cache/
