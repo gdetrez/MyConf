@@ -3,23 +3,24 @@
 {% block head-title %}Welcome to My Conf{% endblock %}
 
 {% block content %}
-<h2>Welcome to My Conf</h2>
-<span class="subtitle">FSCONS' community application</span>
+<h2>FSCONS 2012</h2>
+<span class="subtitle">9, 10 &amp; 11 November, Göteborg, Sweden</span>
 
-<p>Welcome to FSCONS!</p>
+<p>Welcome to FSCONS 2012!</p>
 <p>We're the largest gathering for free culture, free software and a free society in the Nordic countries. The conference is organised by the <a href="http://ffkp.se/">Society for Free Culture and Software</a> in Göteborg, Sweden.</p>
 <p>
- <strong>The conference takes place the 11-13th of November 2011!</strong>
+ <strong>The conference takes place the 9-12th of November 2012!</strong>
 </p>
 
 <ul id="main-navigation" class="listview">
-  <li><a href="{% url 'schedule:schedule' %}" id="index_schedule">Schedule</a>
+  <!-- li><a href="{% url 'cfp:cfp' %}" id="index_cfp">Call for participation</a -->
+  <!-- li><a href="{% url 'schedule:schedule' %}" id="index_schedule">Schedule</a -->
   <!-- li><a href="#" id="index_manifesto">Manifesto</a -->
-  <li><a href="{% url 'map' %}" id="index_map">Map</a>
-  <li><a href="{% url 'information' %}" id="index_information">Practical Information</a>
-  <li><a href="{% url 'staff' %}" id="index_staff">Staff</a>
+  <!-- li><a href="{% url 'map' %}" id="index_map">Map</a -->
+  <!-- li><a href="{% url 'information' %}" id="index_information">Practical Information</a -->
+  <!-- li><a href="{% url 'staff' %}" id="index_staff">Staff</a -->
   <!-- li><a href="#" id="index_notifications">Notifications</a -->
-  <li><a href="{% url 'restaurants' %}" id="index_restaurant">Restaurants</a>
+  <!-- li><a href="{% url 'restaurants' %}" id="index_restaurant">Restaurants</a -->
 </ul>
 
 {% endblock %}
