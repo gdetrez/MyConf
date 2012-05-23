@@ -296,3 +296,12 @@ figcaption {
 }
 
 h3 { clear: both;}
+
+.message {
+    background: #FDEB9B;
+    border: thin solid #FCD116;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    border-radius: 1px;
+    padding: 9px 8px;
+}

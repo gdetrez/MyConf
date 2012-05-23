@@ -147,8 +147,9 @@ INSTALLED_APPS = (
     'apps.signup',
     'apps.map',
     'apps.scheduleapi',
-    'apps.video_publish'
-)
+    'apps.video_publish',
+    'apps.cfp'
+    )
 
 THUMBNAIL_DEBUG = DEBUG
 THUMBNAIL_FORMAT = "PNG"

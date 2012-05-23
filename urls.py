@@ -14,6 +14,7 @@ urlpatterns = patterns('',
 
     url(r'^schedule/api/', include('scheduleapi.urls', namespace="scheduleapi")),
     url(r'^schedule/', include('schedule.urls', namespace="schedule")),
+    url(r'^cfp/', include('cfp.urls', namespace="cfp")),
     url(r'^restaurants/', include('restaurants.urls')),
 
     url(r'^map/$',

@@ -1,0 +1,76 @@
+{% extends "base.djhtml" %}
+{% load url from future %}
+{% block head-title %}CAll for participation{% endblock %}
+
+{% block extra-headers %}
+<link rel="stylesheet"
+      href="{{ STATIC_URL }}style/forms.css"
+      type="text/css"  media="screen">
+{{ form.media }}
+{% endblock %}
+
+{% block content %}
+<h2>Submit a talk</h2>
+<span class="subtitle">Let's have a talk!</span>
+
+
+<form action="{{ action }}" method="post">
+    {% if token %}
+      <input type="hidden" name="token" value="{{ token }}">
+    {% endif %}
+    {{ form.non_field_errors }}
+    <h3>Talk</h3>
+    <div class="fieldWrapper{% if form.title.errors %} errors{% endif %}">
+        <label for="id_title">Title:</label>
+        {{ form.title }}
+        {{ form.title.errors }}
+    </div>
+    <div class="fieldWrapper{% if form.abstract.errors %} errors{% endif %}">
+        <label for="id_abstract">Abstract</label>
+        {{ form.abstract }}
+	<p class="help_text">{{ form.abstract.help_text }}</p>
+        {{ form.abstract.errors }}
+    </div>
+    <div class="fieldWrapper{% if form.speakers.errors %} errors{% endif %}">
+        <label for="id_speakers">Speakers</label>
+        {{ form.speakers }}
+	<p class="help_text">{{ form.speakers.help_text }}</p>
+        {{ form.speakers.errors }}
+    </div>
+
+    <h3>Contact information</h3>
+    <div class="fieldWrapper{% if form.contact_name.errors %} errors{% endif %}">
+        <label for="id_contact_name">Name</label>
+        {{ form.contact_name }}
+        {{ form.contact_name.errors }}
+    </div>
+    <div class="fieldWrapper{% if form.contact_email.errors %} errors{% endif %}">
+        <label for="id_contact_email">Email</label>
+        {{ form.contact_email }}
+        {{ form.contact_email.errors }}
+    </div>
+
+    <h3>Meta</h3>
+    <div class="fieldWrapper">
+        <label for="id_video">
+	       {{ form.video }}
+	       <span>I accept that my talk will be recorded and published online under a creative commn license.</span>
+	</label>
+	<p class="help_text">{{ form.video.help_text }}</p>
+        {{ form.video.errors }}
+    </div>
+    <div class="fieldWrapper">
+        <label for="id_accessible">
+		{{ form.accessible }}
+		<span>I pledge to make my talk more accessible by, at the minimum, following <a href="#">FSCONS 2012 accessibility pledge</a></span>
+	</label>
+	<p class="help_text">{{ form.accessible.help_text }}</p>
+        {{ form.accessible.errors }}
+    </div>
+    <div class="submit-button">
+    	 <button type=submit>Submit</button>
+    </div>
+    {% csrf_token %}
+</form>
+
+{% endblock %}

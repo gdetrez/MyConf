@@ -43,8 +43,7 @@ body {
  */
 sup { line-height: 0;}
 b { font-size: inherit;
-  line-height: 0;}
-
+    line-height: 0;}
 
 /* Uncomment to display the typographic grid
 .wrapper {
@@ -77,6 +76,8 @@ h3 { border-bottom: thin black solid;
     font-family: 'Yanone Kaffeesatz', arial, Sans-serif;
 }
 
+dt { font-weight: bold; }
+
 /* ***************************************************************************
  ** Vertical rythm
  *
@@ -95,6 +96,8 @@ ul, p, .subtitle {
 
 /* For some elements, a margin-top is also necessary */
 ul { margin-top: 1.25em; }
+
+dd { margin-bottom: 1.25em; }
 
 /* **************************************************************************
  ** Links & text styles
