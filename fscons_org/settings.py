@@ -3,7 +3,7 @@
 
 import sys, os
 from os.path import join
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ROOT = PROJECT_ROOT
 sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
@@ -12,10 +12,10 @@ TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'devdb.sqlite',
-        'USER': '',
-        'PASSWORD': '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fscons_myconf',
+        'USER': 'fscons_myconf',
+        'PASSWORD': 'TifJe9quank',
         'HOST': '',
         'PORT': '',
     }
@@ -138,17 +138,17 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     
     # MyConf apps
-    'apps.people',
+    'people',
     #'notifications',
     #'simulator',
-    'apps.schedule',
-    'apps.restaurants',
-    'apps.colors',
-    'apps.signup',
-    'apps.map',
-    'apps.scheduleapi',
-    'apps.video_publish',
-    'apps.cfp'
+    'schedule',
+    'restaurants',
+    'colors',
+    'signup',
+    'map',
+    'scheduleapi',
+    'video_publish',
+    'cfp'
     )
 
 THUMBNAIL_DEBUG = DEBUG
