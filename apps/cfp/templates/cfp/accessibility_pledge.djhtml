@@ -1,0 +1,111 @@
+{% extends "base.djhtml" %}
+{% load url from future %}
+{% block head-title %}CAll for participation{% endblock %}
+
+{% block content %}
+<h2>Accessibility pledge</h2>
+<span class="subtitle"></span>
+
+<div class="contents">
+<p>Presentations that are accessible to people with disabilities are inclusive to many more audiences as well, including people who are not fluent in the language and people with different learning styles. Although a good presenter should adapt his presentation to the particular needs of his or her audience, we we propose these guidelines to help make every presentation more accessible from the start.</p>
+
+<p>For FSCONS 2012, we have decided to introduce a minimal set of guidelines, called the accessibility pledge. As a speaker you can choose to commit to those guidelines in which case your talk will be marked in the schedule as more accessible. By making those guidelines available to everyone we hope to make the meaning of this marking non ambiguous.</p>
+
+<p>Finally, those guidelines are mearly scratching the surface of what you can do to make your presentation more inclusive. If you want to go further, you will find some references at the end of the page.</p>
+
+<p>We hope that, with your help, we can build a more open FSCONS. See you in Gothenburg!</p>
+
+<h3>Slides accessibility</h3>
+
+<h4>Make text and important visuals big enough to be read even from the back of the room.</h4>
+
+<p>This applies to graphics on slides, videos, posters, and other non-electronic material.
+
+<img class="centered" src="{{ STATIC_URL }}cfp/slides_examples-size.png" alt="On the left, the text and the graphic are too small which makes them difficult to read. On the right hand side, the text is made bigger and more space is also given to the graphics, making both easier to see. Note also that different patterns for different graphs make them distinguishable for people with e.g. color blindness." />
+
+<p>On the left, the text and the graphic are too small which makes them difficult to read. On the right hand side, the text is made bigger and more space is also given to the graphics, making both easier to see. Note also that different patterns for different graphs make them distinguishable for people with e.g. color blindness.
+
+<h4>Use an easy-to-read font face.</h4>
+
+<p>Simple fonts with consistent thickness are often easier to read from a distance (as opposed to fonts where parts of the letters are thin, like Times New Roman and most serif fonts). Avoid handwritten, calligraphic and fancy fonts that are difficult to read.
+
+<img class="centered" src="{{ STATIC_URL }}cfp/slides_examples-fonts.png" alt=On the right hand side, examples of fonts that are poorly adapted to slides are shown (serif fonts, fancy calligraphic fonts, or funny hadwritten fonts). On the left hand side, we used Open Sans which is very nice for legible slides." />
+
+<p>The fonts used on the left slide are not the most readable for a presentation. [Open Sans] is a good example of legible, sans-serifs font that works well on slides. It is available for free under the Apache licence.
+
+<h4>Use sufficient color contrast.</h4>
+
+<p>Color contrast guidelines and evaluation tools for web pages might be helpful to determine sufficient contrast (although the medium is different because those guidelines are specifically for web pages). Use appropriate background and text colors. Some suggest when presenting in a light room to display dark text on a light background. When presenting in a darkened room to display light text on a dark background, and ensure that the weight of text is sufficient (for example, bold).
+
+<img class="centered" src="{{ STATIC_URL }}cfp/slides_examples-contrast.png" alt="On the left, a slide with a dark background shows how dark text (dark red) and thin lines make it more difficult to read. On the right hand side, the text is black, sufficiently weighted, on a white background which makes it very readable." />
+
+<p>Is is really important to have good contrast on the slides. It is also essential to keep in mind that contrast perception can change from a person to another: someone may have difficulties to differentiate two colours that you distinctly perceive as different. Finally, remember that your screen probably have much better contrast than a projector!
+
+<h4>Make provided material accessible.</h4>
+
+<p>If you are giving participants material, make it accessible. An <a href="http://www.w3.org/WAI/presentations/WCAG20_benefits/">example of presentation material provided in both presentation format and web format (HTML and CSS)</a> is linked from the top of the page after "The Benefits of WCAG 2 presentation is available in 2 formats:".
+
+<h3>Accessible audio & video</h4>
+
+<h4>Audio transcription</h4>
+
+<p>If you plan to use audio in your presentation, keep in mind that there could be a lot of things preventing your audience to hear it correctly — or at all! For this reason, it is good to provide a visual support to help them understand. This can be a full transcript of the spoken text or a simple summary.
+
+<h4>Subtitle your videos</h4>
+
+<p>If you want to show a video, make sure that you have proper subtitles for it. This not only helps people who can't hear well or at all but also those who are not familiar with the language spoken in the video. Most commercial video come with subtitles. <a href="http://www.universalsubtitles.org/">Universal subtitles</a> allow you to easily add subtitles to online videos.
+
+<h4>Summarize the video</h4>
+
+<p>Give a quick summary of the video, either before or after playing it. This helps everyone understand the content even if they have cognitive disabilities or cannot see the images properly or at all.
+
+<h3>During the presentation</h3>
+
+<h4>Speak clearly.</h4>
+
+<p>And avoid speaking too fast, so participants and sign language interpreters (if present) can better understand you and keep up.
+
+<h4>Use simple language.</h4>
+
+<p>Avoid or explain jargon, acronyms, and idioms. For example, expressions such as "raising the bar" can be interpreted literally by some people with cognitive disabilities and can be confusing.
+
+<h4>Give people time to process information.</h4>
+
+<p>Pause between topics. When you ask if anyone has questions, some people with cognitive disabilities will need extra time to form their thoughts into words.
+
+<h4>Be visible.</h4>
+
+<p>Also be in good light so participants can see your face when you talk, which helps some people hear and understand better. Be careful not to face away from the audience to read projected material.
+
+<h4>Use a microphone.</h4>
+
+<p>Even in a small room, some people might need the audio electronically, including people using ALDs/hearing loops and remote CART writers. Note that if you ask "Can everyone hear me OK?" some people might be uncomfortable saying that they cannot.
+
+<h4>Ensure that all relevant sound is audible through the sound system.</h4>
+
+<p>For example, if the audience doesn't have a microphone, repeat their questions and comments into your microphone before replying.
+
+<h4>Cover all displayed text.</h4>
+
+<p>Say all of the information that is on each slide. (This does not mean that you have to read the slide exactly as it is, it just means that you cover the visual information in what you say.)
+
+<h4>Describe pertinent parts of graphics, videos, and other visuals.</h4>
+
+<p>Describe them to the extent needed to understand the presentation. (You usually do not need to describe decorative images.)
+
+<h4>Describe other visual information.</h4>
+
+<p>For example, if you ask a question of the audience, summarize the response, such as, Speaker: "If you make your websites fully accessible, please raise your hand."...then: "About half raised their hand."
+
+<h3>Sources and references</h4>
+
+<ul>
+<li><a href="http://www.w3.org/WAI/training/accessible">http://www.w3.org/WAI/training/accessible</a>
+<li><a href="http://www.slideshare.net/PlusOrMinusZero/slide-presentation-guidelines">Slideshare presentation on slides guidelines with examples, good read!</a>
+<li><a href="http://jfly.iam.u-tokyo.ac.jp/color/">Page on color blindness</a>
+<li><a href="http://www.pptmagic.com/articles/see.htm">Can you see what I see?</a>
+<li><a href="http://www.toledo-bend.com/colorblind/index.asp">Colors for the color blind</a>
+<li><a href="http://www.cudo.jp/e/">Color blind universal design</a>
+</ul>
+</div>
+{% endblock %}
