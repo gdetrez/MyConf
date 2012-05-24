@@ -10,7 +10,7 @@ def default_editable_until():
 
 class Submission(models.Model):
     title = models.CharField(max_length=200)
-    abstract = models.TextField(help_text="A short abstract about your talk. You will be able to write a different absctact for the published program if you wish to.")
+    abstract = models.TextField(help_text="A short abstract about your talk. You will be able to write a different absctact for the published programme if you wish to.")
     speakers = models.TextField(help_text="Speakers for this talk. One name per line please.")
 
     contact_name = models.CharField(max_length=30, help_text="Full name")
@@ -44,7 +44,7 @@ class Submission(models.Model):
         mail = loader.get_template('cfp/accept_mail')
         send_mail('[FSCONS 2012] Your submission have been accepted',
                   mail.render(c),
-                  'program@fscons.org',
+                  'programme@fscons.org',
                   [self.contact_email],
                   fail_silently = True)
         self.status = 'A'
@@ -55,7 +55,7 @@ class Submission(models.Model):
         mail = loader.get_template('cfp/reject_mail')
         send_mail('[FSCONS 2012] Your submission have been rejected',
                   mail.render(c),
-                  'program@fscons.org',
+                  'programme@fscons.org',
                   [self.contact_email],
                   fail_silently = True)
         self.status = 'R'

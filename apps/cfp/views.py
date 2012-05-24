@@ -23,7 +23,7 @@ def submit(request):
             mail = loader.get_template('cfp/submit_mail')
             send_mail('[FSCONS 2012] Thanks for your submission',
                       mail.render(c),
-                      'program@fscons.org',
+                      'programme@fscons.org',
                       [submission.contact_email],
                       fail_silently=True)
             t = loader.get_template('cfp/show.djhtml')       
