@@ -9,8 +9,8 @@ urlpatterns = patterns('',
 
     url(r'^$', direct_to_template, {'template': 'home.djhtml'}, name="home"),
 
-    url(r'^staff/$', 'myconf.apps.people.views.staff', name="staff"),
-    url(r'^people/(?P<slug>[\w\d-]+)/$', 'myconf.apps.people.views.user'),
+    url(r'^staff/$', 'apps.people.views.staff', name="staff"),
+    url(r'^people/(?P<slug>[\w\d-]+)/$', 'apps.people.views.user'),
 
     url(r'^schedule/api/', include('scheduleapi.urls', namespace="scheduleapi")),
     url(r'^schedule/', include('schedule.urls', namespace="schedule")),

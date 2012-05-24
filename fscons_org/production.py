@@ -23,3 +23,4 @@ CACHES = {
     }
 }
 
+ROOT_URLCONF = 'myconf.urls'

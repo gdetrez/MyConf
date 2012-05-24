@@ -234,6 +234,9 @@ navigation.listview { list-style-type: none;
     background-image: url("ic_staff_black.png");
     background-position: 1.5px center;
     padding-left: 50px;}
+#index_cfp {
+    background-image: url("ic_cfp_black.png");
+    background-position: 9px center;}
 #main-navigation a:hover { background-color: #f8f8f8;}
 #main-navigation a:hover:after { float:right; content: "»"; margin-right:5px;}
 

@@ -65,7 +65,7 @@ div.submit-button {
 }
 
 
-button {
+button, a.button {
     color: white;
     display: inline-block;
     height: 32px;
@@ -87,8 +87,7 @@ button {
     text-transform: none;
     vertical-align: bottom;
     white-space: pre;
-    width: 85px;
-
+//    width: 85px;
     border: 1px solid transparent;
     color: #fff;
     text-shadow: 0 1px rgba(0,0,0,0.1);
@@ -101,7 +100,7 @@ button {
     background-image: -o-linear-gradient(top,#dd4b39,#d14836);
     background-image: linear-gradient(top,#dd4b39,#d14836);
 }
-button:hover {
+button:hover, a.button:hover {
   border: 1px solid #b0281a;
   color: #fff;
   text-shadow: 0 1px rgba(0,0,0,0.3);
@@ -118,7 +117,7 @@ button:hover {
   -o-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
   box-shadow: 0 1px 1px rgba(0,0,0,0.2);
   }
-button:active {
+button:active, a.button:active {
   border: 1px solid #992a1b;
   background-color: #b0281a;
   background-image: -webkit-gradient(linear,left top,left bottom,from(#dd4b39),to(#b0281a));

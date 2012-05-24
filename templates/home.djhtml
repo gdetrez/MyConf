@@ -13,7 +13,7 @@
 </p>
 
 <ul id="main-navigation" class="listview">
-  <!-- li><a href="{% url 'cfp:cfp' %}" id="index_cfp">Call for participation</a -->
+  <li><a href="{% url 'cfp:cfp' %}" id="index_cfp">Call for participation</a>
   <!-- li><a href="{% url 'schedule:schedule' %}" id="index_schedule">Schedule</a -->
   <!-- li><a href="#" id="index_manifesto">Manifesto</a -->
   <!-- li><a href="{% url 'map' %}" id="index_map">Map</a -->
