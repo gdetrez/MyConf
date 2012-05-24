@@ -22,5 +22,3 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
-
-ROOT_URLCONF = 'myconf.urls'

@@ -2,11 +2,11 @@
 # Django settings for myconf project.
 
 import sys, os
-from os.path import join
+
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ROOT = PROJECT_ROOT
-sys.path.insert(0, PROJECT_ROOT)
-sys.path.insert(1, os.path.join(PROJECT_ROOT, "apps"))
+print "PROJECT_ROOT: %s" % PROJECT_ROOT
+sys.path.insert(0, os.path.join(PROJECT_ROOT, "apps"))
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
@@ -116,7 +116,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'fscons.urls'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
