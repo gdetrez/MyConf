@@ -1,9 +1,7 @@
 Hej!
 
 You have successfully submited the talk “{{ submission.title }}” to FSCONS 2012. You will hear from us about the final decision on this same email address.
-Thanks again for your participation!
-
-Here are the details of your submission.
+Thanks again for your submission!
 
 ---------------------------------
 Title: {{ submission.title }}
@@ -20,4 +18,4 @@ Accessible: {{ submission.accessible|yesno }}
 If you have question or if you want to change your submission, do not hesitate to contact us at programme@fscons.org.
 We hope to see you at FSCONS,
 
-The FSCONS organiation commitee.
+The programme manager.

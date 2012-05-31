@@ -1,6 +1,6 @@
 {% extends "base.djhtml" %}
 {% load url from future %}
-{% block head-title %}CAll for participation{% endblock %}
+{% block head-title %}Call for participation{% endblock %}
 
 {% block extra-headers %}
 <link rel="stylesheet"
@@ -54,7 +54,7 @@
     <div class="fieldWrapper">
         <label for="id_video">
 	       {{ form.video }}
-	       <span>I accept that my talk will be recorded and published online under a Creative Commons license (<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>).</span>
+	       <span>I accept that my talk will be recorded (audio&amp;video) and published online under a Creative Commons license (<a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>).</span>
 	</label>
 	<p class="help_text">{{ form.video.help_text }}</p>
         {{ form.video.errors }}
