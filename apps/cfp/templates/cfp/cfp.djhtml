@@ -1,15 +1,65 @@
 {% extends "base.djhtml" %}
 {% load url from future %}
-{% block head-title %}CAll for participation{% endblock %}
+{% block head-title %}Call for participation{% endblock %}
 
 {% block content %}
 <h2>Call for participation</h2>
-<span class="subtitle">Let's have a talk!</span>
+<span class="subtitle">FSCONS 2012, November 09‒11</span>
 
-<h3>Here goes the CFP text</h3>
+<div class="content">
+<p>The Free Society Conference and Nordic Summit (FSCONS) is a meeting place for social change, focused on the future of free software and free society. The conference brings together people from a wide range of fields, and merges the technical with the social, seeking both to activate and challenge. Open discussion and brainstorming are as important as the talks given during the conference.
+
+<h4>Invitation</h4>
+<p>For this years conference we're looking for proposals on a number of different subjects. We're looking for proposals that relate to Free Society or Free Software generally, as well as those which are at the crossroads of the two or which take the philosophy of Free Society and Free Software and brings them to a whole new field. To give you a hint of the scope of the conference here are some topics already planned:
+<ul>
+<li>Embedded systems
+<li>FSFE—Legal track
+<li>FSFE—Hosting your own services
+<li>Wikimedia
+<li>Open entertainment
+<li>Open security
+<li>Free software in a free world
+<li>Decentralised society
+<li>Web science
+</ul>
+
+<p>But don't let this restrict your thinking: you can submit a proposal even if it doesn't quite fit into any of the above topics.
+
+<p>The dealine for your proposal is July 1 st.
+
+<h4>How to submit your proposal</h4>
+
+<p>In order to submit your proposal, please go to <a href="http://fscons.org/cfp/submit/">http://fscons.org/cfp/submit/</a>, register your proposal and make sure your provide valid contact information. This proposal form is to be used only for your personal proposal. If you have ideas of other people you want to suggest as speakers, please feel free to suggest those in the FSCONS Wiki (<a href="http://wiki.fscons.org/page/Suggested_Speakers_2012">http://wiki.fscons.org/page/Suggested_Speakers_2012</a>).
+
+<p>When you fill out the proposal form, we would like to ask you to provide the following information.
+<ul>
+<li>Title—The title of your session/presentation
+<li>Abstract—The abstract and description of your presentation.
+<li>Presenter(s)—You can add any number of presenters to the session.
+<li>Contact information
+<li>Video recording/streaming—Indicates wether you want your session recorded or not.
+<li>Accessibility pledge—Indicates you want your talk inluded in the list of accessible talks. Please see <a href="http://fscons.org/cfp/accessibility/">http://fscons.org/cfp/accessibility/</a> to understand what this means.
+</ul>
+
+<p>After the review period, ending August 1 st, you will get notified if your proposal is accepted or not.
 
 <div class="submit-button">
     <a class="button" href="{% url 'cfp:submit' %}">Submit a talk</a>
+</div>   
+
+<h4>Important dates for FSCONS 2012</h4>
+<p>
+<ul>
+<li>July 1 st - deadline for submissions
+<li>August 1 st - accepted proposals will be notified.
+</ul>
+
+<p>If your proposal is accepted, the abstract submission deadline is September 1 st.
+
+<p>Looking forward to see you at FSCONS 2012 in November!
+
+<p>Programme manager, Leif-Jöran Olsson
+
 </div>   
 
 {% endblock %}

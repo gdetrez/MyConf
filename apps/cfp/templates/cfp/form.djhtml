@@ -11,8 +11,7 @@
 
 {% block content %}
 <h2>Submit a talk</h2>
-<span class="subtitle">Let's have a talk!</span>
-
+<span class="subtitle">FSCONS 2012, November 09‒11</span>
 
 <form action="{{ action }}" method="post">
     {% if token %}

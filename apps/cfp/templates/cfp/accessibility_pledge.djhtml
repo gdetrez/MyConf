@@ -1,6 +1,6 @@
 {% extends "base.djhtml" %}
 {% load url from future %}
-{% block head-title %}CAll for participation{% endblock %}
+{% block head-title %}Accessibility pledge{% endblock %}
 
 {% block content %}
 <h2>Accessibility pledge</h2>
