@@ -48,5 +48,11 @@
             {% endblock %}
         </div>
         {% endblock %}
+	<div id="footer">
+	<ul>
+	<li><a href="{% url 'about' %}">About fscons</a>
+	<li><a href="{% url 'contact' %}">Contact us</a>
+	</ul>
+	</div>
     </body>
 </html>
