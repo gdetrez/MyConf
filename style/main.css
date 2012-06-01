@@ -43,7 +43,6 @@
 }
 
 .fullscreen {
-    /* Limiting width helps avoids too long lines on big screens */
     max-width: none;
     width:100%;
     margin:0;
@@ -123,6 +122,39 @@ hgroup, nav, section, summary, video {
 #nav_notifications {
     background-image: url("./ic_notification_24.png");
     width: 26px;}
+
+/* ***************************************************************************
+ * Footer
+ * Style and layout
+ */
+#footer {
+    /* Limiting width helps avoids too long lines on big screens */
+    padding: 0 1em;
+}
+
+#footer {
+    margin: 2.5em auto 0;
+    padding: 1.25em 0;
+    background: #f3f3f3;
+}
+
+#footer ul {
+    max-width: 50em;
+    margin: 0 auto;
+    display: block;
+}
+
+#footer ul li {
+    list-style-type: none;
+    display: inline;
+    font-size: .75em;
+}
+
+#footer ul li a {
+    text-decoration: none;
+    color: #666;
+    margin-left: 1.25em
+}
 
 /* ***************************************************************************
  * LIST VIEW
