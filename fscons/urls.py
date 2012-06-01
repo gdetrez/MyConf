@@ -9,6 +9,11 @@ urlpatterns = patterns('',
 
     url(r'^$', direct_to_template, {'template': 'home.djhtml'}, name="home"),
 
+    url(r'^about/$', direct_to_template,
+     {'template': 'about.html'}, name="about"),
+    url(r'^contact/$', direct_to_template,
+     {'template': 'contact.html'}, name="contact"),
+
     url(r'^staff/$', 'apps.people.views.staff', name="staff"),
     url(r'^people/(?P<slug>[\w\d-]+)/$', 'apps.people.views.user'),
 
