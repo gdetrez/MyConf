@@ -13,6 +13,8 @@ urlpatterns = patterns('',
      {'template': 'about.html'}, name="about"),
     url(r'^contact/$', direct_to_template,
      {'template': 'contact.html'}, name="contact"),
+    url(r'^get-involved/$', direct_to_template,
+     {'template': 'get_involved.html'}, name="get-involved"),
 
     url(r'^staff/$', 'apps.people.views.staff', name="staff"),
     url(r'^people/(?P<slug>[\w\d-]+)/$', 'apps.people.views.user'),

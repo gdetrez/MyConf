@@ -269,6 +269,9 @@ navigation.listview { list-style-type: none;
 #index_cfp {
     background-image: url("ic_cfp_black.png");
     background-position: 9px center;}
+#index_help {
+    background-image: url("ic_help_black.png");
+    background-position: 9px center;}
 #main-navigation a:hover { background-color: #f8f8f8;}
 #main-navigation a:hover:after { float:right; content: "»"; margin-right:5px;}
 

@@ -89,7 +89,7 @@ dt { font-weight: bold; }
  * element has to be a multiple of the line height.
  * Default is 1 line (1.25em = 20px) spacing.
  **/
-ul, p, .subtitle {
+ul, p, .subtitle, address {
     display: block;
     margin-bottom: 1.25em;    
 }
