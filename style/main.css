@@ -146,14 +146,14 @@ hgroup, nav, section, summary, video {
 
 #footer ul li {
     list-style-type: none;
-    display: inline;
+    display: inline-block;
     font-size: .75em;
+    margin-left: 2em
 }
 
 #footer ul li a {
     text-decoration: none;
     color: #666;
-    margin-left: 1.25em
 }
 
 /* ***************************************************************************

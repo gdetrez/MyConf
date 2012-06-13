@@ -23,6 +23,7 @@ RSYNC_EXCLUDE = (
     'local_settings.py',
     'fabfile.py',
     'bootstrap.py',
+    '_static',
 )
 
 @task(default=True)
@@ -66,7 +67,6 @@ def rsync():
 def reload():
     """ touch wsgi file to trigger reload """
     apache_dir = os.path.join(env.root, 'myconf', 'apache')
+    sudo("service apache2 restart")
     with cd(apache_dir):
         run('touch staging.wsgi')
-
-

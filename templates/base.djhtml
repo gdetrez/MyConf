@@ -53,6 +53,12 @@
 	<li><a href="{% url 'about' %}">About fscons</a>
 	<li><a href="{% url 'contact' %}">Contact us</a>
 	</ul>
+	<ul>
+	<li><a href="/2010/">FSCONS'10</a>
+	<li><a href="/2009/">FSCONS'09</a>
+	<li><a href="/2008/">FSCONS'08</a>
+	<li><a href="/2007/">FSCONS'07</a>
+	</ul>
 	</div>
     </body>
 </html>
