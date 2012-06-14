@@ -28,31 +28,31 @@
 #main { margin-top: 1.25em; /* 1 line1 of space before the content */ }
 
 @media screen and (min-width: 500px) {
-    #main { margin-top: 2.5em; /* 2 lines of space before the content */ }
+  #main { margin-top: 2.5em; /* 2 lines of space before the content */ }
 }
 
 /* and no margin for full screen #main */
 #main.fullscreen {
-    margin-top: 0;
+  margin-top: 0;
 }
 .wrapper {
-    /* Limiting width helps avoids too long lines on big screens */
-    max-width:50em;
-    margin:0 auto 0;
-    padding: 0 1em;
+  /* Limiting width helps avoids too long lines on big screens */
+  max-width:50em;
+  margin:0 auto 0;
+  padding: 0 1em;
 }
 
 .fullscreen {
-    max-width: none;
-    width:100%;
-    margin:0;
-    padding:0;
+  max-width: none;
+  width:100%;
+  margin:0;
+  padding:0;
 }
 
 article, aside, canvas, details,
 figure, footer, header,
 hgroup, nav, section, summary, video {
-    display: block;
+  display: block;
 }
 
 /* ***************************************************************************
@@ -60,100 +60,102 @@ hgroup, nav, section, summary, video {
  * Style and layout
  */
 .header {
-    color: #f5f5f5;
-    background: #1a1a1a url("./line.png") repeat-x top left;
-    margin: 0;
-    padding:1em 0;}
-    /* clearing after the header */
-    .header:after {
-	clear:both; content: "."; height:0; visibility:hidden; display:block;}
+  color: #f5f5f5;
+  background: #1a1a1a url("./line.png") repeat-x top left;
+  margin: 0;
+  padding:1em 0;}
+
+/* clearing after the header */
+.header:after {
+  clear:both; content: "."; height:0; visibility:hidden; display:block;}
 
 .header h1 {
-    margin:0;
-    padding:0;
-    display:inline;
-    font-size: 2em;    /* 32px */
-    line-height:1.25em /* 40px */}
-    .header h1 a {
-	color: #f5f5f5;
-	text-decoration: none;}
+  margin:0;
+  padding:0;
+  display:inline;
+  font-size: 2em;    /* 32px */
+  line-height:1.25em /* 40px */}
+
+.header h1 a {
+  color: #f5f5f5;
+  text-decoration: none;}
 
 /* Logo */
 .header img {
-    height: 40px;
-    vertical-align: top;
+  height: 40px;
+  vertical-align: top;
 }
 
 /** header navigation */
 .header .navigation {
-    display: block;
-    margin:0 auto;
-    list-style-type:none;
-    width:198px;
-    padding:0;}
+  display: block;
+  margin:0 auto;
+  list-style-type:none;
+  width:198px;
+  padding:0;}
 
 /* By default, the navigation is centered under the title.
  * For screen bigger than 500px we can push it in the right top corner.
  */
 @media screen and (min-width: 500px) {
-    .header .navigation { float:right; }
+  .header .navigation { float:right; }
 }
 
 
 .header .navigation a {
-    display:block;
-    float:left;
-    margin:0 10px;
-    height:32px;
-    background-position: center;
-    background-repeat:no-repeat;}
+  display:block;
+  float:left;
+  margin:0 10px;
+  height:32px;
+  background-position: center;
+  background-repeat:no-repeat;}
 
 /* We replace the menu texts by icons.*/
 .header .navigation a span { display:none; }
 #nav_schedule {
-    background-image: url("./ic_schedule_24.png");
-    width: 24px;}
+  background-image: url("./ic_schedule_24.png");
+  width: 24px;}
 #nav_manifesto {
-    background-image: url("./ic_manifesto_24.png");
-    width: 36px;}
+  background-image: url("./ic_manifesto_24.png");
+  width: 36px;}
 #nav_map {
-    background-image: url("./ic_map_24.png");
-    width: 32px;}
+  background-image: url("./ic_map_24.png");
+  width: 32px;}
 #nav_notifications {
-    background-image: url("./ic_notification_24.png");
-    width: 26px;}
+  background-image: url("./ic_notification_24.png");
+  width: 26px;}
 
 /* ***************************************************************************
  * Footer
  * Style and layout
  */
 #footer {
-    /* Limiting width helps avoids too long lines on big screens */
-    padding: 0 1em;
+  /* Limiting width helps avoids too long lines on big screens */
+  padding: 0 1em;
 }
 
 #footer {
-    margin: 2.5em auto 0;
-    padding: 1.25em 0;
-    background: #f3f3f3;
+  margin: 2.5em auto 0;
+  padding: 1.25em 0;
+  background: #f3f3f3;
 }
 
 #footer ul {
-    max-width: 50em;
-    margin: 0 auto;
-    display: block;
+  max-width: 50em;
+  margin: 0 auto;
+  display: block;
 }
 
 #footer ul li {
-    list-style-type: none;
-    display: inline-block;
-    font-size: .75em;
-    margin-left: 2em
+  list-style-type: none;
+  display: inline-block;
+  font-size: .75em;
+  margin-left: 2em
 }
 
 #footer ul li a {
-    text-decoration: none;
-    color: #666;
+  text-decoration: none;
+  color: #666;
 }
 
 /* ***************************************************************************
@@ -171,8 +173,8 @@ hgroup, nav, section, summary, video {
  * agree with the typographic grid of 20px. */
 ul.listview,
 navigation.listview { list-style-type: none;
-	      margin: 30px 0 30px 0 !important;
-	      padding: 0;}
+		      margin: 30px 0 30px 0 !important;
+		      padding: 0;}
 .listview li { list-style-type:none; display:inline;
 	       margin:0; padding:0;}
 .listview a { display:block;
@@ -187,19 +189,19 @@ navigation.listview { list-style-type: none;
 /* in case the screen is bigger than 500px, we split listviews
  * in 2 columns */
 @media screen and (min-width: 500px) {
-    .listview:after {
-	clear:left;
-	content: ".";
-	height:0;
-	visibility:hidden;
-	display:block;}
+  .listview:after {
+    clear:left;
+    content: ".";
+    height:0;
+    visibility:hidden;
+    display:block;}
 
-    /* We use li here to be the floating element
-     * because a may have padding and you should't give 
-     * Width and padding to the same element */
-    .listview li { 
-	width: 45%; float: left;
-	margin-right: 5%;}
+  /* We use li here to be the floating element
+   * because a may have padding and you should't give 
+   * Width and padding to the same element */
+  .listview li { 
+    width: 45%; float: left;
+    margin-right: 5%;}
 }
 
 
@@ -207,23 +209,23 @@ navigation.listview { list-style-type: none;
  * in 3 columns
  */
 @media screen and (min-width: 750px) {
-    /* We use li here to be the floating element
-     * because <a/> may have padding and you should't give 
-     * Width and padding to the same element */
-    .listview li { 
-	width: 30%; float: left;
-	margin-right: 3%;}
+  /* We use li here to be the floating element
+   * because <a/> may have padding and you should't give 
+   * Width and padding to the same element */
+  .listview li { 
+    width: 30%; float: left;
+    margin-right: 3%;}
 }
 
 /* A special case of listview is a clickable menu with 32x32 icons.
  * For this we add hover and space the icons.
  * the actual icon is better specified in a style attribute on the element
  * itself.
-/* **** Main menu **** */
+ /* **** Main menu **** */
 .listview.menu a { background-repeat: no-repeat;
-   padding-left: 50px;
-    background-position: 9px center;
-  }
+		   padding-left: 50px;
+		   background-position: 9px center;
+		 }
 
 .listview.menu a:hover { background-color: #f8f8f8;}
 .listview.menu a:hover:after { float:right; content: "»"; margin-right:5px;}
@@ -232,46 +234,46 @@ navigation.listview { list-style-type: none;
  * Home Screen Menu
  */
 #main-navigation a {
-    background-repeat: no-repeat;
-    padding-left: 60px;}
+  background-repeat: no-repeat;
+  padding-left: 60px;}
 #index_schedule {
-    background-image: url("ic_schedule_black.png");
-    background-position: 13px center;
-    padding-left: 50px;}
+  background-image: url("ic_schedule_black.png");
+  background-position: 13px center;
+  padding-left: 50px;}
 #index_profile {
-    background-image: url("ic_profile_black.png");
-    background-position: 14px center;
-    padding-left: 50px;}
+  background-image: url("ic_profile_black.png");
+  background-position: 14px center;
+  padding-left: 50px;}
 #index_manifesto {
-    background-image: url("ic_manifesto_black.png");
-    background-position: 7px center;}
+  background-image: url("ic_manifesto_black.png");
+  background-position: 7px center;}
 #index_information {
-    background-image: url("ic_information_24.png");
-    background-position: 13px center;
-    padding-left: 50px;
-    font-size: 0.8em;}
+  background-image: url("ic_information_24.png");
+  background-position: 13px center;
+  padding-left: 50px;
+  font-size: 0.8em;}
 #index_map {
-    background-image: url("ic_map_black.png");
-    background-position: 9px center;
-    padding-left: 50px;}
+  background-image: url("ic_map_black.png");
+  background-position: 9px center;
+  padding-left: 50px;}
 #index_restaurant {
-    background-image: url("ic_restaurant_black.png");
-    background-position: 8.5px center;
-    padding-left: 50px;}
+  background-image: url("ic_restaurant_black.png");
+  background-position: 8.5px center;
+  padding-left: 50px;}
 #index_notifications { 
-    background-image: url("ic_notifications_black.png");
-    background-position: 12px center;
-    padding-left: 50px;}
+  background-image: url("ic_notifications_black.png");
+  background-position: 12px center;
+  padding-left: 50px;}
 #index_staff {
-    background-image: url("ic_staff_black.png");
-    background-position: 1.5px center;
-    padding-left: 50px;}
+  background-image: url("ic_staff_black.png");
+  background-position: 1.5px center;
+  padding-left: 50px;}
 #index_cfp {
-    background-image: url("ic_cfp_black.png");
-    background-position: 9px center;}
+  background-image: url("ic_cfp_black.png");
+  background-position: 9px center;}
 #index_help {
-    background-image: url("ic_help_black.png");
-    background-position: 9px center;}
+  background-image: url("ic_help_black.png");
+  background-position: 9px center;}
 #main-navigation a:hover { background-color: #f8f8f8;}
 #main-navigation a:hover:after { float:right; content: "»"; margin-right:5px;}
 
@@ -281,12 +283,12 @@ navigation.listview { list-style-type: none;
 
 /* Style for bus/ferry line numbers */
 .line_number {
-    display:inline-block;
-    background-color: #003273;
-    color: #FFFFFF;
-    font-weight: bold;
-    text-align: center;
-    width: 2.5em;
+  display:inline-block;
+  background-color: #003273;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  width: 2.5em;
 }
 
 /* Footnotes */
@@ -295,51 +297,51 @@ p.footnote { color:grey; font-style: italic; }
 
 /* Information boxes */
 .infobox {
-    background: none repeat scroll 0 0 #EEEEFF;
-    border: thin solid #000099;
-    padding: .75em 1.5em;
-    margin: -0.75em 0 .75;}
+  background: none repeat scroll 0 0 #EEEEFF;
+  border: thin solid #000099;
+  padding: .75em 1.5em;
+  margin: -0.75em 0 .75;}
 @media screen and (min-width: 500px) {
-    .infobox { margin: -0.75em 0 0.75em 1.25em; float:right; width:15em;}
+  .infobox { margin: -0.75em 0 0.75em 1.25em; float:right; width:15em;}
 }
 
 /* Figures */
 figure {
-    display:block;
-    border: thin black solid;
-    padding: 1.25em;
-    text-align: center;
-    margin: -1px auto 20px;
+  display:block;
+  border: thin black solid;
+  padding: 1.25em;
+  text-align: center;
+  margin: -1px auto 20px;
 }
 figure img {
-    display: block;
-    margin: 0 auto 1.25em;
-    max-width:100%;
+  display: block;
+  margin: 0 auto 1.25em;
+  max-width:100%;
 }
 
 figcaption {
-    display:block;
-    margin:0 auto;
-    max-width:20em;
+  display:block;
+  margin:0 auto;
+  max-width:20em;
 }
 
 /* By default, figures are placed between paragraphs.
  * For screen bigger than 750px we can push them in the right.
  */
 @media screen and (min-width: 750px) {
-    figure {
-	float:right;
-	margin-left:20px;
-    }
+  figure {
+    float:right;
+    margin-left:20px;
+  }
 }
 
 h3 { clear: both;}
 
 .message {
-    background: #FDEB9B;
-    border: thin solid #FCD116;
-    -moz-border-radius: 1px;
-    -webkit-border-radius: 1px;
-    border-radius: 1px;
-    padding: 9px 8px;
+  background: #FDEB9B;
+  border: thin solid #FCD116;
+  -moz-border-radius: 1px;
+  -webkit-border-radius: 1px;
+  border-radius: 1px;
+  padding: 9px 8px;
 }
