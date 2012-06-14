@@ -36,17 +36,17 @@
   margin-top: 0;
 }
 .wrapper {
+  margin:0 auto 0;
   /* Limiting width helps avoids too long lines on big screens */
   max-width:50em;
-  margin:0 auto 0;
   padding: 0 1em;
 }
 
 .fullscreen {
-  max-width: none;
-  width:100%;
   margin:0;
+  max-width: none;
   padding:0;
+  width:100%;
 }
 
 article, aside, canvas, details,
@@ -60,25 +60,28 @@ hgroup, nav, section, summary, video {
  * Style and layout
  */
 .header {
-  color: #f5f5f5;
   background: #1a1a1a url("./line.png") repeat-x top left;
+  color: #f5f5f5;
   margin: 0;
-  padding:1em 0;}
+  padding:1em 0;
+}
 
 /* clearing after the header */
 .header:after {
   clear:both; content: "."; height:0; visibility:hidden; display:block;}
 
 .header h1 {
-  margin:0;
-  padding:0;
   display:inline;
   font-size: 2em;    /* 32px */
-  line-height:1.25em /* 40px */}
+  line-height:1.25em; /* 40px */
+  margin:0;
+  padding:0;
+}
 
 .header h1 a {
   color: #f5f5f5;
-  text-decoration: none;}
+  text-decoration: none;
+}
 
 /* Logo */
 .header img {
@@ -89,10 +92,11 @@ hgroup, nav, section, summary, video {
 /** header navigation */
 .header .navigation {
   display: block;
-  margin:0 auto;
   list-style-type:none;
+  margin:0 auto;
+  padding:0;
   width:198px;
-  padding:0;}
+}
 
 /* By default, the navigation is centered under the title.
  * For screen bigger than 500px we can push it in the right top corner.
@@ -103,12 +107,13 @@ hgroup, nav, section, summary, video {
 
 
 .header .navigation a {
+  background-position: center;
+  background-repeat:no-repeat;
   display:block;
   float:left;
-  margin:0 10px;
   height:32px;
-  background-position: center;
-  background-repeat:no-repeat;}
+  margin:0 10px;
+}
 
 /* We replace the menu texts by icons.*/
 .header .navigation a span { display:none; }
@@ -135,27 +140,27 @@ hgroup, nav, section, summary, video {
 }
 
 #footer {
+  background: #f3f3f3;
   margin: 2.5em auto 0;
   padding: 1.25em 0;
-  background: #f3f3f3;
 }
 
 #footer ul {
-  max-width: 50em;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
+  max-width: 50em;
 }
 
 #footer ul li {
-  list-style-type: none;
   display: inline-block;
   font-size: .75em;
+  list-style-type: none;
   margin-left: 2em
 }
 
 #footer ul li a {
-  text-decoration: none;
   color: #666;
+  text-decoration: none;
 }
 
 /* ***************************************************************************
@@ -172,19 +177,29 @@ hgroup, nav, section, summary, video {
  * Be aware that margin, padding and dimension are calculated to
  * agree with the typographic grid of 20px. */
 ul.listview,
-navigation.listview { list-style-type: none;
-		      margin: 30px 0 30px 0 !important;
-		      padding: 0;}
-.listview li { list-style-type:none; display:inline;
-	       margin:0; padding:0;}
-.listview a { display:block;
-	      margin: -1px 0 0;
-	      padding-top:10px;
-	      padding-bottom:9px;
-	      border-top: thin #ececec solid;
-	      border-bottom: thin #ececec solid;
-	      color: inherit;
-	      text-decoration:none;}
+navigation.listview {
+  list-style-type: none;
+  margin: 30px 0 30px 0 !important;
+  padding: 0;
+}
+
+.listview li {
+  display:inline;
+  list-style-type:none;
+  margin:0;
+  padding:0;
+}
+
+.listview a {
+  border-bottom: thin #ececec solid;
+  border-top: thin #ececec solid;
+  color: inherit;
+  display:block;
+  margin: -1px 0 0;
+  padding-bottom:9px;
+  padding-top:10px;
+  text-decoration:none;
+}
 
 /* in case the screen is bigger than 500px, we split listviews
  * in 2 columns */
@@ -192,16 +207,19 @@ navigation.listview { list-style-type: none;
   .listview:after {
     clear:left;
     content: ".";
+    display:block;
     height:0;
     visibility:hidden;
-    display:block;}
+}
 
   /* We use li here to be the floating element
    * because a may have padding and you should't give 
    * Width and padding to the same element */
   .listview li { 
-    width: 45%; float: left;
-    margin-right: 5%;}
+    float: left;
+    margin-right: 5%;
+    width: 45%;
+  }
 }
 
 
@@ -213,8 +231,10 @@ navigation.listview { list-style-type: none;
    * because <a/> may have padding and you should't give 
    * Width and padding to the same element */
   .listview li { 
-    width: 30%; float: left;
-    margin-right: 3%;}
+    float: left;
+    margin-right: 3%;
+    width: 30%;
+  }
 }
 
 /* A special case of listview is a clickable menu with 32x32 icons.
@@ -222,10 +242,11 @@ navigation.listview { list-style-type: none;
  * the actual icon is better specified in a style attribute on the element
  * itself.
  /* **** Main menu **** */
-.listview.menu a { background-repeat: no-repeat;
-		   padding-left: 50px;
-		   background-position: 9px center;
-		 }
+.listview.menu a {
+  background-position: 9px center;
+  background-repeat: no-repeat;
+  padding-left: 50px;
+}
 
 .listview.menu a:hover { background-color: #f8f8f8;}
 .listview.menu a:hover:after { float:right; content: "»"; margin-right:5px;}
@@ -283,9 +304,9 @@ navigation.listview { list-style-type: none;
 
 /* Style for bus/ferry line numbers */
 .line_number {
-  display:inline-block;
   background-color: #003273;
   color: #FFFFFF;
+  display:inline-block;
   font-weight: bold;
   text-align: center;
   width: 2.5em;
@@ -299,19 +320,21 @@ p.footnote { color:grey; font-style: italic; }
 .infobox {
   background: none repeat scroll 0 0 #EEEEFF;
   border: thin solid #000099;
+  margin: -0.75em 0 .75;
   padding: .75em 1.5em;
-  margin: -0.75em 0 .75;}
+}
+
 @media screen and (min-width: 500px) {
   .infobox { margin: -0.75em 0 0.75em 1.25em; float:right; width:15em;}
 }
 
 /* Figures */
 figure {
-  display:block;
   border: thin black solid;
+  display:block;
+  margin: -1px auto 20px;
   padding: 1.25em;
   text-align: center;
-  margin: -1px auto 20px;
 }
 figure img {
   display: block;
@@ -340,8 +363,8 @@ h3 { clear: both;}
 .message {
   background: #FDEB9B;
   border: thin solid #FCD116;
+  border-radius: 1px;
   -moz-border-radius: 1px;
   -webkit-border-radius: 1px;
-  border-radius: 1px;
   padding: 9px 8px;
 }
